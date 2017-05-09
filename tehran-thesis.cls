@@ -91,7 +91,82 @@
 \fi\fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\firstPage}{\begin{titlepage}
+%% جلد پایان‌نامه (زرکوب) به فارسی
+\newcommand{\coverPage}{\begin{titlepage}
+%\topmargin=-30pt
+\vspace{-10mm}
+\centerline{{\includegraphics[width=5cm]{logo}}}
+\par
+\vspace{-5mm}
+{\large\bfseries\@faculty}
+\vskip 1.5cm
+{\huge\titlefont \@title}\par
+\vskip 5mm
+\if@bscthesis 
+	{\large\bfseries{پروژه کارشناسی \@subject}
+	\ifx\@field\undefined%
+		\relax
+	\else
+		گرایش \@field
+	\fi
+	}
+\else
+	{\large\bfseries \@projectLabel\ \ \writtenfor
+	\@degree{} 
+	}
+	{\large\bfseries{در رشته \@subject}}
+	\vskip .2cm
+	\centerline{\large \bfseries%
+		گرایش \@field}
+\fi	
+\vskip 1cm
+\par
+{\Large\bfseries{\large\bfseries   \@name\ \ \@surname}}
+\par
+\vskip 1cm
+\large
+{
+\ifx\@firstsupervisor\undefined%
+	\ifx\@secondsupervisor\undefined%
+	\else
+	\fi
+\else
+\ifx\@secondsupervisor\undefined%
+استاد راهنما
+{\Large\bfseries\par
+\@firstsupervisor}
+\else
+\large
+اساتید راهنما
+\par
+{\Large\bfseries \@firstsupervisor{} و \@secondsupervisor}
+\fi\fi}
+
+
+\par
+\vskip 6mm
+%\vfill
+{\large \@thesisdate}
+%\vfill
+\end{titlepage}%
+} % end of coverPage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% صفحه سفید
+\newcommand{\besmPage}{
+
+\newpage
+%\pagestyle{empty}\noindent\\ 
+%% بسم الله الرحمن الرحیم
+\newpage
+\thispagestyle{empty}
+%\hfill
+\begin{center}
+\includegraphics[width=10cm]{besm}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% فرم داخلی جلد به فارسی (دارای استاد مشاور)
+\newcommand{\titlePage}{\begin{titlepage}
 %\topmargin=-30pt
 \vspace{-10mm}
 \centerline{{\includegraphics[width=5cm]{logo}}}
@@ -163,21 +238,7 @@
 {\large \@thesisdate}
 %\vfill
 \end{titlepage}%
-} % end of firstPage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% صفحه سفید
-\newcommand{\besmPage}{
-
-\newpage
-%\pagestyle{empty}\noindent\\ 
-%% بسم الله الرحمن الرحیم
-\newpage
-\thispagestyle{empty}
-%\hfill
-\begin{center}
-\includegraphics[width=10cm]{besm}
-\end{center}
-}
+} % end of titlePage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
