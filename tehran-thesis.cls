@@ -17,9 +17,9 @@
 %% 
 %% 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{VThesis}
+\ProvidesClass{tehran-thesis}
               [10/21/2011 v0.4
- Persian thesis document class in XeLaTeX for University of Tabriz projects/theses/dissertations]
+ Persian thesis document class in XeLaTeX for University of Tehran projects/theses/dissertations]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions
 \LoadClass[a4paper,12pt]{book}
