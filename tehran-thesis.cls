@@ -164,9 +164,10 @@
 %\vfill
 \end{titlepage}%
 } % end of firstPage
-
-\newcommand{\besmPage}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% صفحه سفید
+\newcommand{\besmPage}{
+
 \newpage
 %\pagestyle{empty}\noindent\\ 
 %% بسم الله الرحمن الرحیم
@@ -177,7 +178,7 @@
 \includegraphics[width=10cm]{besm}
 \end{center}
 }
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
 \newpage
@@ -204,8 +205,8 @@
 %\vspace{.5cm}
 گرایش: \@field
 }
-
-% تأییدیه‌ی صحت و اصالت نتایج
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% تأییدیه‌ی صحت و اصالت نتایج
 \newcommand{\esalatPage}{
 \newpage
 %\thispagestyle{empty}
@@ -237,8 +238,8 @@
 \end{tabular}
 \end{flushleft}
 }
-
-% مجوز بهره‌برداری از پایان‌نامه
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% مجوز بهره‌برداری از پایان‌نامه
 \newcommand{\mojavezPage}
 {
 \newpage
