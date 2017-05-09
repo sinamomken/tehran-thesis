@@ -1,0 +1,72 @@
+% !TEX TS-program = XeLaTeX
+% Commands for running this example:
+% 	 xelatex main
+% 	 bibtex8 -W -c cp1256fa main
+%      xindy -L persian -C utf8 -M texindy main
+% 	 xelatex main
+% 	 xelatex main
+% End of Commands
+
+%        نمونه پایان‌نامه آماده شده با استفاده از کلاس IUST-Thesis، نگارش 0.6
+% 		محمود امین‌طوسی، دانشگاه تربیت معلم سبزوار، http://profsite.sttu.ac.ir/mamintoosi/
+% 		گروه پارسی‌لاتک  http://www.parsilatex.com
+%        این نسخه، بر اساس نسخه‌ 0.4 از کلاس Tabriz_Thesis آقای وحید دامن‌افشان آماده شده است. http://damanafshan.tk
+%        
+%        تغییرات:
+%        نسخه 0.6:
+%        اصلاح مشکل بسته subfig 
+%----------------------------------------------------------------------------------------------
+%        اگر قصد نوشتن پروژه کارشناسی را دارید، در خط زیر به جای msc، کلمه bsc و اگر قصد نوشتن پروژه دکترا
+%        را دارید، کلمه phd را قرار دهید. کلیه تنظیمات لازم، به طور خودکار، اعمال می‌شود.
+
+%        اگر مایلید پایان‌نامه شما دورو باشد به جای oneside  در خط زیر از twoside استفاده کنید
+\documentclass[oneside,openany,msc]{IUST-Thesis}
+
+% مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
+
+%       فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین 
+%       و دیگر بسته‌ها و ... در این فایل قرار دارد و بهتر است که با نحوه استفاده از آنها آشنا شوید.
+\input{commands}
+
+\begin{document}
+
+\pagenumbering{harfi}
+\input{faTitle}
+\tableofcontents
+
+\newpage
+\listoffigures \newpage
+\listoftables  \newpage
+\addcontentsline{toc}{chapter}{\listalgorithmname}
+\listofalgorithms \newpage
+\input{acronyms}
+
+\pagestyle{fancy}
+% اگر شما فصل اول  خود را در فایلی به جز chapter1 همراه با این کلاس نوشته‌اید باید چندخط اول chapter1 را در فایل خود کپی کنید.
+\include{intro}			% فصل اول: مقدمه
+\include{latexIntro}		% فصل دوم: آشنایی مقدماتی با لاتک
+
+% مراجع
+\pagestyle{empty}
+{
+\onehalfspacing
+\bibliographystyle{acm-fa}%{chicago-fa}%{plainnat-fa}%
+\bibliography{MyReferences}
+}
+
+\pagestyle{fancy}
+
+\appendix                           %فصلهای پس از این قسمت به عنوان ضمیمه خواهند آمد.
+% اگر شما پیوست اول  خود را در فایلی به جز appendix1 همراه با این کلاس نوشته‌اید باید چندخط اول appendix1 را در فایل خود کپی کنید.
+\include{appendix1}		% پیوست اول: مدیریت مراجع در لاتک
+\include{appendix2}
+
+%\baselineskip=.75cm
+\onehalfspacing
+\include{dicfa2en}
+\include{dicen2fa}
+\printindex
+\input{enTitle}
+\label{LastPage}
+
+\end{document}
