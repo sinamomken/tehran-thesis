@@ -18,7 +18,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tehran-thesis}
-              [10/21/2011 v0.4
+              [05/09/2017 v0.1
  Persian thesis document class in XeLaTeX for University of Tehran projects/theses/dissertations]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions
@@ -465,20 +465,19 @@ Advisors:
 \newpage
 \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
-%% M.Amintoosi
+%% Author: Sina Momken
+%%
+%% Base author: M.Amintoosi
 %% 
-%% Copyright © 2011-2012      by Vahid Damanafshan     
+%% Copyright © 2011-2012 by Vahid Damanafshan     
 %% 
-%% Distributable under the LaTeX Project Public License,
-%% version 1.3c or higher (your choice). The latest version of
-%% this license is at: http://www.latex-project.org/lppl.txt
+%% Distributable under GNU GENERAL PUBLIC LICENSE Version 3.
 %% 
-%% This work is "maintained" (as per LPPL maintenance status)
-%%  by Vahid Damanafshan.
-%% 
+%% This work is "maintained" by Sina Momken.
 %% 
 %% 
 %% 
-%% Special thanks to Vafa Khalighi for his invaluable hints.
+%% 
+%% Special thanks to Mahmood Amintoosi, Vahid Damanafshan and Vafa Khalighi for their invaluable work.
 %%
 %% End of file `tehran-thesis.cls'.
