@@ -243,48 +243,29 @@
 \newcommand{\mojavezPage}
 {
 \newpage
-%\thispagestyle{empty}
+\ \vfill
+\vspace{-12cm}
+\tikzstyle{tmpvip}=%
+[ultra thick,rectangle,draw=black!72,rounded corners=2mm,%
+inner xsep=-1.3cm,inner ysep=0.4cm]
 \begin{center}
-{\Large \titlefont
-مجوز بهره‌برداری از پایان‌نامه \\
- }
-\vspace{.5cm}
+\begin{tikzpicture}
+\node[tmpvip](mainbox){%
+\begin{minipage}{0.7\textwidth}
+\begin{persian}
+\begin{center}
+
+\textbf{کلیه حقوق مادی  و معنوی این اثر}
+ 
+\textbf{متعلّق به دانشگاه تهران می‌باشد.}
+
 \end{center}
-\doublespacing 
-
-بهره‌برداری از این پایان‌نامه در چهارچوب مقررات كتابخانه و با توجه به محدودیتی كه توسط استاد راهنما به شرح زیر تعیین می‌شود، بلامانع است:
-
-\noindent$\Box$ بهره‌برداری از این پایان‌نامه برای همگان بلامانع است.\\
-$\Box$ بهره‌برداری از این پایان‌نامه با اخذ مجوز از استاد راهنما، بلامانع است.\\
-$\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ .................................... ممنوع است.\\
-
-\vspace{.5cm}
-\begin{flushleft}
-\begin{tabular}{l p{.25\textwidth}}
-% چون & در ماکروی دخل جدول مشکل ایجاد می‌کرد مجبور شدم دو تیکه بنویسم
-\ifx\@firstsupervisor\undefined%
-	\relax
-\else
-	\ifx\@secondsupervisor\undefined%
-		استاد راهنما:
-	\else
-		اساتید راهنما: 
-	\fi
-\fi
-&
-\ifx\@firstsupervisor\undefined%
-	\relax
-\else
-	\ifx\@secondsupervisor\undefined%
-		\@firstsupervisor
-	\else
-		\@firstsupervisor{} \newline \@secondsupervisor
-	\fi
-\fi \\
-  تاریخ: & \\
-	 امضا: &\\
-\end{tabular}
-\end{flushleft}
+\end{persian}
+\end{minipage}};
+%\node[viptitle] at (mainbox.west){\ding{'153}};
+\end{tikzpicture}
+\end{center}
+\ \vfill
 }
 
 % \def\frame{\newpage
