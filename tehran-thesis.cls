@@ -248,7 +248,7 @@
 
 \begin{center}
 {\Large \titlefont
- تأییدیه‌ی هیأت داوران جلسه‌ی دفاع از \@projectLabel
+گواهی دفاع از \@projectLabel{} \@degree{}
  }
 \end{center}
 \vspace{.5cm}
