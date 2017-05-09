@@ -1,13 +1,13 @@
 
 %%
-%%  This is file `IUST-Thesis.cls',
-%%  It is a modification  of Tabriz_thesis of Vahid Damanafshan,
-%%	by: Mahmood Amintoosi, m.amintoosi@gmail.com
-%%  http://profsite.sttu.ac.ir/mamintoosi
-%%	Ver 0.1, Jan 2012
+%%  This is file `tehran-thesis.cls',
+%%  It is a modification IUST-Thesis by Mahmood Amintoosi which itself is a change of Tabriz_thesis by Vahid Damanafshan.
+%%  Author: Sina Momken, sina.momken@gmail.com
+%%	Base author: Mahmood Amintoosi, m.amintoosi@gmail.com
+%%  https://github.com/sinamomken/tehran-thesis
+%%	Ver 0.1, May 2017
 
 %% Original Copyright
-
 %%  The original file was xepersian-thesis.cls by Vafa Khalighi
 %%   __________________________________
 %%   Copyright © 2011-2012 Vahid Damanafshan
@@ -481,4 +481,4 @@ Advisors:
 %% 
 %% Special thanks to Vafa Khalighi for his invaluable hints.
 %%
-%% End of file `IUST-Thesis.cls'.
+%% End of file `tehran-thesis.cls'.
