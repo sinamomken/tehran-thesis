@@ -1,0 +1,112 @@
+% !TeX root=main.tex
+
+\chapter{‌جدول، نمودار و الگوریتم در لاتک}\label{App:Latex:More}
+\thispagestyle{empty}
+
+در این بخش نمونه مثالهایی از جدول، نمودار و الگوریتم در لاتک را خواهیم دید.
+\section{مدلهای حرکت دوبعدی}
+بسیاری از اوقات حرکت بین دو تصویر از یک صحنه با یکی از مدلهای پارامتری ذکر شده در جدول \eqref{tab:MotionModels} قابل مدل نمودن می‌باشد.  
+\begin{table}[ht]
+\caption{مدلهای تبدیل.}
+\label{tab:MotionModels}
+\centering
+\onehalfspacing
+\begin{tabular}{|r|c|l|r|}
+\hline نام مدل & درجه آزادی & تبدیل مختصات & توضیح \\ 
+\hline انتقالی & ۲ & $\begin{aligned} x'=x+t_x \\ y'=y+t_y \end{aligned}$  &  انتقال دوبعدی\\ 
+\hline اقلیدسی & ۳ & $\begin{aligned} x'=xcos\theta - ysin\theta+t_x \\ y'=xsin\theta+ycos\theta+t_y \end{aligned}$  &  انتقالی+دوران \\ 
+\hline مشابهت & ۴ & $\begin{aligned} x'=sxcos\theta - sysin\theta+t_x \\ y'=sxsin\theta+sycos\theta+t_y  \end{aligned}$  & اقلیدسی+تغییرمقیاس \\ 
+\hline آفین & ۶ & $\begin{aligned} x'=a_{11}x+a_{12}y+t_x \\ y'=a_{21}x+a_{22}y+t_y \end{aligned}$  & مشابهت+اریب‌شدگی \\ 
+\hline  پروجکتیو & ۸ & $\begin{aligned} x'&=(m_1x+m_2y+m_3)/D \\ y'&=(m_4x+m_5y+m_6)/D \\ D&=m_7x+m_8y+1 \end{aligned}$  & آفین+\lr{keystone+chirping} \\ 
+\hline  شارنوری & $\infty $ & $\begin{aligned} x'=x+v_x(x,y) \\ y'=y+v_y(x,y) \end{aligned}$  &  حرکت آزاد\\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+\section{ماتریس}
+
+شناخته‌شده‌ترین روش تخمین ماتریس هوموگرافی الگوریتم تبدیل خطی مستقیم (\lr{DLT\LTRfootnote{Direct Linear Transform}}) است.  فرض کنید چهار زوج نقطهٔ متناظر در دو تصویر در دست هستند،  $\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$   و تبدیل با رابطهٔ
+  $\mathbf{x}'_i = H\mathbf{x}_i$
+  نشان داده می‌شود که در آن:
+\[\mathbf{x}'_i=(x'_i,y'_i,w'_i)^\top  \]
+و
+\[ H=\left[
+\begin{array}{ccc}
+h_1 & h_2 & h_3 \\ 
+h_4 & h_5 & h_6 \\ 
+h_7 & h_8 & h_9
+\end{array} 
+\right]\]
+رابطه زیر را برای الگوریتم  \eqref{alg:DLT} لازم دارم.
+\begin{equation}\label{eq:DLT_Ah}
+\left[
+\begin{array}{ccc}
+0^\top & -w'_i\mathbf{x}_i^\top & y'_i\mathbf{x}_i^\top \\ 
+w'_i\mathbf{x}_i & 0^\top & -x'_i\mathbf{x}_i^\top \\ 
+- y'_i\mathbf{x}_i^\top & x'_i\mathbf{x}_i^\top & 0^\top
+\end{array} 
+\right]
+\left(
+\begin{array}{c}
+\mathbf{h}^1 \\ 
+\mathbf{h}^2 \\ 
+\mathbf{h}^3
+\end{array} 
+\right)=0
+\end{equation}
+
+\section{الگوریتم با دستورات فارسی}
+با مفروضات فوق، الگوریتم \lr{DLT} به صورت نشان داده شده در الگوریتم \eqref{alg:DLT}  خواهد بود.
+\begin{algorithm}[t]
+\onehalfspacing
+\caption{الگوریتم \lr{DLT} برای تخمین ماتریس هوموگرافی.} \label{alg:DLT}
+\begin{algorithmic}[1]
+\REQUIRE $n\geq4$ زوج نقطهٔ متناظر در دو تصویر 
+${\mathbf{x}_i\leftrightarrow\mathbf{x}'_i}$،\\
+\ENSURE ماتریس هوموگرافی $H$ به نحوی‌که: 
+$\mathbf{x}'_i = H \mathbf{x}_i$.
+  \STATE برای هر زوج نقطهٔ متناظر
+$\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$ 
+ماتریس $\mathbf{A}_i$ را با استفاده از رابطهٔ \ref{eq:DLT_Ah} محاسبه کنید.
+  \STATE ماتریس‌های ۹ ستونی  $\mathbf{A}_i$ را در قالب یک ماتریس $\mathbf{A}$ ۹ ستونی ترکیب کنید. 
+  \STATE تجزیهٔ مقادیر منفرد \lr{(SVD)}  ماتریس $\mathbf{A}$ را بدست آورید. بردار واحد متناظر با کمترین مقدار منفرد جواب $\mathbf{h}$ خواهد بود.
+  \STATE  ماتریس هوموگرافی $H$ با تغییر شکل $\mathbf{h}$ حاصل خواهد شد.
+\end{algorithmic}
+\end{algorithm}
+
+\section{الگوریتم با دستورات لاتین}
+الگوریتم \ref{alg:RANSAC} یک الگوریتم با دستورات لاتین است.
+
+\begin{algorithm}[t]
+\onehalfspacing
+\caption{الگوریتم \lr{RANSAC} برای تخمین ماتریس هوموگرافی.} \label{alg:RANSAC}
+\begin{latin}
+\begin{algorithmic}[1]
+\REQUIRE $n\geq4$ putative correspondences, number of estimations, $N$, distance threshold $T_{dist}$.\\
+\ENSURE Set of inliers and Homography matrix $H$.
+\FOR{$k = 1$ to $N$}
+  \STATE Randomly choose 4 correspondence,
+  \STATE Check whether these points are colinear, if so, redo the above step
+  \STATE Compute the homography $H_{curr}$ by DLT algorithm from the 4 points pairs,
+  \STATE $\ldots$ % الگوریتم کامل نیست
+  \ENDFOR
+  \STATE Refinement: re-estimate H from all the inliers using the DLT algorithm.
+\end{algorithmic}
+\end{latin}
+\end{algorithm}
+
+\section{نمودار}
+لاتک بسته‌هایی با قابلیت‌های زیاد برای رسم انواع مختلف نمودارها دارد. مانند بسته‌های \lr{Tikz} و  \lr{PSTricks}. توضیح اینها فراتر از این پیوست کوچک است. مثالهایی از رسم نمودار را در مجموعه پارسی‌لاتک خواهید یافت. توصیه می‌کنم که حتماً مثالهایی از برخی از آنها را ببینید. راهنمای همه آنها در تک‌لایو هست. نمونه مثالهایی از بسته \lr{Tikz} را می‌توانید در \url{http://www.texample.net/tikz/examples/} ببینید.
+
+\section{تصویر}
+نمونه تصاویری در بخش قبل دیدیم. دو تصویر شیر کنار هم را هم در شکل \ref{fig:twolion} مشاهده می‌کنید.
+\begin{figure}[t]
+\centering 
+\subfigure[شیر ۱]{ \label{fig:twolion:one}
+\includegraphics[width=.3\textwidth]{lion}}
+%\hspace{2mm}
+\subfigure[شیر ۲]{ \label{fig:twolion:two}
+\includegraphics[width=.3\textwidth]{lion}}
+\caption{دو شیر}
+\label{fig:twolion} %% label for entire figure
+\end{figure}
