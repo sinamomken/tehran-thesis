@@ -96,10 +96,10 @@
 %\topmargin=-30pt
 \vspace{-10mm}
 \centerline{{\includegraphics[width=5cm]{logo}}}
-\par
-\vspace{-5mm}
-
-{\large\bfseries\@faculty}
+%\par
+%\vspace{-5mm}
+\centerline{\bf \@university}
+\centerline{\large\bfseries\@faculty}
 \vskip 1.5cm
 {\huge\titlefont \@title}\par
 \vskip 5mm
@@ -171,9 +171,10 @@
 %\topmargin=-30pt
 \vspace{-10mm}
 \centerline{{\includegraphics[width=5cm]{logo}}}
-\par
-\vspace{-5mm}
-{\large\bfseries\@faculty}
+%\par
+%\vspace{-5mm}
+\centerline{\bf \@university}
+\centerline{\large\bfseries\@faculty}
 \vskip 1.5cm
 {\huge\titlefont \@title}\par
 \vskip 5mm
