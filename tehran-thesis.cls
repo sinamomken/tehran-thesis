@@ -98,6 +98,7 @@
 \centerline{{\includegraphics[width=5cm]{logo}}}
 \par
 \vspace{-5mm}
+
 {\large\bfseries\@faculty}
 \vskip 1.5cm
 {\huge\titlefont \@title}\par
@@ -330,6 +331,8 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 % \thispagestyle{empty}
 % \newpage
 % }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% چکیده فارسی
 \newcommand\abstractPage{\newpage
 \thispagestyle{empty}
 \vskip 15mm
@@ -355,7 +358,8 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 % \vspace{5mm}}
 
 % \def\endlatinabstract{\newpage}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% قدردانی (فارسی)
 \def\acknowledgementpage{\newpage
 \thispagestyle{empty}
 \centerline{\Large \bfseries قدردانی}
@@ -390,10 +394,15 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 %  \ifnum\c@chapter=0 \pagenumbering{arabic}\setcounter{page}{1}\fi
 %  \ol@chapter}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Latin Abstract and Title pages
+
 %\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
+
 \font\supervisorfont=cmbxti10
 
-\newcommand{\latinfirstPage}{%
+\newcommand{\latinTitlePage}{%
+%% Latin abstract Page
 \newpage\clearpage
 \thispagestyle{empty}
 \vskip 15mm
@@ -408,9 +417,10 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \textbf{Keywords:} 
 \@latinkeywords
 
+%% Latin title page
 \begin{titlepage}
 \vspace{-10mm}
-{\includegraphics[height=4.5cm]{logo-en}}
+{\includegraphics[width=5cm]{logo-en}}
 \centerline{\bf \@latinuniversity} 
 \large\bfseries
 \@latinfaculty\space 
@@ -426,13 +436,15 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
     Bachelor of Science Thesis
 	in  \@latinsubject 
 \else
-	A Thesis Submitted in Partial Fulfillment of the Requirement for the Degree of 
-	 \if@mscthesis
-	Master of Science
+	A Thesis submitted to the Graduate Studies Office
+    \\In partial fulfillment of the requirements for
+    \\The degree of 
+	\if@mscthesis
+	 Master of Science
 	\else
 	 Doctor of Philosophy
 	\fi
-	in  \@latinsubject 
+	\\in  \@latinsubject{} - \@latinfield{}
 	%\baselineskip=.750cm
 	%\addtolength{\baselineskip}{-5mm}
 \fi
