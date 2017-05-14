@@ -35,19 +35,19 @@
 \makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
-\usepackage{xepersian}
-\settextfont[Scale=1]{XB Niloofar}
-\setlatintextfont[Scale=0.9]{Liberation Serif}
+\usepackage[extrafootnotefeatures]{xepersian}
+\settextfont[BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
 
+\setlatintextfont[Scale=1]{Liberation Serif}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
-\setdigitfont[Scale=1]{XB Zar}%{Persian Modern}
+\setdigitfont[Scale=1.2]{IRLotusICEE.ttf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-\defpersianfont\titlefont[Scale=1]{XB Titre}
-% \defpersianfont\iranic[Scale=1.1]{XB Zar Oblique}%Italic}%
+\defpersianfont\titlefont[Scale=1]{IRTitr.ttf}
+\setiranicfont[Scale=1.3]{IRLotusICEE_Iranic.ttf}				% ایرانیک، خوابیده به چپ
 % \defpersianfont\nastaliq[Scale=1.2]{IranNastaliq}
-
+\setmathsfdigitfont{IRTitr.ttf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % دستوری برای حذف کلمه «چکیده»
 \renewcommand{\abstractname}{}
