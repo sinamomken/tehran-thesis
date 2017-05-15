@@ -140,4 +140,33 @@
    \def\newblock{}
    \sloppy
    \sfcode`\.=1000\relax}}
+   
+%اگر مایلید در شماره گذاری حرفی و ابجد به جای آ از الف استفاده شود دستورات زیر را فعال کنید.   
+%\def\@Abjad#1{%
+%  \ifcase#1\or الف\or ب\or ج\or د%
+%           \or هـ\or و\or ز\or ح\or ط%
+%           \or ی\or ک\or ل\or م\or ن%
+%           \or س\or ع\or ف\or ص%
+%           \or ق\or ر\or ش\or ت\or ث%
+%            \or خ\or ذ\or ض\or ظ\or غ%
+%            \else\@ctrerr\fi}
+%
+% \def\abj@num@i#1{%
+%   \ifcase#1\or الف\or ب\or ج\or د%
+%            \or هـ‍\or و\or ز\or ح\or ط\fi
+
+%   \ifnum#1=\z@\abjad@zero\fi}   
+%  
+%   \def\@harfi#1{\ifcase#1\or الف\or ب\or پ\or ت\or ث\or
+
+% ج\or چ\or ح\or خ\or د\or ذ\or ر\or ز\or ژ\or س\or ش\or ص\or ض\or ط\or ظ\or ع\or غ\or
+
+% ف\or ق\or ک\or گ\or ل\or م\or ن\or و\or ه\or ی\else\@ctrerr\fi}
+
+%
 \makeatother
+
+% for numbering subsubsections
+\setcounter{secnumdepth}{3}
+%to include subsubsections in the table of contents
+\setcounter{tocdepth}{3}
