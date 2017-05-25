@@ -152,11 +152,10 @@
 \end{titlepage}%
 } % end of coverPage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% صفحه سفید
 \newcommand{\besmPage}{
-
+%% صفحه سفید
 \newpage
-%\pagestyle{empty}\noindent\\ 
+\pagestyle{empty}\noindent\\ 
 %% بسم الله الرحمن الرحیم
 \newpage
 \thispagestyle{empty}
@@ -164,6 +163,9 @@
 \begin{center}
 \includegraphics[width=10cm]{besm}
 \end{center}
+%% صفحه سفید
+\newpage
+\pagestyle{empty}\noindent\\ 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% فرم داخلی جلد به فارسی (دارای استاد مشاور)
