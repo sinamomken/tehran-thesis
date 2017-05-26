@@ -24,6 +24,8 @@
 \ProcessOptions
 \LoadClass[a4paper,12pt]{book}
 \def\university#1{\gdef\@university{#1}}
+\def\college#1{\gdef\@college{#1}}
+\def\faculty#1{\gdef\@faculty{#1}}
 \def\department#1{\gdef\@department{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\thesisdate#1{\gdef\@thesisdate{#1}}
@@ -35,17 +37,18 @@
 \def\surname#1{\gdef\@surname{#1}}
 \def\keywords#1{\gdef\@keywords{#1}}
 \def\fa-abstract#1{\gdef\@fa-abstract{#1}}
-\def\faculty#1{\gdef\@faculty{#1}}
 \def\subject#1{\gdef\@subject{#1}}
 \def\field#1{\gdef\@field{#1}}
-\def\department#1{\gdef\@department{#1}}
 \def\projectLabel#1{\gdef\@projectLabel{#1}}
 \def\studentID#1{\gdef\@studentID{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\latintitle#1{\gdef\@latintitle{#1}}
 \def\latinauthor#1{\gdef\@latinauthor{#1}}
 \def\latindegree#1{\gdef\@latindegree{#1}}
+\def\latinuniversity#1{\gdef\@latinuniversity{#1}}
+\def\latincollege#1{\gdef\@latincollege{#1}}
 \def\latinfaculty#1{\gdef\@latinfaculty{#1}}
+\def\latindepartment#1{\gdef\@latindepartment{#1}}
 \def\latinthesisdate#1{\gdef\@latinthesisdate{#1}}
 \def\latinsubject#1{\gdef\@latinsubject{#1}}
 \def\latinfield#1{\gdef\@latinfield{#1}}
@@ -57,7 +60,6 @@
 \def\latinsurname#1{\gdef\@latinsurname{#1}}
 \def\en-abstract#1{\gdef\@en-abstract{#1}}
 \def\latinkeywords#1{\gdef\@latinkeywords{#1}}
-\def\latinuniversity#1{\gdef\@latinuniversity{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@bscthesis
 \@bscthesisfalse
@@ -91,15 +93,34 @@
 \fi\fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% جلد پایان‌نامه (زرکوب) به فارسی
+%% جلد زرکوب به فارسی (بدون اساتید مشاور)
 \newcommand{\coverPage}{\begin{titlepage}
 %\topmargin=-30pt
 \vspace{-10mm}
-\centerline{{\includegraphics[width=5cm]{logo}}}
-%\par
-%\vspace{-5mm}
-\centerline{\bf \@university}
-\centerline{\large\bfseries\@faculty}
+% دستورات دوآرمه
+\makebox[\textwidth][c]{
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=4cm,left]{logo}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		\begin{onehalfspacing}
+		{\normalsize \bf \@university \\}
+		{\normalsize \bf \@college \\}
+		{\large\bfseries\@faculty \\}
+		{\large\bfseries\@department}
+		\end{onehalfspacing}
+	\end{center}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=4cm,right]{eng-logo}
+\end{minipage}
+}
+% دستورات تک‌آرمه
+%\centerline{{\includegraphics[width=5cm]{logo}}}
+%\centerline{\bf \@university}
+%\centerline{\large\bfseries\@faculty}
+% بعد از آرم‌ها
 \vskip 1.5cm
 {\huge\titlefont \@title}\par
 \vskip 5mm
@@ -122,7 +143,7 @@
 \fi	
 \vskip 1cm
 \par
-{\Large\bfseries{\large\bfseries   \@name\ \ \@surname}}
+{\Large\bfseries{\@name\ \ \@surname}}
 \par
 \vskip 1cm
 \large
@@ -172,11 +193,30 @@
 \newcommand{\titlePage}{\begin{titlepage}
 %\topmargin=-30pt
 \vspace{-10mm}
-\centerline{{\includegraphics[width=5cm]{logo}}}
-%\par
-%\vspace{-5mm}
-\centerline{\bf \@university}
-\centerline{\large\bfseries\@faculty}
+% دستورات دوآرمه
+\makebox[\textwidth][c]{
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=4cm,left]{logo}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		\begin{onehalfspacing}
+		{\normalsize \bf \@university \\}
+		{\normalsize \bf \@college \\}
+		{\large\bfseries\@faculty \\}
+		{\large\bfseries\@department}
+		\end{onehalfspacing}
+	\end{center}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=4cm,right]{eng-logo}
+\end{minipage}
+}
+% دستورات تک‌آرمه
+%\centerline{{\includegraphics[width=5cm]{logo}}}
+%\centerline{\bf \@university}
+%\centerline{\large\bfseries\@faculty}
+% بعد از آرم‌ها
 \vskip 1.5cm
 {\huge\titlefont \@title}\par
 \vskip 5mm
@@ -199,7 +239,7 @@
 \fi	
 \vskip 1cm
 \par
-{\Large\bfseries{\large\bfseries   \@name\ \ \@surname}}
+{\Large\bfseries{\@name\ \ \@surname}}
 \par
 \vskip 15mm
 \large
@@ -423,11 +463,31 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 %% Latin title page
 \begin{titlepage}
 \vspace{-10mm}
-{\includegraphics[width=5cm]{logo-en}}
-\centerline{\bf \@latinuniversity} 
-\large\bfseries
-\@latinfaculty\space 
-\vskip 1cm
+%% Double logo commands
+\makebox[\textwidth][c]{
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=4cm,right]{eng-logo-en}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\begin{center}
+		\begin{onehalfspacing}
+		{\normalsize \bf \@latinuniversity \\}
+		{\normalsize \bf \@latincollege \\}
+		{\large\bfseries\@latinfaculty \\}
+		{\large\bfseries\@latindepartment \\}
+		\end{onehalfspacing}
+	\end{center}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=4cm,left]{logo-en}
+\end{minipage}
+}
+%% Single logo commands
+%\centerline{{\includegraphics[width=5cm]{logo-en}}}
+%\centerline{\bf \@latinuniversity}
+%\centerline{\large\bfseries\@latinfaculty}
+%% After logos
+\vskip 1.5cm
 {%\latintitlefont 
 \Huge
 \@latintitle}
@@ -455,7 +515,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \vskip 15mm
 {\bfseries\latinby}\par
 {\large %\supervisorfont
-\rm\@latinname \; \@latinsurname}\par
+\rm \Large\bfseries \@latinname \; \@latinsurname}\par
 
 \vskip 15mm
 
