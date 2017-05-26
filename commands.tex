@@ -13,35 +13,34 @@
 \usepackage{lastpage}
 % بسته‌ و دستوراتی برای ایجاد لینک‌های رنگی با امکان جهش
 \usepackage[unicode=true,pagebackref=false,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
-% چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، 
-% لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
+% چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
 %\usepackage[pagebackref=false]{hyperref}
 % بسته‌ لازم برای تنظیم سربرگ‌ها
 \usepackage{fancyhdr}
 %
 %\usepackage{enumitem}
 \usepackage{setspace}
+% بسته‌ٔ لازم برای تغییر شماره‌گذاری صفحات پیوست‌ها
+\usepackage{etoolbox}
+% بسته‌های لازم برای نوشتن الگوریتم‌ها
 \usepackage{algorithm}
 \usepackage{algorithmic}
-
-%بسته‌های لازم برای رسم بهتر جداول
+% بسته‌های لازم برای رسم بهتر جداول
 \usepackage{tabulary}
 \usepackage{tabularx}
-
+% بسته‌های لازم برای رسم تنظیم بهتر شکل‌ها و زیرشکل‌ها
 \usepackage[export]{adjustbox}
 \usepackage{subfigure}
 \usepackage[subfigure]{tocloft}
-
-% بسته‌ای برای رسم دیاگرام‌ها و نیز صفحه مالکیت اثر
+% بسته‌ای برای رسم نمودارها و نیز صفحه مالکیت اثر
 \usepackage{tikz}
-
 % بسته‌ای برای ظاهر شدن «مراجع» و «نمایه» در فهرست مطالب
 \usepackage[nottoc]{tocbibind}
 % دستورات مربوط به ایجاد نمایه
 \usepackage{makeidx}
 \makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-% فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
+% فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد) و تعریف قلم فارسی و انگلیسی
 \usepackage[extrafootnotefeatures]{xepersian}
 \settextfont[BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
 
