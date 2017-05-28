@@ -287,7 +287,7 @@
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
 \newpage
-\setcounter{page}{1}
+%\setcounter{page}{1}
 %\thispagestyle{empty}
 
 \begin{center}

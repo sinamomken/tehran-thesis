@@ -95,18 +95,21 @@
 \def\listtablename{فهرست جداول}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% دستورهایی برای سفارشی کردن سربرگ صفحات
-% \newcommand{\SetHeader}{
-% \csname@twosidetrue\endcsname
-% \pagestyle{fancy}
-% \fancyhf{} 
-% \fancyhead[OL,EL]{\thepage}
-% \fancyhead[OR]{\small\rightmark}
-% \fancyhead[ER]{\small\leftmark}
-% \renewcommand{\chaptermark}[1]{%
-% \markboth{\thechapter-\ #1}{}}
-% }
-%%%%%%%%%%%%5
+%%% دستورهایی برای سفارشی کردن سربرگ صفحات:
+%\newcommand{\SetHeader}[1]{
+% دستور زیر معادل با گزینه twoside است.
+%\csname@twosidetrue\endcsname
+\pagestyle{fancy}
+%% دستورات زیر سبک صفحات fancy را تغییر می‌دهد:
+% O=Odd, E=Even, L=Left, R=Right
+% در صورت oneside بودن، عنوان فصل، سمت چپ ظاهر می‌شود.
+\fancyhead{}
+\fancyhead[OL]{\small\leftmark}
+\fancyhead[ER]{\small\leftmark}
+% شکل‌دهی شماره و عنوان فصل در سربرگ
+%\renewcommand{\chaptermark}[1]{\markboth{\thechapter-\ #1}{}}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\def\MATtextbaseline{1.5}
 %\renewcommand{\baselinestretch}{\MATtextbaseline}
 \doublespacing
