@@ -4,12 +4,13 @@
 \addtocontents{toc}{
     \protect\renewcommand\protect\cftchappresnum{\appendixname~}%
     \protect\setlength{\cftchapnumwidth}{\mylenapp}}
-% دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱
+    
 \let\Chapter\chapter
-\pretocmd{\chapter}{
-  \clearpage
-  \pagenumbering{arabic}
-  \renewcommand*{\thepage}{\thechapter-\arabic{page}}}{}{}
+% دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱
+%\pretocmd{\chapter}{
+%  \clearpage
+%  \pagenumbering{arabic}
+%  \renewcommand*{\thepage}{\rl{\thechapter-\arabic{page}}}}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
 \chapter{آشنایی سریع با برخی دستورات لاتک}
