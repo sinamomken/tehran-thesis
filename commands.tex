@@ -11,20 +11,31 @@
 \usepackage{framed} 
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
+% بسته‌ٔ لازم برای تغییر شماره‌گذاری صفحات پیوست‌ها
+\usepackage{etoolbox}
+%%%%%%%%%%%%
 % بسته‌ و دستوراتی برای ایجاد لینک‌های رنگی با امکان جهش
-\usepackage[unicode=true,pagebackref=false,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[unicode=true,pagebackref=true,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
 % چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
 %\usepackage[pagebackref=false]{hyperref}
+% اگر در مراجع، آدرس وب حاوی '%' بوده و pagebackref فعال باشد، دستورات زیر باید بیایند.
+\makeatletter
+\let\ORIG@BR@@bibitem\BR@@bibitem
+\apptocmd\ORIG@BR@@bibitem{\endgroup}{}{}
+\def\BR@@bibitem{\begingroup\catcode`\%=12 \ORIG@BR@@bibitem}
+\makeatother
+%%%%%%%%%%%%
 % بسته‌ لازم برای تنظیم سربرگ‌ها
 \usepackage{fancyhdr}
 %
 %\usepackage{enumitem}
 \usepackage{setspace}
-% بسته‌ٔ لازم برای تغییر شماره‌گذاری صفحات پیوست‌ها
-\usepackage{etoolbox}
-% بسته‌های لازم برای نوشتن الگوریتم‌ها
+% بسته‌های لازم برای نوشتن الگوریتم
 \usepackage{algorithm}
 \usepackage{algorithmic}
+% بسته‌های مورد نیاز برای نوشتن کدها و رنگ‌آمیزی آنها
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 % بسته‌های لازم برای رسم بهتر جداول
 \usepackage{tabulary}
 \usepackage{tabularx}
@@ -39,6 +50,12 @@
 % دستورات مربوط به ایجاد نمایه
 \usepackage{makeidx}
 \makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% دستورات وابسته به استیل مراجع
+%% if (plainnat-fa or asa-fa or chicago-fa) uncomment line below:
+%\usepackage{natbib}
+%% else, comment line above and uncomment line below:
+\let\citep\cite
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد) و تعریف قلم فارسی و انگلیسی
 \usepackage[extrafootnotefeatures]{xepersian}
@@ -174,6 +191,27 @@
 
 %
 \makeatother
+
+%%% امکان درج کد در سند
+% در این قسمت رنگ، قلم و قالب‌بندی قسمت‌های مختلف یک کد تعیین می‌شود. 
+\lstdefinestyle{myStyle}{
+	basicstyle=\ttfamily, % whole listing /w verbatim font
+	keywordstyle=\color{blue}\bfseries, % bold black keywords
+	identifierstyle=, % nothing happens
+	commentstyle=\color{LimeGreen}, % green comments
+	stringstyle=\ttfamily\color{red}, % red typewriter font for strings
+	showstringspaces=false % no special string spaces
+	breaklines=true,
+	breakatwhitespace=false,
+	numbers=right, % line number formats
+	numberstyle=\footnotesize\lr,
+	numbersep=-10pt,
+	frame=single,
+	captionpos=b,
+	captiondirection=RTL
+}
+\lstset{style=myStyle} % command to set default style
+\def\lstlistingname{\rl{برنامه}}
 
 % for numbering subsubsections
 \setcounter{secnumdepth}{3}

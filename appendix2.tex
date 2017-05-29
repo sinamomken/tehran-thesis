@@ -4,28 +4,66 @@
 \label{app:latex:more}
 %\thispagestyle{empty}
 
-در این بخش نمونه مثالهایی از جدول، نمودار و الگوریتم در لاتک را خواهیم دید.
-\section{مدلهای حرکت دوبعدی}
-بسیاری از اوقات حرکت بین دو تصویر از یک صحنه با یکی از مدلهای پارامتری ذکر شده در جدول \eqref{tab:MotionModels} قابل مدل نمودن می‌باشد.  
+در این بخش نمونه مثالهایی از جدول، شکل، نمودار، الگوریتم و معادلات ریاضی را در لاتک خواهیم دید.
+دقت کنید که در پایان‌نامه‌ها و مقالات، باید قاعدهٔ «ارجاع به جلو%
+\LTRfootnote{Forward Referencing}»
+رعایت شود؛ یعنی ابتدا در متن به شمارهٔ شکل، جدول یا معادله اشاره شود و بعد از آن (زیر آن) خود شکل، جدول یا معادله رسم شود. (توضیحات بیشتر در قسمت
+\ref{sec:floatObjs}).
+
+\section{جدول}
+دستور اصلی برای رسم جدول در لاتک 
+\verb|tabular|
+می‌باشد که جدول
+\eqref{tab:motionModels}
+با استفاده از آن کشیده شده است؛ در
+\verb|tabular|
+عرض جدول برابر با مجموع عرض ستون‌ها و حداکثر مساوی عرض متن است.
 \begin{table}[ht]
 \caption{مدلهای تبدیل.}
-\label{tab:MotionModels}
+\label{tab:motionModels}
 \centering
 \onehalfspacing
 \begin{tabular}{|r|c|l|r|}
-\hline نام مدل & درجه آزادی & تبدیل مختصات & توضیح \\ 
-\hline انتقالی & ۲ & $\begin{aligned} x'=x+t_x \\ y'=y+t_y \end{aligned}$  &  انتقال دوبعدی\\ 
-\hline اقلیدسی & ۳ & $\begin{aligned} x'=xcos\theta - ysin\theta+t_x \\ y'=xsin\theta+ycos\theta+t_y \end{aligned}$  &  انتقالی+دوران \\ 
-\hline مشابهت & ۴ & $\begin{aligned} x'=sxcos\theta - sysin\theta+t_x \\ y'=sxsin\theta+sycos\theta+t_y  \end{aligned}$  & اقلیدسی+تغییرمقیاس \\ 
-\hline آفین & ۶ & $\begin{aligned} x'=a_{11}x+a_{12}y+t_x \\ y'=a_{21}x+a_{22}y+t_y \end{aligned}$  & مشابهت+اریب‌شدگی \\ 
-\hline  پروجکتیو & ۸ & $\begin{aligned} x'&=(m_1x+m_2y+m_3)/D \\ y'&=(m_4x+m_5y+m_6)/D \\ D&=m_7x+m_8y+1 \end{aligned}$  & آفین+\lr{keystone+chirping} \\ 
-\hline  شارنوری & $\infty $ & $\begin{aligned} x'=x+v_x(x,y) \\ y'=y+v_y(x,y) \end{aligned}$  &  حرکت آزاد\\ 
-\hline 
+	\hline نام مدل & درجه آزادی & تبدیل مختصات & توضیح \\ 
+	\hline انتقالی & ۲ & $\begin{aligned} x'=x+t_x \\ y'=y+t_y \end{aligned}$  &  انتقال دوبعدی\\ 
+	\hline اقلیدسی & ۳ & $\begin{aligned} x'=x\cos\theta - y\sin\theta+t_x \\ y'=x\sin\theta+y\cos\theta+t_y \end{aligned}$  &  انتقالی+دوران \\ 
+	\hline 
 \end{tabular} 
 \end{table}
 
-\section{ماتریس}
+برای اینکه عرض جدول قابل کنترل باشد، باید از دستورات
+\verb|tabularx|،
+\verb|tabulary| یا
+\verb|tabu|
+استفاده کرد که راهنمای آنها در اینترنت وجود دارد.
+مثلاً جدول
+\ref{tab:motionModelsCont}
+با
+\verb|tabularx|
+رسم شده که عرض جدول در آن ثابت بوده و ستون‌های از نوع
+\verb|X|
+عرض خالی جدول را پر می‌کنند.
+\begin{table}[ht]
+	\caption{مدلهای تبدیل دیگر.}
+	\label{tab:motionModelsCont}
+	\centering
+	\onehalfspacing
+	\begin{tabularx}{\textwidth}{|r|c|l|X|}
+		\hline نام مدل & درجه آزادی & تبدیل مختصات & توضیح \\ 
+		\hline مشابهت & ۴ & $\begin{aligned} x'=sx\cos\theta - sy\sin\theta+t_x \\ y'=sx\sin\theta+sy\cos\theta+t_y  \end{aligned}$  & اقلیدسی+تغییرمقیاس \\ 		
+		\hline آفین & ۶ & $\begin{aligned} x'=a_{11}x+a_{12}y+t_x \\ y'=a_{21}x+a_{22}y+t_y \end{aligned}$  & مشابهت+اریب‌شدگی \\
+		\hline
+	\end{tabularx}
+\end{table}
 
+\section{معادلات ریاضی و ماتریس‌ها}
+تقریباً هر آنچه دانشجویان برای نوشتن فرمول‌های ریاضی لازم دارند، در کتاب 
+\lr{mathmode}
+آمده است. کافیست در خط فرمان، دستور زیر را وارد کنید:
+\begin{latin}
+	\texttt{texdoc mathmode}
+\end{latin}
+متن زیر شامل انواعی از اشیاء ریاضی است که با ملاحظه کدش می‌توانید با دستورات آن آشنا شوید.\\
 شناخته‌شده‌ترین روش تخمین ماتریس هوموگرافی الگوریتم تبدیل خطی مستقیم (\lr{DLT\LTRfootnote{Direct Linear Transform}}) است.  فرض کنید چهار زوج نقطهٔ متناظر در دو تصویر در دست هستند،  $\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$   و تبدیل با رابطهٔ
   $\mathbf{x}'_i = H\mathbf{x}_i$
   نشان داده می‌شود که در آن:
@@ -38,20 +76,21 @@ h_4 & h_5 & h_6 \\
 h_7 & h_8 & h_9
 \end{array} 
 \right]\]
-رابطه زیر را برای الگوریتم  \eqref{alg:DLT} لازم دارم.
-\begin{equation}\label{eq:DLT_Ah}
+رابطه زیر را برای الگوریتم  \eqref{alg:DLT} لازم داریم.
+\begin{equation}
+\label{eq:DLT_Ah}
 \left[
 \begin{array}{ccc}
-0^\top & -w'_i\mathbf{x}_i^\top & y'_i\mathbf{x}_i^\top \\ 
-w'_i\mathbf{x}_i & 0^\top & -x'_i\mathbf{x}_i^\top \\ 
-- y'_i\mathbf{x}_i^\top & x'_i\mathbf{x}_i^\top & 0^\top
+	0^\top & -w'_i\mathbf{x}_i^\top & y'_i\mathbf{x}_i^\top \\ 
+	w'_i\mathbf{x}_i & 0^\top & -x'_i\mathbf{x}_i^\top \\ 
+	- y'_i\mathbf{x}_i^\top & x'_i\mathbf{x}_i^\top & 0^\top
 \end{array} 
 \right]
 \left(
 \begin{array}{c}
-\mathbf{h}^1 \\ 
-\mathbf{h}^2 \\ 
-\mathbf{h}^3
+	\mathbf{h}^1 \\ 
+	\mathbf{h}^2 \\ 
+	\mathbf{h}^3
 \end{array} 
 \right)=0
 \end{equation}
@@ -96,18 +135,88 @@ $\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$
 \end{latin}
 \end{algorithm}
 
-\section{نمودار}
-لاتک بسته‌هایی با قابلیت‌های زیاد برای رسم انواع مختلف نمودارها دارد. مانند بسته‌های \lr{Tikz} و  \lr{PSTricks}. توضیح اینها فراتر از این پیوست کوچک است. مثالهایی از رسم نمودار را در مجموعه پارسی‌لاتک خواهید یافت. توصیه می‌کنم که حتماً مثالهایی از برخی از آنها را ببینید. راهنمای همه آنها در تک‌لایو هست. نمونه مثالهایی از بسته \lr{Tikz} را می‌توانید در \url{http://www.texample.net/tikz/examples/} ببینید.
+\section{درج کد}
+درج کد به زبان‌های مختلف به سادگی امکان‌پذیر است. برنامه
+\ref{code:matlabEx}
+یک قطعه کد
+\lr{MATLAB}
+را نشان می‌دهد.
+\singlespacing
+\begin{figure}
+	\begin{LTR}
+		\lstinputlisting[language=MATLAB, caption={نمونه کد \lr{MATLAB}}, label={code:matlabEx}]{MatlabExample.m}
+	\end{LTR}
+%\caption{نمونه کد \lr{MATLAB}}
+%\label{fig:code}
+\end{figure}
+\doublespacing
 
 \section{تصویر}
-نمونه تصاویری در بخش قبل دیدیم. دو تصویر شیر کنار هم را هم در شکل \ref{fig:twolion} مشاهده می‌کنید.
+نمونهٔ یک تصویر را در فصل قبل دیدیم. دو تصویر شیر کنار هم را نیز در شکل
+\ref{fig:twoLion}
+مشاهده می‌کنید.
 \begin{figure}[ht]
 \centering 
 \subfigure[شیر ۱]{ \label{fig:twolion:one}
-\includegraphics[width=.3\textwidth]{lion}}
+\includegraphics[width=0.3\textwidth]{lion}}
 %\hspace{2mm}
 \subfigure[شیر ۲]{ \label{fig:twolion:two}
-\includegraphics[width=.3\textwidth]{lion}}
+\includegraphics[width=0.3\textwidth]{lion}}
 \caption{دو شیر}
-\label{fig:twolion} %% label for entire figure
+\label{fig:twoLion} %% label for entire figure
 \end{figure}
+
+\section{نمودار}
+لاتک بسته‌هایی با قابلیت‌های زیاد برای رسم انواع مختلف نمودارها دارد. مانند بسته‌های \lr{Tikz} و  \lr{PSTricks}. توضیح اینها فراتر از این پیوست کوچک است.%
+\footnote{
+مثال‌هایی از بکارگیری بسته
+\lr{Tikz}
+را می‌توانید در
+\url{http://www.texample.net/tikz/examples/}
+ببینید. توصیه می‌شود دانشجویانی که قصد درج اشکالی مانند گراف را در سند خود دارند، مثالهایی از سایت مذکور را ملاحظه فرمایند.
+}
+یک نمودار رسم شده با بسته‌ی 
+\lr{TikZ}
+ در شکل 
+\ref{fig:parabola}
+نشان داده شده است.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=2.5]
+  \shade[top color=blue,bottom color=gray!50] 
+      (0,0) parabola (1.5,2.25) |- (0,0);
+  \draw (1.05cm,2pt) node[above] 
+      {$\displaystyle\int_0^{3/2} \!\!x^2\mathrm{d}x$};
+
+  \draw[style=help lines] (0,0) grid (3.9,3.9)
+       [step=0.25cm]      (1,2) grid +(1,1);
+
+  \draw[->] (-0.2,0) -- (4,0) node[right] {$x$};
+  \draw[->] (0,-0.2) -- (0,4) node[above] {$f(x)$};
+
+  \foreach \x/\xtext in {1/1, 1.5/1\frac{1}{2}, 2/2, 3/3}
+    \draw[shift={(\x,0)}] (0pt,2pt) -- (0pt,-2pt) node[below] {$\xtext$};
+
+  \foreach \y/\ytext in {1/1, 2/2, 2.25/2\frac{1}{4}, 3/3}
+    \draw[shift={(0,\y)}] (2pt,0pt) -- (-2pt,0pt) node[left] {$\ytext$};
+
+  \draw (-.5,.25) parabola bend (0,0) (2,4) node[below right] {$x^2$};
+\end{tikzpicture}
+\caption{یک نمودار زیبا با ارقام فارسی و قابلیت بزرگ‌نمایی بسیار، بدون از دست دادن کیفیت.}
+\label{fig:parabola}
+\end{figure}
+
+\section{نحوه قرارگیری اشیای شناور}
+\label{sec:floatObjs}
+شکل‌ها، جداول و الگوریتم‌ها در لاتک اشیای شناور محسوب می‌شوند؛ یعنی خود لاتک تصمیم می‌گیرد آنها را در کجای صفحه ترسیم کند تا زیباتر باشد. اما می‌توان به لاتک توصیه کرد که آن را در قسمت خاصی از صفحه رسم کند. برای اینکه قاعدهٔ «ارجاع به جلو» رعایت شود باید فقط از پرچم
+\verb|[ht]|
+استفاده کرد، که می‌گوید اگر جا شد شکل را دقیقاً در همین مکان و در غیراینصورت در بالای صفحه بعد رسم کن.
+بنابراین دستورات درج تصویر، جدول و الگوریتم به صورت زیر باید باشند:
+
+\begin{latin}
+\begin{verbatim}
+	\begin{figure/table/algorithm}[ht]
+		...
+	\end{figure/table/algorithm}
+\end{verbatim}
+\end{latin}

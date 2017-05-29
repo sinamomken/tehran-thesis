@@ -1,9 +1,12 @@
 % !TEX TS-program = XeLaTeX
 % Command(s) for running this example:
-%    latexmk -e "$pdflatex=q/xelatex -synctex=1 -interaction=nonstopmode/" -pdf main.tex
-% OR
+% Linux/Mac:
+%    latexmk -e '$bibtex=q/bibtex8 -W -c cp1256fa/' -pdflatex='xelatex -synctex=1 -interaction=nonstopmode' -pdf main.tex
+% Windows:
+%	latexmk -e "$bibtex=q/bibtex8 -W -c cp1256fa/" -pdflatex="xelatex -synctex=1 -interaction=nonstopmode" -pdf main.tex
+% Alternative commands for run:
 % 	 xelatex main
-% 	 bibtex8 main
+% 	 bibtex8 -W -c cp1256fa myfile
 %      xindy -L persian -C utf8 -M texindy main
 % 	 xelatex main
 % 	 xelatex main
@@ -29,14 +32,15 @@
 \input{commands}
 
 \begin{document}
-
+\pagenumbering{adadi} % یک، دو، ...
 \input{faTitle}
-\pagenumbering{harfi}
+\pagenumbering{harfi} % آ، ب، ...
 \tableofcontents \newpage
 \listoffigures \newpage
 \listoftables  \newpage
 \addcontentsline{toc}{chapter}{\listalgorithmname}
 \listofalgorithms \newpage
+\lstlistoflistings \newpage
 \input{acronyms}
 
 \pagestyle{fancy}
@@ -50,7 +54,7 @@
 \pagestyle{empty}
 {
 \onehalfspacing
-\bibliographystyle{ieeetr-fa}
+\bibliographystyle{plain-fa}
 \bibliography{MyReferences}
 }
 
@@ -65,7 +69,7 @@
 
 % برگرداندن شماره‌بندی صفحات فصول
 \let\chapter\Chapter
-\pagenumbering{tartibi}
+\pagenumbering{tartibi} % اول، دوم، ...
 %\baselineskip=.75cm
 \onehalfspacing
 \include{dicfa2en}
