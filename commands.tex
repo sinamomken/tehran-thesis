@@ -11,20 +11,36 @@
 \usepackage{framed} 
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
-% بسته‌ٔ لازم برای تغییر شماره‌گذاری صفحات پیوست‌ها
+% بسته‌ٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
 \usepackage{etoolbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% دستورات وابسته به استیل مراجع:
+%% اگر از استیل‌های natbib (plainnat-fa، asa-fa، chicago-fa) استفاده می‌کنید، خط زیر را فعال و بعدی‌اش را غیرفعال کنید.
+\usepackage{natbib}
+%% اگر از سایر استیل‌ها استفاده می‌کنید، خط بالا را غیرفعال و خط زیر را فعال کنید.
+%\let\citep\cite
 %%%%%%%%%%%%
-% بسته‌ و دستوراتی برای ایجاد لینک‌های رنگی با امکان جهش
+%%% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
 \usepackage[unicode=true,pagebackref=true,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
 % چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
 %\usepackage[pagebackref=false]{hyperref}
-% اگر در مراجع، آدرس وب حاوی '%' بوده و pagebackref فعال باشد، دستورات زیر باید بیایند.
+%%%%%%%%%%%%
+%%% تصحیح باگ: اگر در مراجع، آدرس وب حاوی '%' بوده و pagebackref فعال باشد، دستورات زیر باید بیایند:
+%% برای استیل‌های natbib مثل plainnat-fa، asa-fa، chicago-fa
+\makeatletter
+\let\ORIG@BR@@lbibitem\BR@@lbibitem
+\apptocmd\ORIG@BR@@lbibitem{\endgroup}{}{}
+\def\BR@@lbibitem{\begingroup\catcode`\%=12 \ORIG@BR@@lbibitem}
+\makeatother
+%% برای سایر استیل‌ها
 \makeatletter
 \let\ORIG@BR@@bibitem\BR@@bibitem
 \apptocmd\ORIG@BR@@bibitem{\endgroup}{}{}
 \def\BR@@bibitem{\begingroup\catcode`\%=12 \ORIG@BR@@bibitem}
 \makeatother
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % بسته‌ لازم برای تنظیم سربرگ‌ها
 \usepackage{fancyhdr}
 %
@@ -51,17 +67,12 @@
 \usepackage{makeidx}
 \makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% دستورات وابسته به استیل مراجع
-%% if (plainnat-fa or asa-fa or chicago-fa) uncomment line below:
-%\usepackage{natbib}
-%% else, comment line above and uncomment line below:
-\let\citep\cite
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد) و تعریف قلم فارسی و انگلیسی
 \usepackage[extrafootnotefeatures]{xepersian}
 \settextfont[BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
 
-\setlatintextfont[Scale=1]{Liberation Serif}% or FreeSerif
+% LiberationSerif or FreeSerif as free equivalents of Times New Roman
+\setlatintextfont[BoldFont={LiberationSerif-Bold.ttf}, BoldItalicFont={LiberationSerif-BoldItalic.ttf}, ItalicFont={LiberationSerif-Italic.ttf},Scale=1]{LiberationSerif-Regular.ttf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
 \setdigitfont[Scale=1.2]{IRLotusICEE.ttf}
