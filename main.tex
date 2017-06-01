@@ -24,16 +24,16 @@
 % اگر قصد نوشتن پروژه کارشناسی را دارید، در خط زیر به جای msc، کلمه bsc و اگر قصد نوشتن رساله دکترا را دارید، کلمه phd را قرار دهید. کلیه تنظیمات لازم، به طور خودکار، اعمال می‌شود.
 
 % اگر مایلید پایان‌نامه شما دورو باشد به جای oneside در خط زیر از twoside استفاده کنید.
-\documentclass[twoside,openany,msc]{tehran-thesis}
+\documentclass[twoside,openany,msc]{./tex/tehran-thesis}
 
 % مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
 
 % فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین و دیگر بسته‌ها و ... در این فایل قرار دارد و بهتر است که با نحوه استفاده از آنها آشنا شوید.
-\input{commands}
+\input{./tex/commands}
 
 \begin{document}
 \pagenumbering{adadi} % یک، دو، ...
-\input{faTitle}
+\input{./tex/faTitle}
 \pagenumbering{harfi} % آ، ب، ...
 \tableofcontents \newpage
 \listoffigures \newpage
@@ -42,15 +42,15 @@
 \listofalgorithms \newpage
 \addcontentsline{toc}{chapter}{\lstlistlistingname}
 \lstlistoflistings \newpage
-\input{acronyms}
+\input{./tex/acronyms}
 
 \pagestyle{fancy}
 % اگر شما فصل اول  خود را در فایلی به جز chapter1 نوشته‌اید باید چندخط اول آن را در فایل خود کپی کنید.
-\include{chapter1}		% فصل اول: مقدمه
-\include{chapter2}		% فصول دوم: مروری بر مطالعات انجام شده
-\include{chapter3}		% فصل سوم: روش تحقیق
-\include{chapter4}		% فصل چهارم: نتایج
-\include{chapter5}		% فصل پنجم: بحث و نتیجه‌گیری
+\include{./tex/chapter1}		% فصل اول: مقدمه
+\include{./tex/chapter2}		% فصول دوم: مروری بر مطالعات انجام شده
+\include{./tex/chapter3}		% فصل سوم: روش تحقیق
+\include{./tex/chapter4}		% فصل چهارم: نتایج
+\include{./tex/chapter5}		% فصل پنجم: بحث و نتیجه‌گیری
 
 % مراجع
 % اگر از استیل‌های natbib استفاده می‌کنید باید دو خط را در فایل commands.tex تغییر دهید.
@@ -58,7 +58,7 @@
 {
 \onehalfspacing
 \bibliographystyle{plain-fa} % or plainnat-fa for author-date
-\bibliography{MyReferences}
+\bibliography{./tex/MyReferences}
 }
 
 \pagestyle{fancy}
@@ -66,19 +66,19 @@
 \appendix
 % فصلهای پس از این قسمت به عنوان ضمیمه خواهند آمد.
 % چندخط اول فایل appendix1 باید در فایل اولین پیوست بیاید.
-\include{appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
-\include{appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
-\include{appendix3} 	% پیوست سوم: مدیریت مراجع در لاتک
+\include{./tex/appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
+\include{./tex/appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
+\include{./tex/appendix3} 	% پیوست سوم: مدیریت مراجع در لاتک
 
 % برگرداندن شماره‌بندی صفحات فصول
 \let\chapter\Chapter
 \pagenumbering{tartibi} % اول، دوم، ...
 %\baselineskip=.75cm
 \onehalfspacing
-\include{dicfa2en}
-\include{dicen2fa}
+\include{./tex/dicfa2en}
+\include{./tex/dicen2fa}
 \printindex
-\input{enTitle}
+\input{./tex/enTitle}
 \label{LastPage}
 
 \end{document}
