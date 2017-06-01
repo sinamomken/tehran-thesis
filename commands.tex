@@ -17,9 +17,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورات وابسته به استیل مراجع:
 %% اگر از استیل‌های natbib (plainnat-fa، asa-fa، chicago-fa) استفاده می‌کنید، خط زیر را فعال و بعدی‌اش را غیرفعال کنید.
-\usepackage{natbib}
-%% اگر از سایر استیل‌ها استفاده می‌کنید، خط بالا را غیرفعال و خط زیر را فعال کنید.
-%\let\citep\cite
+%\usepackage{natbib}
+%\newcommand{\citelatin}[1]{\cite{#1}\LTRfootnote{\citeauthor*{#1}}}
+%\newcommand{\citeplatin}[1]{\citep{#1}\LTRfootnote{\citeauthor*{#1}}}
+%% اگر از سایر استیل‌ها استفاده می‌کنید، خط بالا را غیرفعال و خط‌های زیر را فعال کنید.
+\let\citep\cite
+\let\citelatin\cite
+\let\citeplatin\cite
 %%%%%%%%%%%%
 %%% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
 \usepackage[unicode=true,pagebackref=true,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}

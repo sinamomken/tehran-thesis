@@ -1,4 +1,3 @@
-
 %%
 %%  This is file `tehran-thesis.cls',
 %%  It is a modification IUST-Thesis by Mahmood Amintoosi which itself is a change of Tabriz_thesis by Vahid Damanafshan.
