@@ -1,9 +1,9 @@
 % در این فایل، دستورها و تنظیمات مورد نیاز، آورده شده است.
 %-------------------------------------------------------------------------------------------------------------------
-\makeatletter
-\def\input@path{{./tex/}}
-\makeatother
-
+% دستوراتی که پوشه پیش‌فرض زیرفایل‌های tex را مشخص می‌کند.
+%\makeatletter
+%\def\input@path{{./tex/}}
+%\makeatother
 % در ورژن جدید زی‌پرشین برای تایپ متن‌های ریاضی، این سه بسته، حتماً باید فراخوانی شود
 \usepackage{amsthm,amssymb,amsmath}
 % بسته‌ای برای تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
@@ -76,7 +76,7 @@
 \usepackage{makeidx}
 \makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-% فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد) و تعریف قلم فارسی و انگلیسی
+% فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد)، تعریف قلم فارسی و انگلیسی و مکان قلم‌ها
 \usepackage[extrafootnotefeatures]{xepersian}
 \settextfont[Path ={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
 
