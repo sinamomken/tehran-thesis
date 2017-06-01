@@ -99,7 +99,7 @@
 % دستورات دوآرمه
 \makebox[\textwidth][c]{
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,left]{logo}
+	\includegraphics[height=4cm,left]{img/logo}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
 	\begin{center}
@@ -112,7 +112,7 @@
 	\end{center}
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,right]{eng-logo}
+	\includegraphics[height=4cm,right]{img/eng-logo}
 \end{minipage}
 }
 % دستورات تک‌آرمه
@@ -181,7 +181,7 @@
 \thispagestyle{empty}
 %\hfill
 \begin{center}
-\includegraphics[width=10cm]{besm}
+\includegraphics[width=10cm]{img/besm}
 \end{center}
 %% صفحه سفید
 \newpage
@@ -195,7 +195,7 @@
 % دستورات دوآرمه
 \makebox[\textwidth][c]{
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,left]{logo}
+	\includegraphics[height=4cm,left]{img/logo}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
 	\begin{center}
@@ -208,7 +208,7 @@
 	\end{center}
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,right]{eng-logo}
+	\includegraphics[height=4cm,right]{img/eng-logo}
 \end{minipage}
 }
 % دستورات تک‌آرمه
@@ -465,7 +465,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 %% Double logo commands
 \makebox[\textwidth][c]{
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,right]{eng-logo-en}
+	\includegraphics[height=4cm,right]{img/eng-logo-en}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\begin{center}
@@ -478,7 +478,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 	\end{center}
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,left]{logo-en}
+	\includegraphics[height=4cm,left]{img/logo-en}
 \end{minipage}
 }
 %% Single logo commands
