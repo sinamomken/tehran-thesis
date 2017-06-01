@@ -30,9 +30,18 @@
 \let\citeplatin\cite
 %%%%%%%%%%%%
 %%% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
-\usepackage[unicode=true,pagebackref=true,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[unicode=true,pagebackref=true,
+colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
 % چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
 %\usepackage[pagebackref=false]{hyperref}
+% تعیین مشخصات فایل PDF
+\hypersetup{
+pdftitle={My Thesis},
+pdfauthor={Sina Momken},
+pdfsubject={Master Thesis},
+pdfkeywords={keywords},
+pdfdirection={R2L}
+}
 %%%%%%%%%%%%
 %%% تصحیح باگ: اگر در مراجع، آدرس وب حاوی '%' بوده و pagebackref فعال باشد، دستورات زیر باید بیایند:
 %% برای استیل‌های natbib مثل plainnat-fa، asa-fa، chicago-fa
