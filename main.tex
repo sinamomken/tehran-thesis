@@ -1,18 +1,8 @@
 % !TEX TS-program = XeLaTeX
-% Command(s) for running this example:
-% Linux/Mac:
-%    latexmk -e '$bibtex=q/bibtex8 -W -c cp1256fa/' -pdflatex='xelatex -synctex=1 -interaction=nonstopmode' -pdf main.tex
-% Windows:
-%	latexmk -e "$bibtex=q/bibtex8 -W -c cp1256fa/" -pdflatex="xelatex -synctex=1 -interaction=nonstopmode" -pdf main.tex
-% Alternative commands for run:
-% 	 xelatex main
-% 	 bibtex8 -W -c cp1256fa myfile
-%      xindy -L persian -C utf8 -M texindy main
-% 	 xelatex main
-% 	 xelatex main
-% End of Commands
+% Command for running this example (needs latexmkrc file):
+%    latexmk -bibtex -pdf main.tex
 
-%       نمونه پایان‌نامه آماده شده با استفاده از کلاس tehran-thesis، نگارش 0.1
+%       نمونه پایان‌نامه آماده شده با استفاده از کلاس tehran-thesis، نگارش 0.9
 %        سینا ممکن، دانشگاه تهران 
 %        https://github.com/sinamomken/tehran-thesis
 %        گروه پارسی‌لاتک
@@ -24,27 +14,22 @@
 % اگر قصد نوشتن پروژه کارشناسی را دارید، در خط زیر به جای msc، کلمه bsc و اگر قصد نوشتن رساله دکترا را دارید، کلمه phd را قرار دهید. کلیه تنظیمات لازم، به طور خودکار، اعمال می‌شود.
 
 % اگر مایلید پایان‌نامه شما دورو باشد به جای oneside در خط زیر از twoside استفاده کنید.
-\documentclass[twoside,openany,msc]{./tex/tehran-thesis}
 
-% مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
+% برای حاشیه‌نویسی و کم کردن صفحات ابتدایی، گزینه draft را وارد کنید.
+\documentclass[twoside,openany,msc,draft]{./tex/tehran-thesis} % draft
 
-% فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین و دیگر بسته‌ها و ... در این فایل قرار دارد و بهتر است که با نحوه استفاده از آنها آشنا شوید.
+% فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین و دیگر بسته‌ها و ... در این فایل قرار دارد.
 \input{./tex/commands}
+% تنظیمات و تعاریف واژه‌نامه و اختصارات
+\input{./tex/glossaries-settings}
+\input{./tex/words}
+\input{./tex/acronyms}
 
 \begin{document}
 \pagenumbering{adadi} % یک، دو، ...
+% مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
 \input{./tex/faTitle}
-\pagenumbering{harfi} % آ، ب، ...
-\tableofcontents \newpage
-\listoffigures \newpage
-\listoftables  \newpage
-\addcontentsline{toc}{chapter}{\listalgorithmname}
-\listofalgorithms \newpage
-\addcontentsline{toc}{chapter}{\lstlistlistingname}
-\lstlistoflistings \newpage
-\input{./tex/acronyms}
 
-\pagestyle{fancy}
 % اگر شما فصل اول  خود را در فایلی به جز chapter1 نوشته‌اید باید چندخط اول آن را در فایل خود کپی کنید.
 \include{./tex/chapter1}		% فصل اول: مقدمه
 \include{./tex/chapter2}		% فصول دوم: مروری بر مطالعات انجام شده
@@ -75,8 +60,9 @@
 \pagenumbering{tartibi} % اول، دوم، ...
 %\baselineskip=.75cm
 \onehalfspacing
-\include{./tex/dicfa2en}
-\include{./tex/dicen2fa}
+%\include{./tex/dicfa2en}
+%\include{./tex/dicen2fa}
+\printglossary
 \printindex
 \input{./tex/enTitle}
 \label{LastPage}

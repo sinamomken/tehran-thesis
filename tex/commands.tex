@@ -9,8 +9,12 @@
 % بسته‌ای برای تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
 \usepackage[top=40mm, bottom=40mm, left=25mm, right=35mm]{geometry}
 % بسته‌‌ای برای ظاهر شدن شکل‌ها و تعیین آدرس تصاویر
-\usepackage{graphicx}
+\usepackage[final]{graphicx}
 \graphicspath{{./img/}}
+% بسته‌های مورد نیاز برای نوشتن کدها، رنگ‌آمیزی آنها و تعیین پوشهٔ کدها
+\usepackage{listings}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\lstset{inputpath=./code/}
 % بسته‌ای برای رسم کادر
 \usepackage{framed} 
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
@@ -29,11 +33,27 @@
 \let\citelatin\cite
 \let\citeplatin\cite
 %%%%%%%%%%%%
-%%% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
-\usepackage[unicode=true,pagebackref=true,
-colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
-% چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است
-%\usepackage[pagebackref=false]{hyperref}
+% بررسی حالت پیش نویس
+\usepackage{ifdraft}
+\ifdraft
+{%
+	% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
+	\usepackage[unicode=true,pagebackref=true,
+colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
+	%\usepackage{todonotes}
+	\usepackage[firstpage]{draftwatermark}
+	\SetWatermarkText{\ \ \ پیش‌نویس}
+	\SetWatermarkScale{1.2}
+}
+{ 
+	\usepackage[pagebackref=false,colorlinks,
+	linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+	%\usepackage[disable]{todonotes} % final without TODOs
+}
+
+\usepackage[obeyDraft]{todonotes}
+\setlength{\marginparwidth}{2cm}
+
 % تعیین مشخصات فایل PDF
 \hypersetup{
 pdftitle={My Thesis},
@@ -60,16 +80,11 @@ pdfdirection={R2L}
 
 % بسته‌ لازم برای تنظیم سربرگ‌ها
 \usepackage{fancyhdr}
-%
 %\usepackage{enumitem}
 \usepackage{setspace}
 % بسته‌های لازم برای نوشتن الگوریتم
 \usepackage{algorithm}
 \usepackage{algorithmic}
-% بسته‌های مورد نیاز برای نوشتن کدها، رنگ‌آمیزی آنها و تعیین پوشهٔ کدها
-\usepackage{listings}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\lstset{inputpath=./code/}
 % بسته‌های لازم برای رسم بهتر جداول
 \usepackage{tabulary}
 \usepackage{tabularx}
@@ -84,6 +99,11 @@ pdfdirection={R2L}
 % دستورات مربوط به ایجاد نمایه
 \usepackage{makeidx}
 \makeindex
+%%% بسته ایجاد واژه‌نامه با xindy
+\usepackage[xindy,acronym,nonumberlist=true]{glossaries}
+
+% بسته زیر باگ ناشی از فراخوانی بسته‌های زیاد را برطرف می‌کند.
+\usepackage{morewrites}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد)، تعریف قلم فارسی و انگلیسی و مکان قلم‌ها
 \usepackage[extrafootnotefeatures]{xepersian}
@@ -101,6 +121,16 @@ pdfdirection={R2L}
 % \defpersianfont\nastaliq[Scale=1.2]{IranNastaliq}
 \setmathsfdigitfont{IRTitr.ttf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+% راستچین شدن todonotes
+\presetkeys{todonotes}{align=right,textdirection=righttoleft}{}
+\makeatletter
+\providecommand\@dotsep{5}
+\def\listtodoname{فهرست کارهای باقیمانده}
+\def\listoftodos{\noindent{\Large\vspace{10mm}\textbf{\listtodoname}}\@starttoc{tdo}}
+\renewcommand{\@todonotes@MissingFigureText}{شکل}
+\renewcommand{\@todonotes@MissingFigureUp}{شکل}
+\renewcommand{\@todonotes@MissingFigureDown}{جاافتاده}
+\makeatother
 % دستوری برای حذف کلمه «چکیده»
 \renewcommand{\abstractname}{}
 % دستوری برای حذف کلمه «abstract»
@@ -241,6 +271,7 @@ pdfdirection={R2L}
 }
 \lstset{style=myStyle} % command to set default style
 \def\lstlistingname{\rl{برنامه}}
+
 
 % for numbering subsubsections
 \setcounter{secnumdepth}{3}
