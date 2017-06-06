@@ -29,13 +29,26 @@
 \def\degree#1{\gdef\@degree{#1}}
 \def\thesisdate#1{\gdef\@thesisdate{#1}}
 \newcommand{\firstsupervisor}[1]{\def\@firstsupervisor{#1}}
+\newcommand{\firstsupervisorrank}[1]{\def\@firstsupervisorrank{#1}}
 \newcommand{\secondsupervisor}[1]{\def\@secondsupervisor{#1}}
+\newcommand{\secondsupervisorrank}[1]{\def\@secondsupervisorrank{#1}}
 \newcommand{\firstadvisor}[1]{\def\@firstadvisor{#1}}
+\newcommand{\firstadvisorrank}[1]{\def\@firstadvisorrank{#1}}
 \newcommand{\secondadvisor}[1]{\def\@secondadvisor{#1}}
+\newcommand{\secondadvisorrank}[1]{\def\@secondadvisorrank{#1}}
+\newcommand{\internaljudge}[1]{\def\@internaljudge{#1}}
+\newcommand{\internaljudgerank}[1]{\def\@internaljudgerank{#1}}
+\newcommand{\externaljudge}[1]{\def\@externaljudge{#1}}
+\newcommand{\externaljudgerank}[1]{\def\@externaljudgerank{#1}}
+\newcommand{\externaljudgeuniversity}[1]{\def\@externaljudgeuniversity{#1}}
+\newcommand{\graduatedeputy}[1]{\def\@graduatedeputy{#1}}
+\newcommand{\graduatedeputyrank}[1]{\def\@graduatedeputyrank{#1}}
 \def\name#1{\gdef\@name{#1}}
 \def\surname#1{\gdef\@surname{#1}}
+\def\dedication#1{\gdef\@dedication{#1}}
+\long\def\acknowledgement#1{\gdef\@acknowledgement{#1}}
 \def\keywords#1{\gdef\@keywords{#1}}
-\def\fa-abstract#1{\gdef\@fa-abstract{#1}}
+\long\def\fa-abstract#1{\gdef\@fa-abstract{#1}}
 \def\subject#1{\gdef\@subject{#1}}
 \def\field#1{\gdef\@field{#1}}
 \def\projectLabel#1{\gdef\@projectLabel{#1}}
@@ -282,34 +295,136 @@
 %\vfill
 \end{titlepage}%
 } % end of titlePage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\titlepage{\newpage\centering
+  \thispagestyle{empty}
+  \parindent 0pt \parskip 10pt plus 1fil minus 1fil
+  \def\baselinestretch{1}\@normalsize\vbox to \vsize\bgroup\vbox to 9in\bgroup}
+\def\endtitlepage{\par\kern 0pt\egroup\vss\egroup\newpage}
+
+\def\signature{\vspace{1cm}
+\begin{flushleft}
+{%\nastaliq \scriptsize 
+\@name\ \@surname \\
+\@thesisdate}
+\end{flushleft}}
+
+% \def\abstract{
+% \newpage
+% \subsection*{چکیده}\small
+% \@normalsize
+% \@fa-abstract
+% }
+% \def\endabstract{\par}
+
+%\pagenumbering{harfi}
+%\let\ol@chapter\@chapter
+%\def\@chapter{%
+%  \ifnum\c@chapter=0 \pagenumbering{arabic}\setcounter{page}{1}\fi
+%  \ol@chapter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
 \newpage
 %\setcounter{page}{1}
 %\thispagestyle{empty}
 
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=3cm,left]{logo}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		\begin{onehalfspacing}
+		{\normalsize \bf \@university \\}
+		{\normalsize \bf \@college \\}
+		{\large\bfseries\@faculty \\}
+		%{\large\bfseries\@department}
+		\end{onehalfspacing}
+	\end{center}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\includegraphics[height=3cm,left]{eng-logo}
+\end{minipage}
+
 \begin{center}
-{\Large \titlefont
-گواهی دفاع از \@projectLabel{} \@degree{}
- }
-\end{center}
-\vspace{.5cm}
-
-نام دانشكده: \@faculty
-
-نام دانشجو: \@name{} \@surname
-
-عنوان \@projectLabel: \@title
-
-تاریخ دفاع: \@thesisdate
-
-رشته: \@subject
-
-%\vspace{.5cm}
-گرایش: \@field
+{\Large\bfseries
+	گواهی دفاع از \@projectLabel{} \@degree{}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{center}
+%\vspace{.5cm}
+هیأت داوران \hspace{1ex} \@projectLabel{} \@degree{} \hspace{1ex} آقای / خانم \@name{} \@surname{} \hspace{1ex} به شماره دانشجویی \@studentID{} \hspace{1ex} در رشته \@subject{} - گرايش \@field{} \hspace{1ex} را در تاريخ ............ با عنوان « \@title{} »\\
+\makebox[\textwidth][l]{
+\parbox{0.7\textwidth}{
+\makebox[2cm]{}\hspace{1ex}\makebox[2cm]{به عدد}\makebox[5cm]{به حروف}\\
+\makebox[2cm][l]{با نمره نهایی}\hspace{1ex}\framebox[2cm]{\strut}\framebox[5cm]{\strut}
+\\
+\\
+\makebox[2cm][l]{و درجه}\hspace{1ex}\framebox[3cm]{\strut}\hspace{1ex}
+ارزیابی کرد.
+}
+}
+
+\newcounter{davaranCounter}
+\begin{table}[h]
+\begin{onehalfspacing}
+\begin{adjustbox}{width=1.1\textwidth,center}
+\begin{tabular}{| p{4mm} | p{.2\textwidth} | p{.17\textwidth} |p{14mm}|p{.2\textwidth}|c|}
+\hline
+\scriptsize{ردیف} & مشخصات هیئت داوران & نام و نام خانوادگی & مرتبه \newline دانشگاهی &	دانشگاه یا مؤسسه & امضـــــــــــــا \\
+\hline
+\ifx\@firstsupervisor\undefined
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} &	استاد راهنما & \@firstsupervisor & \@firstsupervisorrank & دانشگاه تهران & \\
+\fi
+\ifx\@secondsupervisor\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} &	استاد راهنما & \@secondsupervisor & \@secondsupervisorrank & دانشگاه تهران & \\
+\fi
+\hline
+\ifx\@firstadvisor\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد مشاور & \@firstadvisor & \@firstadvisorrank & دانشگاه تهران & \\
+\fi
+\ifx\@secondadvisor\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد مشاور & \@secondadvisor & \@secondadvisorrank & دانشگاه تهران & \\
+\fi
+\hline
+\ifx\@internaljudge\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \\
+\hline
+\fi
+\ifx\@externaljudge\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \\
+\hline
+\fi
+\ifx\@graduatedeputy\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & نماینده تحصیلات تکمیلی دانشکده & \@graduatedeputy & \@graduatedeputyrank &  دانشگاه تهران & \\
+\hline
+\fi
+\end{tabular}
+\end{adjustbox}
+\end{onehalfspacing}
+\end{table}
+
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		نام و نام خانوادگی معاون تحصیلات تكمیلی و پژوهشی دانشكده / گروه:\\
+		تاریخ و امضاء:
+	\end{center}
+\end{minipage}
+\hspace{1ex}
+\begin{minipage}{0.45\textwidth}
+	\begin{center}
+		نام و نام خانوادگی معاون آموزشی و تحصیلات تكمیلی پردیس دانشكده‌های فنی:\\
+		تاریخ و امضاء:
+	\end{center}
+\end{minipage}
+} % End of davaranPage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تأییدیه‌ی صحت و اصالت نتایج
 \newcommand{\esalatPage}{
 \newpage
@@ -374,21 +489,51 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 % \newpage
 % }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% بخش تقدیم
+%% پایان‌نامه خود را تقدیم کنید! %%
+\newcommand{\taghdimPage}
+{
+\ifx\@dedication\undefined%
+    \relax
+\else
+    \newpage
+    \thispagestyle{empty}
+    %\vspace{-40mm}
+    \@dedication
+\fi
+}
+
+%% قدردانی (فارسی)
+\newcommand{\ghadrdaniPage}
+{
+\ifx\@acknowledgement\undefined%
+	\relax
+\else   
+	\newpage
+	\thispagestyle{empty}
+	\centerline{\Large \bfseries قدردانی}
+	\vspace{1cm}
+	\par\noindent
+	\@acknowledgement
+% با استفاده از دستور زیر، امضای شما، به طور خودکار، درج می‌شود.
+	\signature 
+\fi
+}
+
 %% چکیده فارسی
-\newcommand\abstractPage{\newpage
-\thispagestyle{empty}
-\vskip 15mm
-{\noindent\bfseries چکیده}
-\vspace{5mm}
-\par
-\noindent
-\@fa-abstract
-\vspace{8mm}
-\par
-\noindent
-\textbf{واژگان کلیدی:} 
-\@keywords
-\newpage
+\newcommand\abstractPage{
+	\newpage
+	\thispagestyle{empty}
+	\vskip 15mm
+	{\noindent\bfseries چکیده}
+	\vspace{5mm}
+	\par\noindent
+	\@fa-abstract
+	\vspace{8mm}
+	\par\noindent
+	\textbf{واژگان کلیدی:} 
+	\@keywords
+	\newpage
 }
 
 % \def\latinabstract{\newpage
@@ -401,42 +546,8 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 
 % \def\endlatinabstract{\newpage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% قدردانی (فارسی)
-\def\acknowledgementpage{\newpage
-\thispagestyle{empty}
-\centerline{\Large \bfseries قدردانی}
-\vspace{1cm}
-\par\noindent}
-\def\endacknowledgementpage{\newpage}
 
-\def\titlepage{\newpage\centering
-  \thispagestyle{empty}
-  \parindent 0pt \parskip 10pt plus 1fil minus 1fil
-  \def\baselinestretch{1}\@normalsize\vbox to \vsize\bgroup\vbox to 9in\bgroup}
-\def\endtitlepage{\par\kern 0pt\egroup\vss\egroup\newpage}
 
-\def\signature{\vspace{1cm}
-\begin{flushleft}
-{%\nastaliq \scriptsize 
-\@name\ \@surname \\
-\@thesisdate}
-\end{flushleft}}
-
-% \def\abstract{
-% \newpage
-% \subsection*{چکیده}\small
-% \@normalsize
-% \@fa-abstract
-% }
-% \def\endabstract{\par}
-
-%\pagenumbering{harfi}
-%\let\ol@chapter\@chapter
-%\def\@chapter{%
-%  \ifnum\c@chapter=0 \pagenumbering{arabic}\setcounter{page}{1}\fi
-%  \ol@chapter}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Latin Abstract and Title pages
 
 %\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
