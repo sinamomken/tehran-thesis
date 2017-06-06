@@ -2,12 +2,12 @@
 % Command for running this example (needs latexmkrc file):
 %    latexmk -bibtex -pdf main.tex
 
-%       نمونه پایان‌نامه آماده شده با استفاده از کلاس tehran-thesis، نگارش 0.9
-%        سینا ممکن، دانشگاه تهران 
-%        https://github.com/sinamomken/tehran-thesis
-%        گروه پارسی‌لاتک
-%        http://www.parsilatex.com
-%        این نسخه، بر اساس نسخه‌ 0.1 از کلاس IUST-Thesis آقای محمود امین‌طوسی آماده شده است.
+%	نمونه پایان‌نامه آماده شده با استفاده از کلاس tehran-thesis، نگارش 1
+%	سینا ممکن، دانشگاه تهران 
+%	https://github.com/sinamomken/tehran-thesis
+%	گروه پارسی‌لاتک
+%	http://www.parsilatex.com
+%	این نسخه، بر اساس نسخه‌ 0.1 از کلاس IUST-Thesis آقای محمود امین‌طوسی آماده شده است.
 %        http://profsite.sttu.ac.ir/mamintoosi
 
 %----------------------------------------------------------------------------------------------
@@ -18,8 +18,9 @@
 % برای حاشیه‌نویسی و کم کردن صفحات ابتدایی، گزینه draft را وارد کنید.
 \documentclass[twoside,openany,msc,draft]{./tex/tehran-thesis} % draft
 
-% فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین و دیگر بسته‌ها و ... در این فایل قرار دارد.
+% فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته‌ها، فونت و دستورات خاص در این فایل قرار دارد.
 \input{./tex/commands}
+
 % تنظیمات و تعاریف واژه‌نامه و اختصارات
 \input{./tex/glossaries-settings}
 \input{./tex/words}
@@ -53,17 +54,18 @@
 % چندخط اول فایل appendix1 باید در فایل اولین پیوست بیاید.
 \include{./tex/appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
 \include{./tex/appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
-\include{./tex/appendix3} 	% پیوست سوم: مدیریت مراجع در لاتک
+\include{./tex/appendix3} 	% پیوست سوم: مراجع، واژه‌نامه و حاشیه‌نویسی
 
 % برگرداندن شماره‌بندی صفحات فصول
 \let\chapter\Chapter
 \pagenumbering{tartibi} % اول، دوم، ...
 %\baselineskip=.75cm
+
+% چاپ واژه‌نامه‌ها و نمایه 
 \onehalfspacing
-%\include{./tex/dicfa2en}
-%\include{./tex/dicen2fa}
 \printglossary
 \printindex
+% مشخصات انگلیسی پایان‌نامه
 \input{./tex/enTitle}
 \label{LastPage}
 
