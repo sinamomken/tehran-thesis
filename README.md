@@ -65,7 +65,7 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
 
 ## Screenshots
 tehran-thesis in BiDiTexmaker
-![biditexmaker](./screenshot/biditexmaker.png biditexmaker)
+![biditexmaker](./screenshot/biditexmaker.png "biditexmaker")
 
 tehran-thesis in BiDiTexmaker (draft mode)
 ![biditexmaker-draft](./screenshot/biditexmaker-draft.png biditexmaker-draft)
