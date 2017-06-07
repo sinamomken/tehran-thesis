@@ -64,20 +64,20 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
 * \[Optional\] [IRFonts] installed in your system.
 
 ## Screenshots
-tehran-thesis in BiDiTexmaker
+tehran-thesis in BiDiTexmaker  
 ![biditexmaker](./screenshot/biditexmaker.png "biditexmaker")
 
-tehran-thesis in BiDiTexmaker (draft mode)
+tehran-thesis in BiDiTexmaker (draft mode)  
 ![biditexmaker-draft](./screenshot/biditexmaker-draft.png "biditexmaker-draft")
 
-Example of citation to various sources
-<img src="./screenshot/cite-example.jpg" alt="cite-example" width="45%"/> <img src="./screenshot/bibliography.jpg" alt="bibliography" width="45%"/>
+Example of citation to various sources  
+<img src="./screenshot/cite-example.jpg" alt="cite-example" width="49%"/> <img src="./screenshot/bibliography.jpg" alt="bibliography" width="49%"/>
 
-Glossary and index
-<img src="./screenshot/fa2en-glossary.jpg" alt="fa2en-glossary" width="45%"/> <img src="./screenshot/index.jpg" alt="index" width="45%"/>
+Glossary and index  
+<img src="./screenshot/fa2en-glossary.jpg" alt="fa2en-glossary" width="49%"/> <img src="./screenshot/index.jpg" alt="index" width="49%"/>
 
-Colorized codes and todo notes (in draft version)
-<img src="./screenshot/algs-codes.jpg" alt="colorized codes" width="45%"/> <img src="./screenshot/todos.jpg" alt="todo notes" width="45%"/>
+Colorized codes and todo notes (in draft version)  
+<img src="./screenshot/algs-codes.jpg" alt="colorized codes" width="49%"/> <img src="./screenshot/todos.jpg" alt="todo notes" width="49%"/>
 
 More screenshots are available in 'screenshot' folder.
 
