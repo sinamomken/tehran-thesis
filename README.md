@@ -63,6 +63,24 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
 * A TeX editor/IDE with RTL support, e.g. [BiDiTexmaker][biditexmaker].
 * \[Optional\] [IRFonts] installed in your system.
 
+## Screenshots
+tehran-thesis in BiDiTexmaker
+![biditexmaker](./screenshot/biditexmaker.png biditexmaker)
+
+tehran-thesis in BiDiTexmaker (draft mode)
+![biditexmaker-draft](./screenshot/biditexmaker-draft.png biditexmaker-draft)
+
+Example of citation to various sources
+![cite-example](./screenshot/cite-example.jpg cite-example){: width="49%"} ![bibliography](./screenshot/bibliography.jpg bibliography){: width="49%"}
+
+Glossary and index
+![fa2en-glossary](./screenshot/fa2en-glossary.jpg fa2en-glossary){: width="49%"} ![index](./screenshot/index.jpg index){: width="49%"}
+
+Colorized codes and todo notes (in draft version)
+![algorithms and codes](./screenshot/algs-codes.jpg colorized codes){: width="49%"} ![todos](./screenshot/todos.jpg todo notes){: width="49%"}
+
+More screenshots are available in 'screenshot' folder.
+
 [egufa site]: http://egufa.ut.ac.ir/%D8%B1%D9%88%DB%8C%D9%87%E2%80%8C%D9%87%D8%A7-%D9%88-%D9%81%D8%B1%D9%85%E2%80%8C%D9%87%D8%A7/%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B1%D8%B4%D8%AF/417-%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D9%86%DA%AF%D8%A7%D8%B1%D8%B4-%D9%88-%D8%AA%D8%AF%D9%88%DB%8C%D9%86-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D9%86%D8%B4%D8%AC%D9%88%DB%8C%D8%A7%D9%86-%D9%85%D9%82%D8%B7%D8%B9-%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B1%D8%B4%D8%AF-%D9%88-%D8%AF%DA%A9%D8%AA%D8%B1%DB%8C
 
 [irfonts]: https://earmin.com/scict-standard-persian-fonts/
