@@ -71,7 +71,7 @@ tehran-thesis in BiDiTexmaker (draft mode)
 ![biditexmaker-draft](./screenshot/biditexmaker-draft.png "biditexmaker-draft")
 
 Example of citation to various sources
-<img src="./screenshot/cite-example.jpg" alt="cite-example" style="width:49%;"/> <img src="./screenshot/bibliography.jpg" alt="bibliography" style="width:49%;">
+<img src="./screenshot/cite-example.jpg" alt="cite-example" width="200"/> <img src="./screenshot/bibliography.jpg" alt="bibliography" width="50%"/>
 
 Glossary and index
 ![fa2en-glossary](./screenshot/fa2en-glossary.jpg "fa2en-glossary"){: width="49%"} ![index](./screenshot/index.jpg "index"){: width="49%"}
