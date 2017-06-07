@@ -68,16 +68,16 @@ tehran-thesis in BiDiTexmaker
 ![biditexmaker](./screenshot/biditexmaker.png "biditexmaker")
 
 tehran-thesis in BiDiTexmaker (draft mode)
-![biditexmaker-draft](./screenshot/biditexmaker-draft.png biditexmaker-draft)
+![biditexmaker-draft](./screenshot/biditexmaker-draft.png "biditexmaker-draft")
 
 Example of citation to various sources
-![cite-example](./screenshot/cite-example.jpg cite-example){: width="49%"} ![bibliography](./screenshot/bibliography.jpg bibliography){: width="49%"}
+![cite-example](./screenshot/cite-example.jpg "cite-example"){: width="49%"} ![bibliography](./screenshot/bibliography.jpg "bibliography"){: width="49%"}
 
 Glossary and index
-![fa2en-glossary](./screenshot/fa2en-glossary.jpg fa2en-glossary){: width="49%"} ![index](./screenshot/index.jpg index){: width="49%"}
+![fa2en-glossary](./screenshot/fa2en-glossary.jpg "fa2en-glossary"){: width="49%"} ![index](./screenshot/index.jpg "index"){: width="49%"}
 
 Colorized codes and todo notes (in draft version)
-![algorithms and codes](./screenshot/algs-codes.jpg colorized codes){: width="49%"} ![todos](./screenshot/todos.jpg todo notes){: width="49%"}
+![algorithms and codes](./screenshot/algs-codes.jpg "colorized codes"){: width="49%"} ![todos](./screenshot/todos.jpg "todo notes"){: width="49%"}
 
 More screenshots are available in 'screenshot' folder.
 
