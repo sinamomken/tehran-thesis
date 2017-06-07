@@ -6,11 +6,11 @@
     \protect\setlength{\cftchapnumwidth}{\mylenapp}}
     
 \let\Chapter\chapter
-% دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱
-\pretocmd{\chapter}{
-  \clearpage
-  \pagenumbering{arabic}
-  \renewcommand*{\thepage}{\rl{\thechapter-\arabic{page}}}}{}{}
+% دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱ (فعلا با glossaries سازگار نیست)
+%\pretocmd{\chapter}{
+%  \clearpage
+%  \pagenumbering{arabic}
+%  \renewcommand*{\thepage}{\rl{\thechapter-\arabic{page}}}}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
 \chapter{آشنایی سریع با برخی دستورات لاتک}
