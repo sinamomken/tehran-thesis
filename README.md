@@ -1,6 +1,7 @@
 # tehran-thesis
 LaTeX template for MSc/BSc/PhD theses for University of Tehran.
 <div dir=rtl>
+
 ## راهنمای فارسی:
 ### ویژگی‌ها
 1. کاملاً منطبق بر «دستورالعمل نگارش و تدوین پایان‌نامه» دانشگاه تهران، ویرایش اول، شهریور ۱۳۹۲.
@@ -31,6 +32,7 @@ LaTeX template for MSc/BSc/PhD theses for University of Tehran.
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل BiDiTexmaker.
 * ‫[اختیاری] نصب قلم‌های استاندارد IRFonts در سیستم‌عامل‌تان.
 </div>
+
 ## English readme:
 ### Features
 1. Fully compliant with "Manual of writing and editing thesis of University of Tehran", Sep. 2013.
