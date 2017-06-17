@@ -16,10 +16,11 @@ sub makeacn2acr {
     system("xindy -L english -C utf8 -I xindy -M '$_[0]'.xdy -t '$_[0]'.alg -o '$_[0]'.acr '$_[0]'.acn");
 }
 
-push @generated_exts, 'glo', 'gls', 'glg';
+push @generated_exts, 'glo', 'gls', 'glg', 'glsdefs';
 push @generated_exts, 'blo', 'bls', 'blg';
 push @generated_exts, 'acn', 'acr', 'alg';
 push @generated_exts, 'loa', 'lol';
 push @generated_exts, 'bbl', 'brf';
 push @generated_exts, 'mw';
+push @generated_exts, 'tdo';
 $clean_ext .= ' %R.ist %R.xdy';
