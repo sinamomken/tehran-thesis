@@ -65,19 +65,19 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
 
 ## Screenshots
 tehran-thesis in BiDiTexmaker  
-![biditexmaker](./screenshot/biditexmaker.png "biditexmaker")
+![biditexmaker](./img/biditexmaker.png "biditexmaker")
 
 tehran-thesis in BiDiTexmaker (draft mode)  
-![biditexmaker-draft](./screenshot/biditexmaker-draft.png "biditexmaker-draft")
+![biditexmaker-draft](./img/biditexmaker-draft.png "biditexmaker-draft")
 
 Example of citation to various sources  
-<img src="./screenshot/cite-example.jpg" alt="cite-example" width="49%"/> <img src="./screenshot/bibliography.jpg" alt="bibliography" width="49%"/>
+<img src="./img/cite-example.jpg" alt="cite-example" width="49%"/> <img src="./img/bibliography.jpg" alt="bibliography" width="49%"/>
 
 Glossary and index  
-<img src="./screenshot/fa2en-glossary.jpg" alt="fa2en-glossary" width="49%"/> <img src="./screenshot/index.jpg" alt="index" width="49%"/>
+<img src="./img/fa2en-glossary.jpg" alt="fa2en-glossary" width="49%"/> <img src="./img/index.jpg" alt="index" width="49%"/>
 
 Colorized codes and todo notes (in draft version)  
-<img src="./screenshot/algs-codes.jpg" alt="colorized codes" width="49%"/> <img src="./screenshot/todos.jpg" alt="todo notes" width="49%"/>
+<img src="./img/algs-codes.jpg" alt="colorized codes" width="49%"/> <img src="./img/todos.jpg" alt="todo notes" width="49%"/>
 
 More screenshots are available in 'screenshot' folder.
 
