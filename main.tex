@@ -16,27 +16,27 @@
 % اگر مایلید پایان‌نامه شما دورو باشد به جای oneside در خط زیر از twoside استفاده کنید.
 
 % برای حاشیه‌نویسی و کم کردن صفحات ابتدایی، گزینه draft را وارد و برای نسخه نهایی آن را حذف کنید.
-\documentclass[twoside,openany,msc,draft]{./tex/tehran-thesis} % draft
+\documentclass[twoside,openany,msc,draft]{tehran-thesis} % draft
 
 % فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته‌ها، فونت و دستورات خاص در این فایل قرار دارد.
-\input{./tex/commands}
+\input{commands}
 
 % تنظیمات و تعاریف واژه‌نامه و اختصارات
-\input{./tex/glossaries-settings}
-\input{./tex/words}
-\input{./tex/acronyms}
+\input{glossaries-settings}
+\input{words}
+\input{acronyms}
 
 \begin{document}
 \pagenumbering{adadi} % یک، دو، ...
 % مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
-\input{./tex/faTitle}
+\input{faTitle}
 
 % اگر شما فصل اول  خود را در فایلی به جز chapter1 نوشته‌اید باید چندخط اول آن را در فایل خود کپی کنید.
-\include{./tex/chapter1}		% فصل اول: مقدمه
-\include{./tex/chapter2}		% فصول دوم: مروری بر مطالعات انجام شده
-\include{./tex/chapter3}		% فصل سوم: روش تحقیق
-\include{./tex/chapter4}		% فصل چهارم: نتایج
-\include{./tex/chapter5}		% فصل پنجم: بحث و نتیجه‌گیری
+\include{chapter1}		% فصل اول: مقدمه
+\include{chapter2}		% فصول دوم: مروری بر مطالعات انجام شده
+\include{chapter3}		% فصل سوم: روش تحقیق
+\include{chapter4}		% فصل چهارم: نتایج
+\include{chapter5}		% فصل پنجم: بحث و نتیجه‌گیری
 
 % مراجع
 % اگر از استیل‌های natbib استفاده می‌کنید باید دو خط را در فایل commands.tex تغییر دهید.
@@ -44,7 +44,7 @@
 {
 \onehalfspacing
 \bibliographystyle{plain-fa} % or plainnat-fa for author-date
-\bibliography{./tex/MyReferences}
+\bibliography{MyReferences}
 }
 
 \pagestyle{fancy}
@@ -52,9 +52,9 @@
 \appendix
 % فصلهای پس از این قسمت به عنوان ضمیمه خواهند آمد.
 % چندخط اول فایل appendix1 باید در فایل اولین پیوست بیاید.
-\include{./tex/appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
-\include{./tex/appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
-\include{./tex/appendix3} 	% پیوست سوم: مراجع، واژه‌نامه و حاشیه‌نویسی
+\include{appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
+\include{appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
+\include{appendix3} 	% پیوست سوم: مراجع، واژه‌نامه و حاشیه‌نویسی
 
 % برگرداندن شماره‌بندی صفحات فصول
 \let\chapter\Chapter
@@ -66,7 +66,7 @@
 \printglossary
 \printindex
 % مشخصات انگلیسی پایان‌نامه
-\input{./tex/enTitle}
+\input{enTitle}
 \label{LastPage}
 
 \end{document}
