@@ -27,7 +27,7 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
   * ‫glossaries: بسته مدیریت پیشرفتهٔ واژه‌نامه‌ها در لاتک.
   * ‫todonotes: امکان حاشیه‌نویسی و نکته‌گذاری را در فایل‌های tex شما فراهم می‌آورد.
 * ‫`latexmk`: برنامه‌ایست معادل 'make' برای پروژه‌های لاتک که مراحل مختلف کامپایل را در صورت نیاز تکرار می‌کند (باید در نسخه کامل texlive باشد).
-* `‫bibtex`: برنامهٔ ساخت فهرست مراجع و کتابشناسی (باید در نسخه کامل texlive باشد).
+* `‫bibtex`: برنامهٔ ساخت فهرست مراجع و کتابشناسی (باید در نسخه کامل texlive باشد) و بستهٔ persian-bib.
 * ‫`xindy`: برنامهٔ پشتی مورد نیاز برای ساخت واژه‌نامه‌ها و نمایه‌ها.
   * زبان 'persian' یا 'persian-variant1' باید برای xindy نصب باشد (که در اوبونتو 16.04 دستی باید دانلود و کپی شود).
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل [BiDiTexmaker][biditexmaker].
@@ -58,7 +58,7 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
   * glossaries: Advanced glossary management package.
   * todonotes: Provides commenting and todo notes available in your tex files.
 *  `latexmk`: equivalent of 'make' for latex projects (should be included in a full texlive installation).
-* `bibtex`: bibliography creation backend engine (should be included in a full texlive installation).
+* `bibtex`: bibliography creation backend engine (should be included in a full texlive installation) and persian-bib package.
 * `xindy`: glossary/indexing backend engine.
   * 'persian' or 'persian-variant1' language should be installed for xindy (not available by default in Ubuntu 16.04).
 * A TeX editor/IDE with RTL support, e.g. [BiDiTexmaker][biditexmaker].
