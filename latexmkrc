@@ -1,4 +1,7 @@
 $pdflatex = 'xelatex -synctex=1 -interaction=nonstopmode %O %S';
+$pdf_mode = 1;
+$dvi_mode = 0;
+$postscript_mode = 0;
 $bibtex = 'bibtex8 -W -c cp1256fa %O %B';
 
 add_cus_dep('glo', 'gls', 0, 'makeglo2gls');
