@@ -112,9 +112,10 @@
 % دستورات دوآرمه
 \makebox[\textwidth][c]{
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,left]{logo}
+	\raggedleft
+	\includegraphics[height=4cm]{logo}
 \end{minipage}
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{0.3\textwidth}
 	\begin{center}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@university \\}
@@ -125,7 +126,8 @@
 	\end{center}
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,right]{eng-logo}
+	\raggedright
+	\includegraphics[height=4cm]{eng-logo}
 \end{minipage}
 }
 % دستورات تک‌آرمه
@@ -207,10 +209,11 @@
 \vspace{-10mm}
 % دستورات دوآرمه
 \makebox[\textwidth][c]{
-\begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,left]{logo}
+\begin{minipage}{5cm}
+	\raggedleft
+	\includegraphics[height=4cm]{logo}
 \end{minipage}
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{\textwidth - 8cm}
 	\begin{center}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@university \\}
@@ -220,8 +223,9 @@
 		\end{onehalfspacing}
 	\end{center}
 \end{minipage}
-\begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,right]{eng-logo}
+\begin{minipage}{5cm}
+	\raggedright
+	\includegraphics[height=4cm]{eng-logo}
 \end{minipage}
 }
 % دستورات تک‌آرمه
@@ -329,10 +333,11 @@
 %\setcounter{page}{1}
 %\thispagestyle{empty}
 
-\begin{minipage}{0.3\textwidth}
-	\includegraphics[height=3cm,left]{logo}
+\begin{minipage}{4cm}
+	\raggedleft
+	\includegraphics[height=3cm]{logo}
 \end{minipage}
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{\textwidth - 8cm}
 	\begin{center}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@university \\}
@@ -342,8 +347,9 @@
 		\end{onehalfspacing}
 	\end{center}
 \end{minipage}
-\begin{minipage}{0.3\textwidth}
-	\includegraphics[height=3cm,left]{eng-logo}
+\begin{minipage}{4cm}
+	\raggedright
+	\includegraphics[height=3cm]{eng-logo}
 \end{minipage}
 
 \begin{center}
