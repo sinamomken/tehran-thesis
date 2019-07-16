@@ -1,8 +1,9 @@
 # tehran-thesis
-LaTeX template for MSc/BSc/PhD theses of University of Tehran.
-<div dir=rtl>
+LaTeX template for MSc/BSc/PhD theses of University of Tehran.  
+<div dir="rtl">قالب لاتک پایان‌نامه دانشگاه تهران</div>
+<div dir="rtl">
 
-## راهنمای فارسی:
+## راهنمای فارسی
 ### ویژگی‌ها
 1. کاملاً منطبق بر [«دستورالعمل نگارش و تدوین پایان‌نامه» دانشگاه تهران، ویرایش اول، شهریور ۱۳۹۲][egufa site].
 1. طراحی مدولار و انعطاف‌پذیر، به همراه دستورات از پیش‌تعریف‌شده برای مشخصات متغیر یک پایان‌نامهٔ دانشگاه تهران (مثل عنوان، نام دانشچو، استاد راهنما، تاریخ و غیره).
@@ -26,14 +27,14 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
   * ‫glossaries: بسته مدیریت پیشرفتهٔ واژه‌نامه‌ها در لاتک.
   * ‫todonotes: امکان حاشیه‌نویسی و نکته‌گذاری را در فایل‌های tex شما فراهم می‌آورد.
 * ‫`latexmk`: برنامه‌ایست معادل 'make' برای پروژه‌های لاتک که مراحل مختلف کامپایل را در صورت نیاز تکرار می‌کند (باید در نسخه کامل texlive باشد).
-* `‫bibtex`: برنامهٔ ساخت فهرست مراجع و کتابشناسی (باید در نسخه کامل texlive باشد).
+* `‫bibtex`: برنامهٔ ساخت فهرست مراجع و کتابشناسی (باید در نسخه کامل texlive باشد) و بستهٔ persian-bib.
 * ‫`xindy`: برنامهٔ پشتی مورد نیاز برای ساخت واژه‌نامه‌ها و نمایه‌ها.
   * زبان 'persian' یا 'persian-variant1' باید برای xindy نصب باشد (که در اوبونتو 16.04 دستی باید دانلود و کپی شود).
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل [BiDiTexmaker][biditexmaker].
 * ‫\[اختیاری\] نصب قلم‌های استاندارد [IRFonts] در سیستم‌عامل‌تان.
 </div>
 
-## English readme:
+## English Readme
 ### Features
 1. Fully compliant with ["Manual of writing and editing thesis of University of Tehran", Sep. 2013][egufa site].
 1. Modular and flexible design, with predefined commands for variables of a standard UT thesis (title, name, supervisor, date, ...).
@@ -46,7 +47,7 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 1. Ability to include figures, different tabulars, tikz diagrams, Persian & English algorithms and colorized code listings; And their catalogue.
 1. Standard headers, odd/even margins and page numberings.
 
-### How to use
+### How to Use
 'tehran-thesis' latex template is a portable package, that is designed for customization by the student to fill his/her thesis materials.
 Therefor, it doesn't need any installation. However, it uses many technologies to fulfill its duties. Dependencies below must be installed:
 
@@ -57,29 +58,29 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
   * glossaries: Advanced glossary management package.
   * todonotes: Provides commenting and todo notes available in your tex files.
 *  `latexmk`: equivalent of 'make' for latex projects (should be included in a full texlive installation).
-* `bibtex`: bibliography creation backend engine (should be included in a full texlive installation).
+* `bibtex`: bibliography creation backend engine (should be included in a full texlive installation) and persian-bib package.
 * `xindy`: glossary/indexing backend engine.
   * 'persian' or 'persian-variant1' language should be installed for xindy (not available by default in Ubuntu 16.04).
 * A TeX editor/IDE with RTL support, e.g. [BiDiTexmaker][biditexmaker].
 * \[Optional\] [IRFonts] installed in your system.
 
 ## Screenshots
-tehran-thesis in BiDiTexmaker  
+#### tehran-thesis in BiDiTexmaker  
 ![biditexmaker](./img/biditexmaker.png "biditexmaker")
 
-tehran-thesis in BiDiTexmaker (draft mode)  
+#### tehran-thesis in BiDiTexmaker (draft mode)  
 ![biditexmaker-draft](./img/biditexmaker-draft.png "biditexmaker-draft")
 
-Example of citation to various sources  
+#### Example of citation to various sources  
 <img src="./img/cite-example.jpg" alt="cite-example" width="49%"/> <img src="./img/bibliography.jpg" alt="bibliography" width="49%"/>
 
-Glossary and index  
+#### Glossary and index  
 <img src="./img/fa2en-glossary.jpg" alt="fa2en-glossary" width="49%"/> <img src="./img/index.jpg" alt="index" width="49%"/>
 
-Colorized codes and todo notes (in draft version)  
+#### Colorized codes and todo notes (in draft version)  
 <img src="./img/algs-codes.jpg" alt="colorized codes" width="49%"/> <img src="./img/todos.jpg" alt="todo notes" width="49%"/>
 
-More screenshots are available in 'screenshot' folder.
+More screenshots are available in 'img' folder.
 
 [egufa site]: http://egufa.ut.ac.ir/%D8%B1%D9%88%DB%8C%D9%87%E2%80%8C%D9%87%D8%A7-%D9%88-%D9%81%D8%B1%D9%85%E2%80%8C%D9%87%D8%A7/%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B1%D8%B4%D8%AF/417-%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D9%86%DA%AF%D8%A7%D8%B1%D8%B4-%D9%88-%D8%AA%D8%AF%D9%88%DB%8C%D9%86-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D9%86%D8%B4%D8%AC%D9%88%DB%8C%D8%A7%D9%86-%D9%85%D9%82%D8%B7%D8%B9-%DA%A9%D8%A7%D8%B1%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B1%D8%B4%D8%AF-%D9%88-%D8%AF%DA%A9%D8%AA%D8%B1%DB%8C
 

@@ -1,14 +1,17 @@
 $pdflatex = 'xelatex -synctex=1 -interaction=nonstopmode %O %S';
+$pdf_mode = 1;
+$dvi_mode = 0;
+$postscript_mode = 0;
 $bibtex = 'bibtex8 -W -c cp1256fa %O %B';
 
 add_cus_dep('glo', 'gls', 0, 'makeglo2gls');
 sub makeglo2gls {
-    system("xindy -L persian -C utf8 -I xindy -M '$_[0]'.xdy -t '$_[0]'.glg -o '$_[0]'.gls '$_[0]'.glo");
+    system("xindy -L persian-variant3 -C utf8 -I xindy -M '$_[0]'.xdy -t '$_[0]'.glg -o '$_[0]'.gls '$_[0]'.glo");
 }
 
 add_cus_dep('blo', 'bls', 0, 'makeblo2bls');
 sub makeblo2bls {
-    system("xindy -L persian -C utf8 -I xindy -M '$_[0]'.xdy -t '$_[0]'.blg -o '$_[0]'.bls '$_[0]'.blo");
+    system("xindy -L persian-variant3 -C utf8 -I xindy -M '$_[0]'.xdy -t '$_[0]'.blg -o '$_[0]'.bls '$_[0]'.blo");
 }
 
 add_cus_dep('acn', 'acr', 0, 'makeacn2acr');
