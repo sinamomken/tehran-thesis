@@ -30,16 +30,22 @@ twoside
 % فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته‌ها، فونت و دستورات خاص در این فایل قرار دارد.
 \input{./tex/commands}
 
+% مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
+\input{./tex/faTitle}
+% مشخصات انگلیسی پایان‌نامه
+\input{./tex/enTitle}
+
 % تنظیمات و تعاریف واژه‌نامه و اختصارات
 \input{./tex/glossaries-settings}
 \input{./tex/words}
 \input{./tex/acronyms}
 
 \begin{document}
-\pagenumbering{adadi} % یک، دو، ...
-% مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
-\input{./tex/faTitle}
 
+\pagenumbering{adadi} % یک، دو، ...
+\input{./tex/thesis_preamble}
+
+\pagestyle{fancy}
 \pagenumbering{arabic} % 1, 2, ...
 
 \include{./tex/chapter1}		% فصل اول: مقدمه
@@ -90,8 +96,11 @@ twoside
 \onehalfspacing
 \printglossary
 \printindex
-% مشخصات انگلیسی پایان‌نامه
-\input{./tex/enTitle}
+
+\begin{latin}
+\baselineskip=.6cm
+\latinTitlePage
+\end{latin}
 \label{LastPage}
 
 \end{document}

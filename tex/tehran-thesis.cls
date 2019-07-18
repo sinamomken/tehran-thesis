@@ -694,6 +694,19 @@ Advisors:
 \newpage
 \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
+\AtBeginDocument{
+\makeatletter
+% تعیین مشخصات فایل PDF
+\hypersetup{
+pdftitle={\@latintitle},
+pdfauthor={\@latinname \@latinsurname},
+pdfsubject={Thesis in \@latinsubject},
+pdfkeywords={\@latinkeywords},
+pdfdirection={R2L}
+}
+\makeatother
+}
+
 %% Author: Sina Momken
 %%
 %% Base author: M.Amintoosi

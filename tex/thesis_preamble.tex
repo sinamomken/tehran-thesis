@@ -1,0 +1,36 @@
+% ابتدای درج صفحات مختلف
+\titlePage
+% بررسی حالت پیش‌نویس
+\ifoptiondraft{}{% 
+    \besmPage
+    \titlePage
+    \davaranPage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% در این قسمت اسامی اساتید راهنما، مشاور و داور باید به صورت دستی وارد شوند
+%\renewcommand{\arraystretch}{1.2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \esalatPage
+    \mojavezPage
+% چنانچه مایل به چاپ صفحات «تقدیم»، «نیایش» و «سپاس‌گزاری» در خروجی نیستید، خط‌های زیر را با گذاشتن ٪  در ابتدای آنها غیرفعال کنید.
+    \taghdimPage
+    \ghadrdaniPage
+} % end ifoptiondraft
+\abstractPage
+% شروع درج فهرست‌ها
+\newpage\clearpage
+\pagenumbering{harfi} % آ، ب، ...
+\tableofcontents \newpage
+% بررسی حالت پیش‌نویس برای بقیه فهرست‌ها
+\ifoptiondraft{
+    \listoftodos
+}{%
+    \listoffigures \newpage
+    \listoftables  \newpage
+    \addcontentsline{toc}{chapter}{\listalgorithmname}
+    \listofalgorithms %\newpage
+    \addcontentsline{toc}{chapter}{\lstlistlistingname}
+    \lstlistoflistings \newpage
+    \printacronyms
+} % end ifoptiondraft
