@@ -105,21 +105,47 @@ pdfdirection={R2L}
 % بسته زیر باگ ناشی از فراخوانی بسته‌های زیاد را برطرف می‌کند.
 \usepackage{morewrites}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-% فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد)، تعریف قلم فارسی و انگلیسی و مکان قلم‌ها
-\usepackage[extrafootnotefeatures, localise=on]{xepersian}
-\settextfont[Path={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
+% فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد)
+\usepackage[extrafootnotefeatures, localise=on, displaymathdigits=persian]{xepersian}
 
+
+
+
+\makeatletter
+% تعریف قلم فارسی و انگلیسی و مکان قلم‌ها
+\if@irfonts
+\settextfont[Path={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
 % LiberationSerif or FreeSerif as free equivalents of Times New Roman
 \setlatintextfont[Path={./font/}, BoldFont={LiberationSerif-Bold.ttf}, BoldItalicFont={LiberationSerif-BoldItalic.ttf}, ItalicFont={LiberationSerif-Italic.ttf},Scale=1]{LiberationSerif-Regular.ttf}
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 % چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
 \setdigitfont[Path={./font/}, Scale=1.2]{IRLotusICEE.ttf}
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 % تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-\defpersianfont\titlefont[Path={./font/}, Scale=1]{IRTitr.ttf}
 \setiranicfont[Path={./font/}, Scale=1.3]{IRLotusICEE_Iranic.ttf}				% ایرانیک، خوابیده به چپ
-% \defpersianfont\nastaliq[Scale=1.2]{IranNastaliq}
 \setmathsfdigitfont[Path={./font/}]{IRTitr.ttf}
+\defpersianfont\titlefont[Path={./font/}, Scale=1]{IRTitr.ttf}
+% برای تعریف یک قلم خاص عنوان لاتین، خط بعد را فعال و ویرایش کنید و خط بعد از آن را غیرفعال کنید.
+% \deflatinfont\latintitlefont[Scale=1]{LiberationSerif}
+\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
+\else
+\settextfont{XB Niloofar}
+\setlatintextfont{Liberation Serif}
+% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
+\setdigitfont{XB Niloofar}
+% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+\setmathsfdigitfont{XB Titre}
+\defpersianfont\titlefont{XB Titre}
+% برای تعریف یک قلم خاص عنوان لاتین، خط بعد را فعال و ویرایش کنید و خط بعد از آن را غیرفعال کنید.
+\deflatinfont\latintitlefont{XB Titre}
+% \font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
+\fi
+\makeatother
+
+% برای استفاده از قلم نستعلیق خط بعد را فعال کنید.
+% \defpersianfont\nastaliq[Scale=1.2]{IranNastaliq}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % راستچین شدن todonotes
 \presetkeys{todonotes}{align=right,textdirection=righttoleft}{}

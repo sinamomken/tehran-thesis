@@ -79,6 +79,9 @@
 \newif\if@mscthesis
 \@mscthesisfalse
 \DeclareOption{msc}{\@mscthesistrue}
+\newif\if@irfonts
+\@irfontsfalse
+\DeclareOption{irfonts}{\@irfontstrue}
 \ProcessOptions
 
 \ifx\@projectLabel\undefined%
@@ -136,7 +139,7 @@
 %\centerline{\large\bfseries\@faculty}
 % بعد از آرم‌ها
 \vskip 1.5cm
-{\huge\titlefont \@title}\par
+{\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
 \if@bscthesis 
 	{\large\bfseries{پروژه کارشناسی \@subject}
@@ -234,7 +237,7 @@
 %\centerline{\large\bfseries\@faculty}
 % بعد از آرم‌ها
 \vskip 1.5cm
-{\huge\titlefont \@title}\par
+{\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
 \if@bscthesis 
 	{\large\bfseries{پروژه کارشناسی \@subject}
@@ -436,7 +439,7 @@
 \newpage
 %\thispagestyle{empty}
 \begin{center}
-{\Large \titlefont
+{\Large \titlefont\bfseries
 تعهدنامه اصالت اثر \\
  }
 \vspace{.5cm}
@@ -545,7 +548,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 % \def\latinabstract{\newpage
 % \thispagestyle{empty}
 % \vskip 15mm
-% \begin{center}%{\Large\bfseries \@latintitle \\[5mm]}
+% \begin{center}%{\Large\latintitlefont\bfseries \@latintitle \\[5mm]}
 % {\bfseries Abstract}
 % \end{center}
 % \vspace{5mm}}
@@ -555,8 +558,6 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 
 
 %% Latin Abstract and Title pages
-
-%\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
 
 \font\supervisorfont=cmbxti10
 
@@ -605,7 +606,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 %% After logos
 \vskip 1.5cm
 {%\latintitlefont 
-\Huge
+\Huge\latintitlefont\bfseries
 \@latintitle}
 %\baselineskip=.750cm \par
 \vskip 15mm
