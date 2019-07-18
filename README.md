@@ -1,6 +1,11 @@
 # tehran-thesis
-LaTeX template for MSc/BSc/PhD theses of University of Tehran.  
+
+[![GitHub release](https://img.shields.io/github/release/sinamomken/tehran-thesis.svg?style=flat-square)](https://github.com/sinamomken/tehran-thesis/releases/latest)
+[![Travis (.org)](https://img.shields.io/travis/sinamomken/tehran-thesis.svg?style=flat-square)](https://travis-ci.org/sinamomken/tehran-thesis)
+
+LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 <div dir="rtl">قالب لاتک پایان‌نامه دانشگاه تهران</div>
+
 <div dir="rtl">
 
 ## راهنمای فارسی
@@ -32,6 +37,7 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
   * زبان 'persian' یا 'persian-variant1' باید برای xindy نصب باشد (که در اوبونتو 16.04 دستی باید دانلود و کپی شود).
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل [BiDiTexmaker][biditexmaker].
 * ‫\[اختیاری\] نصب قلم‌های استاندارد [IRFonts] در سیستم‌عامل‌تان.
+
 </div>
 
 ## English Readme

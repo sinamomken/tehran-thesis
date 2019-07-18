@@ -3,6 +3,7 @@ $pdf_mode = 1;
 $dvi_mode = 0;
 $bibtex_use = 2;
 $postscript_mode = 0;
+$bibtex_silent_switch = "";
 $bibtex = 'bibtex8 -W -c cp1256fa %O %B';
 
 add_cus_dep('glo', 'gls', 0, 'makeglo2gls');
