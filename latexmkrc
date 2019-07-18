@@ -1,6 +1,7 @@
 $pdflatex = 'xelatex -synctex=1 -interaction=nonstopmode %O %S';
 $pdf_mode = 1;
 $dvi_mode = 0;
+$bibtex_use = 2;
 $postscript_mode = 0;
 $bibtex = 'bibtex8 -W -c cp1256fa %O %B';
 
