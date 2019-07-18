@@ -701,7 +701,7 @@ Advisors:
 %% 
 %% Distributable under GNU GENERAL PUBLIC LICENSE Version 3.
 %% 
-%% This work is "maintained" by Sina Momken.
+%% This work is "maintained" by Sina Momken & Hadi Safari.
 %% 
 %% 
 %% 

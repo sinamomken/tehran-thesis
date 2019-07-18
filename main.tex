@@ -36,7 +36,8 @@ twoside
 % مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
 \input{./tex/faTitle}
 
-% اگر شما فصل اول  خود را در فایلی به جز chapter1 نوشته‌اید باید چندخط اول آن را در فایل خود کپی کنید.
+\pagenumbering{arabic} % 1, 2, ...
+
 \include{./tex/chapter1}		% فصل اول: مقدمه
 \include{./tex/chapter2}		% فصول دوم: مروری بر مطالعات انجام شده
 \include{./tex/chapter3}		% فصل سوم: روش تحقیق
@@ -54,12 +55,26 @@ twoside
 
 \pagestyle{fancy}
 
-\appendix
+% \appendix
 % فصلهای پس از این قسمت به عنوان ضمیمه خواهند آمد.
-% چندخط اول فایل appendix1 باید در فایل اولین پیوست بیاید.
+
+% دستورات لازم برای تبدیل «فصل آ» به «پیوست آ» در فهرست مطالب
+\addtocontents{toc}{
+    \protect\renewcommand\protect\cftchappresnum{\appendixname~}%
+    \protect\setlength{\cftchapnumwidth}{\mylenapp}}
+    
+\let\Chapter\chapter
+% دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱ (فعلا با glossaries سازگار نیست)
+%\pretocmd{\chapter}{
+%  \clearpage
+%  \pagenumbering{arabic}
+%  \renewcommand*{\thepage}{\rl{\thechapter-\arabic{page}}}}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
 \include{./tex/appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
 \include{./tex/appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
-\include{./tex/appendix3} 	% پیوست سوم: مراجع، واژه‌نامه و حاشیه‌نویسی
+\include{./tex/appendix3}   	% پیوست سوم: مراجع، واژه‌نامه و حاشیه‌نویسی
 
 % برگرداندن شماره‌بندی صفحات فصول
 \let\chapter\Chapter
