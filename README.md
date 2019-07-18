@@ -22,7 +22,20 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 1. سربرگ استاندارد، فاصلهٔ مناسب حاشیه‌ها در حالت یک‌رو و دورو و شماره‌دهی صفحات منطبق بر دستورالعمل نگارش.
 
 ### چگونه استفاده کنیم؟
-‫قالب پایان‌نامهٔ 'tehran-thesis' در واقع یک بستهٔ قابل‌حمل است که بگونه‌ای طراحی شده تا مشخصات متغیر پایان‌نامه توسط دانشجو عوض شود و مطالب پایان‌نامه نیز توسط وی در فصول مختلف وارد گردد. به هیچ تلاشی برای قالب‌بندی نیاز نیست و تنها کافی است دانشجو طبق توضیحات، مطالب خود را وارد نماید.
+
+آخرین نسخهٔ منتشرشدهٔ قالب را می‌توانید از
+[![GitHub release](https://img.shields.io/github/release/sinamomken/tehran-thesis.svg?style=flat-square)](https://github.com/sinamomken/tehran-thesis/releases/latest)
+دریافت کنید.
+با دستور زیر نیز می‌توانید به آخرین نسخهٔ در حال توسعهٔ قالب دسترسی داشته باشید:
+<div dir="ltr">
+
+```bash
+git clone https://github.com/sinamomken/tehran-thesis --single-branch
+```
+
+</div>
+
+‫قالب پایان‌نامهٔ _tehran-thesis_ در واقع یک بستهٔ قابل‌حمل است که بگونه‌ای طراحی شده تا مشخصات متغیر پایان‌نامه توسط دانشجو عوض شود و مطالب پایان‌نامه نیز توسط وی در فصول مختلف وارد گردد. به هیچ تلاشی برای قالب‌بندی نیاز نیست و تنها کافی است دانشجو طبق توضیحات، مطالب خود را وارد نماید.
 در نتیجه این قالب به نصب نیاز ندارد. با این حال، این قالب از تکنولوژی‌ها و بسته‌های مختلفی استفاده می‌کند. پیش‌نیازهای زیر قبل از استفاده از قالب باید نصب باشند:
 
 #### پیش‌نیازها
@@ -54,7 +67,15 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 1. Standard headers, odd/even margins and page numberings.
 
 ### How to Use
-'tehran-thesis' latex template is a portable package, that is designed for customization by the student to fill his/her thesis materials.
+It's possible to download the latest released version of template from
+[![GitHub release](https://img.shields.io/github/release/sinamomken/tehran-thesis.svg?style=flat-square)](https://github.com/sinamomken/tehran-thesis/releases/latest).
+Also, by the following command you can access to the latest developing version of template:
+
+```bash
+git clone https://github.com/sinamomken/tehran-thesis --single-branch
+```
+
+_tehran-thesis_ latex template is a portable package, that is designed for customization by the student to fill his/her thesis materials.
 Therefor, it doesn't need any installation. However, it uses many technologies to fulfill its duties. Dependencies below must be installed:
 
 #### Prerequisites
