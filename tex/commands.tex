@@ -80,6 +80,7 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 % بسته‌های لازم برای رسم بهتر جداول
 \usepackage{tabulary}
 \usepackage{tabularx}
+\usepackage{rotating}
 % بسته‌های لازم برای رسم تنظیم بهتر شکل‌ها و زیرشکل‌ها
 \usepackage[export]{adjustbox}
 \usepackage{subfig}
@@ -165,7 +166,7 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 %\newcommand\BackSlash{\char`\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\SepMark{-}
+% \SepMark{-}
 
 % تعریف و نحوه ظاهر شدن عنوان قضیه‌ها، تعریف‌ها، مثال‌ها و ...
 \theoremstyle{definition}
@@ -198,8 +199,14 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \fancyhead{}
 \fancyhead[OL]{\small\leftmark}
 \fancyhead[ER]{\small\leftmark}
+\fancyhead[OR]{\footnotesize\rightmark}
+\fancyhead[EL]{\footnotesize\rightmark}
+\renewcommand{\headrulewidth}{0.75pt}
 % شکل‌دهی شماره و عنوان فصل در سربرگ
-%\renewcommand{\chaptermark}[1]{\markboth{\thechapter-\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{فصل~\thechapter:\ #1}{}}
+\makeatletter
+\renewcommand{\rightmark}[1]{\@title}
+\makeatother
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\def\MATtextbaseline{1.5}
@@ -286,7 +293,8 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 	captiondirection=RTL
 }
 \lstset{style=myStyle} % command to set default style
-\def\lstlistingname{\rl{برنامه}}
+\def\lstlistingname{\rl{برنامهٔ}}
+\def\lstlistlistingname{\rl{فهرست برنامه‌ها}}
 
 
 % for numbering subsubsections

@@ -90,7 +90,7 @@
 {\projectLabel{پایان‌نامه}}
 \else
  \if@bscthesis
- {\projectLabel{پروژه }}
+ {\projectLabel{پروژه}}
  \else
 {\projectLabel{رساله}}
 \fi\fi
@@ -142,7 +142,7 @@
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
 \if@bscthesis 
-	{\large\bfseries{پروژه کارشناسی \@subject}
+	{\large\bfseries{پروژهٔ کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
 	\else
@@ -150,10 +150,10 @@
 	\fi
 	}
 \else
-	{\large\bfseries \@projectLabel\ \ \writtenfor
+	{\large\bfseries \@projectLabel\ \writtenfor
 	\@degree{} 
 	}
-	{\large\bfseries{در رشته \@subject}}
+	{\large\bfseries{در رشتهٔ \@subject}}
 	\vskip .2cm
 	\centerline{\large \bfseries%
 		گرایش \@field}
@@ -240,7 +240,7 @@
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
 \if@bscthesis 
-	{\large\bfseries{پروژه کارشناسی \@subject}
+	{\large\bfseries{پروژهٔ کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
 	\else
@@ -248,10 +248,10 @@
 	\fi
 	}
 \else
-	{\large\bfseries \@projectLabel\ \ \writtenfor
+	{\large\bfseries \@projectLabel{} \writtenfor
 	\@degree{} 
 	}
-	{\large\bfseries{در رشته \@subject}}
+	{\large\bfseries{در رشتهٔ \@subject}}
 	\vskip .2cm
 	\centerline{\large \bfseries%
 		گرایش \@field}
@@ -361,77 +361,79 @@
 }
 \end{center}
 %\vspace{.5cm}
-هیأت داوران \hspace{1ex} \@projectLabel{} \@degree{} \hspace{1ex} آقای / خانم \@name{} \@surname{} \hspace{1ex} به شماره دانشجویی \@studentID{} \hspace{1ex} در رشته \@subject{} - گرايش \@field{} \hspace{1ex} را در تاريخ ............ با عنوان « \@title{} »\\
+هیأت داوران \@projectLabel{}ٔ \@degree{} آقای~/~خانم \@name{} \@surname{} به شمارهٔ دانشجویی \@studentID{} در رشتهٔ \@subject{}~-~گرایش \@field{} را در تاریخ ............ با عنوان «\@title{}»\\
 \makebox[\textwidth][l]{
 \parbox{0.7\textwidth}{
 \makebox[2cm]{}\hspace{1ex}\makebox[2cm]{به عدد}\makebox[5cm]{به حروف}\\
-\makebox[2cm][l]{با نمره نهایی}\hspace{1ex}\framebox[2cm]{\strut}\framebox[5cm]{\strut}
+\makebox[2cm][l]{با نمرهٔ نهایی}\hspace{1ex}\framebox[2cm]{\strut}\framebox[5cm]{\strut}
 \\
 \\
-\makebox[2cm][l]{و درجه}\hspace{1ex}\framebox[3cm]{\strut}\hspace{1ex}
+\makebox[2cm][l]{و درجهٔ}\hspace{1ex}\framebox[3cm]{\strut}\hspace{1ex}
 ارزیابی کرد.
 }
 }
 
 \newcounter{davaranCounter}
 \begin{table}[h]
+\small
 \begin{onehalfspacing}
-\begin{adjustbox}{width=1.1\textwidth,center}
-\begin{tabular}{| p{4mm} | p{.2\textwidth} | p{.17\textwidth} |p{14mm}|p{.2\textwidth}|c|}
+\begin{tabular}{| >{\centering\arraybackslash}m{0.03\textwidth} | >{\centering\arraybackslash}m{.17\textwidth} | >{\centering\arraybackslash}m{.17\textwidth} |>{\centering\arraybackslash}m{.1\textwidth}|>{\centering\arraybackslash}m{.2\textwidth}|>{\centering\arraybackslash}m{.17\textwidth}|}
 \hline
-\scriptsize{ردیف} & مشخصات هیئت داوران & نام و نام خانوادگی & مرتبه \newline دانشگاهی &	دانشگاه یا مؤسسه & امضـــــــــــــا \\
+{\bfseries\begin{sideways}ردیف\end{sideways}} & {\bfseries مشخصات هیأت داوران} & {\bfseries نام و نام خانوادگی} & {\bfseries مرتبهٔ دانشگاهی} &	{\bfseries دانشگاه یا مؤسسه} & {\bfseries امضا} \\
 \hline
 \ifx\@firstsupervisor\undefined
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} &	استاد راهنما & \@firstsupervisor & \@firstsupervisorrank & دانشگاه تهران & \\
+\arabic{davaranCounter} &	استاد راهنما & \@firstsupervisor & \@firstsupervisorrank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \fi
 \ifx\@secondsupervisor\undefined%
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} &	استاد راهنما & \@secondsupervisor & \@secondsupervisorrank & دانشگاه تهران & \\
+\arabic{davaranCounter} &	استاد راهنما & \@secondsupervisor & \@secondsupervisorrank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \fi
 \hline
 \ifx\@firstadvisor\undefined%
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & استاد مشاور & \@firstadvisor & \@firstadvisorrank & دانشگاه تهران & \\
+\arabic{davaranCounter} & استاد مشاور & \@firstadvisor & \@firstadvisorrank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \fi
 \ifx\@secondadvisor\undefined%
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & استاد مشاور & \@secondadvisor & \@secondadvisorrank & دانشگاه تهران & \\
+\arabic{davaranCounter} & استاد مشاور & \@secondadvisor & \@secondadvisorrank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \fi
 \hline
 \ifx\@internaljudge\undefined%
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \\
+\arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
 \ifx\@externaljudge\undefined%
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \\
+\arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
 \ifx\@graduatedeputy\undefined%
 \else \stepcounter{davaranCounter}
-\arabic{davaranCounter} & نماینده تحصیلات تکمیلی دانشکده & \@graduatedeputy & \@graduatedeputyrank &  دانشگاه تهران & \\
+\arabic{davaranCounter} & نمایندهٔ تحصیلات تکمیلی دانشکده & \@graduatedeputy & \@graduatedeputyrank &  دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
 \end{tabular}
-\end{adjustbox}
 \end{onehalfspacing}
 \end{table}
 
-\begin{minipage}{0.45\textwidth}
-	\begin{center}
-		نام و نام خانوادگی معاون تحصیلات تكمیلی و پژوهشی دانشكده / گروه:\\
-		تاریخ و امضاء:
-	\end{center}
-\end{minipage}
-\hspace{1ex}
-\begin{minipage}{0.45\textwidth}
-	\begin{center}
-		نام و نام خانوادگی معاون آموزشی و تحصیلات تكمیلی پردیس دانشكده‌های فنی:\\
-		تاریخ و امضاء:
-	\end{center}
-\end{minipage}
+\begin{center}
+\noindent
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+			نام و نام خانوادگی معاون تحصیلات تکمیلی و پژوهشی دانشکده~/~گروه:\\
+			تاریخ و امضا:
+		\end{center}
+	\end{minipage}
+	\hspace{0.08\textwidth}
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+			نام و نام خانوادگی معاون آموزشی و تحصیلات تکمیلی پردیس دانشکده‌های فنی:\\
+			تاریخ و امضا:
+		\end{center}
+	\end{minipage}
+\end{center}
 } % End of davaranPage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تأییدیه‌ی صحت و اصالت نتایج
@@ -440,8 +442,8 @@
 %\thispagestyle{empty}
 \begin{center}
 {\Large \titlefont\bfseries
-تعهدنامه اصالت اثر \\
- }
+تعهدنامهٔ اصالت اثر\\
+}
 \vspace{.5cm}
 باسمه تعالی 
 \vspace{.5cm}
@@ -450,7 +452,7 @@
 
 اینجانب 
 \@name \ \@surname \
-تائید می‌كنم كه مطالب مندرج در این \@projectLabel{} حاصل كار پژوهشی اینجانب است و به دستاوردهای پژوهشی ديگران كه در این نوشته از آنها استفاده شده است مطابق مقررات ارجاع گرديده است. این پایان نامه قبلاً برای احراز هیچ مدرک هم‌سطح یا بالاتر ارائه نشده است.
+تأیید می‌کنم که مطالب مندرج در این \@projectLabel{} حاصل کار پژوهشی اینجانب است و به دستاوردهای پژوهشی دیگران که در این نوشته از آن‌ها استفاده شده است مطابق مقررات ارجاع گردیده است. این \@projectLabel{} قبلاً برای احراز هیچ مدرک هم‌سطح یا بالاتری ارائه نشده است.
 
 \vspace{1cm}
 \begin{center}
@@ -477,9 +479,9 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \begin{persian}
 \begin{center}
 
-\textbf{کلیه حقوق مادی  و معنوی این اثر}
+\textbf{کلیهٔ حقوق مادی  و معنوی این اثر}
  
-\textbf{متعلّق به دانشگاه تهران می‌باشد.}
+\textbf{متعلّق به دانشگاه تهران است.}
 
 \end{center}
 \end{persian}
@@ -533,27 +535,27 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \newcommand\abstractPage{
 	\newpage
 	\thispagestyle{empty}
-	\vskip 15mm
-	{\noindent\bfseries چکیده}
-	\vspace{5mm}
-	\par\noindent
+	\section*{چکیده}
+	% \addcontentsline{toc}{section}{چکیده}
 	\@fa-abstract
-	\vspace{8mm}
 	\par\noindent
-	\textbf{واژگان کلیدی:} 
+	\paragraph{واژگان کلیدی}
 	\@keywords
 	\newpage
 }
 
-% \def\latinabstract{\newpage
-% \thispagestyle{empty}
-% \vskip 15mm
-% \begin{center}%{\Large\latintitlefont\bfseries \@latintitle \\[5mm]}
-% {\bfseries Abstract}
-% \end{center}
-% \vspace{5mm}}
-
-% \def\endlatinabstract{\newpage}
+\def\latinabstract{
+%% Latin abstract Page
+\newpage\clearpage
+\thispagestyle{empty}
+\section*{Abstract}
+% \addcontentsline{toc}{section}{چکیده}
+\@en-abstract
+\par
+\noindent
+\paragraph{Keywords}
+\@latinkeywords
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -562,21 +564,8 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \font\supervisorfont=cmbxti10
 
 \newcommand{\latinTitlePage}{%
-%% Latin abstract Page
-\newpage\clearpage
-\thispagestyle{empty}
-\vskip 15mm
-{\noindent\bfseries Abstract:}
-\vspace{5mm}
-\par
-\noindent
-\@en-abstract
-\vspace{8mm}
-\par
-\noindent
-\textbf{Keywords:} 
-\@latinkeywords
 
+\latinabstract
 %% Latin title page
 \begin{titlepage}
 \vspace{-10mm}
@@ -685,7 +674,7 @@ Advisors:
 \fi}
 
 \def\onvan{عنوان}
-\def\writtenfor{برای دریافت درجه }
+\def\writtenfor{برای دریافت درجهٔ }
 \def\by{پژوهشگر}
 \def\latinby{By:}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else

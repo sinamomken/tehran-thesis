@@ -10,7 +10,7 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 
 ## راهنمای فارسی
 ### ویژگی‌ها
-1. کاملاً منطبق بر [«دستورالعمل نگارش و تدوین پایان‌نامه» دانشگاه تهران، ویرایش اول، شهریور ۱۳۹۲][egufa site].
+1. منطبق با [«دستورالعمل نگارش و تدوین پایان‌نامه» دانشگاه تهران، ویرایش اول، شهریور ۱۳۹۲][egufa site].
 1. طراحی مدولار و انعطاف‌پذیر، به همراه دستورات از پیش‌تعریف‌شده برای مشخصات متغیر یک پایان‌نامهٔ دانشگاه تهران (مثل عنوان، نام دانشچو، استاد راهنما، تاریخ و غیره).
 1. ‫استفاده از قلم‌های استاندارد [سری X نسخهٔ ۲][irmug-persian] یا قلم‌های استاندارد سری [IRFonts][irfonts] اثر شورای عالی اطلاع‌رسانی (به جای قلم‌های غیراستاندارد BFonts).
 1. ‫ساخته شده بر اساس قالب‌های پیشرفته‌های [IUST-Thesis][iust-template] و HSU-Thesis-V1 اثر دکتر محمود امین‌طوسی.
@@ -55,7 +55,7 @@ git clone https://github.com/sinamomken/tehran-thesis --single-branch
 
 ## English Readme
 ### Features
-1. Fully compliant with ["Manual of writing and editing thesis of University of Tehran", Sep. 2013][egufa site].
+1. Compliant with ["Manual of writing and editing thesis of University of Tehran", Sep. 2013][egufa site].
 1. Modular and flexible design, with predefined commands for variables of a standard UT thesis (title, name, supervisor, date, ...).
 1. Use of standard [X Series 2][irmug-english] fonts or standard [IRFonts][irfonts] by SCICT (instead of non-standard BFonts).
 1. Based on professional templates ["IUST-Thesis"][iust-template] and "HSU-Thesis-V1" by Mahmood AminToosi.
