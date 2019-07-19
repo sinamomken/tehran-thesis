@@ -49,7 +49,7 @@ git clone https://github.com/sinamomken/tehran-thesis --single-branch
 * ‫`xindy`: برنامهٔ پشتی مورد نیاز برای ساخت واژه‌نامه‌ها و نمایه‌ها.
   * زبان `persian` یا `persian-variant3` باید برای `xindy` نصب باشد (که در اوبونتو 16.04 دستی باید دانلود و کپی شود).
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل [`BiDiTexmaker`][biditexmaker].
-* ‫\[اختیاری\] نصب قلم‌های سری X نسخهٔ ۲ در سیستم‌عامل‌تان.
+* ‫\[اختیاری\] نصب قلم‌های سری X نسخهٔ ۲ و Junicode در سیستم‌عامل‌تان.
 
 </div>
 
@@ -89,7 +89,7 @@ Therefor, it doesn't need any installation. However, it uses many technologies t
 * `xindy`: glossary/indexing backend engine.
   * `persian` or `persian-variant3` language should be installed for xindy (not available by default in Ubuntu 16.04).
 * A TeX editor/IDE with RTL support, e.g. [`BiDiTexmaker`][biditexmaker].
-* \[Optional\] X Series 2 Fonts installed in your system.
+* \[Optional\] X Series 2 & Junicode Fonts installed in your system.
 
 ## Screenshots
 #### tehran-thesis in BiDiTexmaker  
