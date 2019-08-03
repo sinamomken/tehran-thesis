@@ -2,8 +2,8 @@ sudo: required
 language: generic
 services: docker
 script:
-- docker run --rm -v "$PWD":"/repo" -w "/repo" dockershelf/latex:full
-  /bin/sh -c "apt-get update && apt-get install -y unzip xindy && mkdir -p /usr/share/xindy/lang/persian/ && curl -L -o /usr/share/xindy/lang/persian/variant3-utf8-lang.xdy http://mirrors.ctan.org/indexing/xindy/contrib/xindy-persian/variant3-utf8-lang.xdy && curl -L -o /usr/share/xindy/lang/persian/variant3-utf8.xdy http://mirrors.ctan.org/indexing/xindy/contrib/xindy-persian/variant3-utf8.xdy && latexmk"
+- docker run --rm -v "$PWD":"/repo" -w "/repo" volkerraschek/docker-latex:latest-ubuntu18.04
+  /bin/sh -c "apt-get update && apt-get install -y unzip curl && mkdir -p /usr/share/xindy/lang/persian/ && curl -L -o /usr/share/xindy/lang/persian/variant3-utf8-lang.xdy http://mirrors.ctan.org/indexing/xindy/contrib/xindy-persian/variant3-utf8-lang.xdy && curl -L -o /usr/share/xindy/lang/persian/variant3-utf8.xdy http://mirrors.ctan.org/indexing/xindy/contrib/xindy-persian/variant3-utf8.xdy && latexmk"
 deploy:
   provider: releases
   api_key:
