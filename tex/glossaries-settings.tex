@@ -96,8 +96,6 @@
 	%\cleardoublepage
 	%\phantomsection
 	\baselineskip=.75cm
-	%% با این دستور عنوان فهرست اختصارات به فهرست مطالب اضافه می‌شود. 
-	\addcontentsline{toc}{chapter}{فهرست اختصارات}
 	\setglossarystyle{myAbbrlist}
 	%\begin{LTR}
 		\Oldprintglossary[type=acronym]	
@@ -115,14 +113,10 @@
 	%\phantomsection
 	%% این دستور موجب این می‌شود که واژه‌نامه‌ها در  حالت دو ستونی نوشته شود. 
 	\twocolumn{}
-	%% با این دستور عنوان واژه‌نامه به فهرست مطالب اضافه می‌شود. 
-	\addcontentsline{toc}{chapter}{واژه‌نامهٔ فارسی به انگلیسی}
 	\setglossarystyle{myFaToEn}
 	\Oldprintglossary[type=persian]
 	\clearpage
 	%\phantomsection
-	%% با این دستور عنوان واژه‌نامه به فهرست مطالب اضافه می‌شود. 
-	\addcontentsline{toc}{chapter}{واژه‌نامهٔ انگلیسی به فارسی}
 	\setglossarystyle{myEntoFa}
 	\Oldprintglossary[type=english]	
 	\onecolumn{}
