@@ -191,31 +191,34 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \def\listtablename{فهرست جداول}
 
 % دستور های لازم برای تعریف ترجمه‌ی دستورات الگوریتم
-\renewcommand{\algorithmicif}{\textbf{اگر}}
-\renewcommand{\algorithmicthen}{\textbf{آنگاه:}}
-\renewcommand{\algorithmicelse}{\textbf{در غیر این صورت:}}
-\renewcommand{\algorithmicelsif}{\textbf{در غیر این صورت اگر}}
-\renewcommand{\algorithmicendif}{\textbf{پایان شرط}}
-%\renewcommand{\algorithmicstep}{\textbf{گام}}
-\renewcommand{\algorithmicfor}{\textbf{برای}}
-\renewcommand{\algorithmicendfor}{\textbf{پایان حلقه‌ی برای}}
-\renewcommand{\algorithmicdo}{\textbf{انجام بده:}}
-\renewcommand{\algorithmicwhile}{\textbf{تا زمانی که}}
-\renewcommand{\algorithmicendwhile}{\textbf{پایان حلقه‌ی شرطی}}
-\renewcommand{\algorithmicrepeat}{\textbf{تکرار کن:}}
-\renewcommand{\algorithmicuntil}{\textbf{تا زمانی که}}
-\renewcommand{\algorithmicloop}{\textbf{تکرار کن:}}
-\renewcommand{\algorithmicendloop}{\textbf{پایان حلقه‌ی تکرار}}
-\renewcommand{\algorithmicreturn}{\textbf{بازگرداندن:}}
-\renewcommand{\algorithmicprint}{\textbf{چاپ:}}
-\renewcommand{\algorithmiccomment}{\textbf{\quad\quad توضیح:}}
-\renewcommand{\algorithmicto}{\textbf{تا}}
-\renewcommand{\algorithmicand}{\textbf{و}}
-\renewcommand{\algorithmicor}{\textbf{یا}}
-\renewcommand{\algorithmicxor}{\textbf{و یا}} % add better translate
-\renewcommand{\algorithmicnot}{\textbf{معکوس}}
-\renewcommand{\algorithmictrue}{\textbf{درست}}
-\renewcommand{\algorithmicfalse}{\textbf{نادرست}}
+\makeatletter
+\renewcommand{\algorithmicrequire}{\if@RTL\textbf{ورودی:}\else\textbf{Require:}\fi}
+\renewcommand{\algorithmicensure}{\if@RTL\textbf{خروجی:}\else\textbf{Ensure:}\fi}
+\renewcommand{\algorithmicend}{\if@RTL\textbf{پایان حلقه}\else\textbf{end}\fi}
+\renewcommand{\algorithmicif}{\if@RTL\textbf{اگر}\else\textbf{if}\fi}
+\renewcommand{\algorithmicthen}{\if@RTL\textbf{آنگاه}\else\textbf{then}\fi}
+\renewcommand{\algorithmicelse}{\if@RTL\textbf{وگرنه}\else\textbf{else}\fi}
+\renewcommand{\algorithmicfor}{\if@RTL\textbf{برای}\else\textbf{for}\fi}
+\renewcommand{\algorithmicforall}{\if@RTL\textbf{برای هر}\else\textbf{for all}\fi}
+\renewcommand{\algorithmicdo}{\if@RTL\textbf{انجام بده}\else\textbf{do}\fi}
+\renewcommand{\algorithmicwhile}{\if@RTL\textbf{تا زمانی که}\else\textbf{while}\fi}
+\renewcommand{\algorithmicloop}{\if@RTL\textbf{تکرار کن}\else\textbf{loop}\fi}
+\renewcommand{\algorithmicrepeat}{\if@RTL\textbf{تکرار کن}\else\textbf{repeat}\fi}
+\renewcommand{\algorithmicuntil}{\if@RTL\textbf{تا زمانی که}\else\textbf{until}\fi}
+\renewcommand{\algorithmicprint}{\if@RTL\textbf{چاپ کن}\else\textbf{print}\fi}
+\renewcommand{\algorithmicreturn}{\if@RTL\textbf{بازگردان}\else\textbf{return}\fi}
+\renewcommand{\algorithmicand}{\if@RTL\textbf{و}\else\textbf{and}\fi}
+\renewcommand{\algorithmicor}{\if@RTL\textbf{و یا}\else\textbf{or}\fi} % TODO add better translate
+\renewcommand{\algorithmicxor}{\if@RTL\textbf{یا}\else\textbf{xor}\fi} % TODO add better translate
+\renewcommand{\algorithmicnot}{\if@RTL\textbf{نقیض}\else\textbf{not}\fi}
+\renewcommand{\algorithmicto}{\if@RTL\textbf{تا}\else\textbf{to}\fi}
+\renewcommand{\algorithmicinputs}{\if@RTL\textbf{ورودی‌ها}\else\textbf{inputs}\fi}
+\renewcommand{\algorithmicoutputs}{\if@RTL\textbf{خروجی‌ها}\else\textbf{outputs}\fi}
+\renewcommand{\algorithmicglobals}{\if@RTL\textbf{متغیرهای عمومی}\else\textbf{globals}\fi}
+\renewcommand{\algorithmicbody}{\if@RTL\textbf{انجام بده}\else\textbf{do}\fi}
+\renewcommand{\algorithmictrue}{\if@RTL\textbf{درست}\else\textbf{true}\fi}
+\renewcommand{\algorithmicfalse}{\if@RTL\textbf{نادرست}\else\textbf{false}\fi}
+\makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورهایی برای سفارشی کردن سربرگ صفحات:
