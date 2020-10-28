@@ -135,6 +135,38 @@ $\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$
 \end{latin}
 \end{algorithm}
 
+\section{الگوریتم با ساختار پیچیده و تو در تو}
+الگوریتم \ref{alg:simulation-random}، یک الگوریتم ترکیبی و تو در تو است که با کمک دستورات بسته‌ی \lr{algorithmic} نوشته شده.
+
+\begin{algorithm}[ht]
+	\onehalfspacing
+	\caption{الگوریتم اجرای برنامه‌ی شبیه سازی}
+	\label{alg:simulation-random}
+	\begin{algorithmic}[1]
+		\REQUIRE زمان $t_{max}$ به عنوان زمان لازم برای انجام شبیه سازی،\\
+		\REQUIRE  گراف شبکه برای شبیه سازی،
+		\ENSURE جدول تغییرات گراف از لحظه‌ی ۰ تا t.
+		\FOR {تمام لحاظات در بازه‌ی ۰ تا $t_{max}$}
+			\FOR {تمام پیوند‌ها}
+				\STATE محاسبه‌ی ضریب و نرخ انتقال پیوند
+				\STATE محاسبه‌ی کیفیت و نرخ یادگیری
+			\ENDFOR
+			\FOR {تمام گره‌ها}
+				\STATE محاسبه‌ی نرخ انتقال گره
+				\STATE محاسبه‌ی وضعیت جدید
+			\ENDFOR
+			\IF {تغییرات از مقدار $\delta$ کمتر است}
+				\STATE شکستن حلقه
+				\COMMENT{این شرط برای پایان قبل از رسیدن به محدودیت زمانی است، اگر تغییرات کمتر از $\delta$ باشد}
+			\ELSIF {زمان اجرای برنامه بیش از حد طول کشیده \AND $t>100$}
+				\STATE شکستن حلقه
+			\ENDIF
+		\ENDFOR
+		\PRINT {زمان اجرای برنامه}
+		\RETURN {ماتریس تغییرات زمانی}
+	\end{algorithmic}
+\end{algorithm}
+
 \section{درج کد}
 درج کد به زبان‌های مختلف به سادگی امکان‌پذیر است. برنامه
 \ref{code:matlabEx}
