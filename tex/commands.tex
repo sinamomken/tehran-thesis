@@ -194,7 +194,7 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \makeatletter
 \renewcommand{\algorithmicrequire}{\if@RTL\textbf{ورودی:}\else\textbf{Require:}\fi}
 \renewcommand{\algorithmicensure}{\if@RTL\textbf{خروجی:}\else\textbf{Ensure:}\fi}
-\renewcommand{\algorithmicend}{\if@RTL\textbf{پایان حلقه}\else\textbf{end}\fi}
+\renewcommand{\algorithmicend}{\if@RTL\textbf{پایان}\else\textbf{end}\fi}
 \renewcommand{\algorithmicif}{\if@RTL\textbf{اگر}\else\textbf{if}\fi}
 \renewcommand{\algorithmicthen}{\if@RTL\textbf{آنگاه}\else\textbf{then}\fi}
 \renewcommand{\algorithmicelse}{\if@RTL\textbf{وگرنه}\else\textbf{else}\fi}
@@ -218,6 +218,11 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \renewcommand{\algorithmicbody}{\if@RTL\textbf{انجام بده}\else\textbf{do}\fi}
 \renewcommand{\algorithmictrue}{\if@RTL\textbf{درست}\else\textbf{true}\fi}
 \renewcommand{\algorithmicfalse}{\if@RTL\textbf{نادرست}\else\textbf{false}\fi}
+\renewcommand{\algorithmicendif}{\algorithmicend\textbf{ شرط }\algorithmicif}
+\renewcommand{\algorithmicendfor}{\algorithmicend\textbf{ حلقه‌ی }\algorithmicfor}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\textbf{ حلقه‌ی }\algorithmicwhile}
+\renewcommand{\algorithmicendloop}{\algorithmicend\textbf{ حلقه‌ی }\algorithmicloop}
+\renewcommand{\algorithmiccomment}[1]{\{{\itshape #1}\}}
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
