@@ -95,7 +95,9 @@ h_7 & h_8 & h_9
 \right)=0
 \end{equation}
 
-\section{الگوریتم با دستورات فارسی}
+\section{الگوریتم}
+
+\subsection{الگوریتم ساده با دستورهای فارسی}
 با مفروضات فوق، الگوریتم \lr{DLT} به صورت نشان داده شده در الگوریتم \eqref{alg:DLT}  خواهد بود.
 \begin{algorithm}[ht]
 \onehalfspacing
@@ -114,8 +116,40 @@ $\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$
 \end{algorithmic}
 \end{algorithm}
 
-\section{الگوریتم با دستورات لاتین}
-الگوریتم \ref{alg:RANSAC} یک الگوریتم با دستورات لاتین است.
+\subsection{الگوریتم پیچیده و تودرتو با دستورهای فارسی}
+الگوریتم \ref{alg:simulation-random}، یک الگوریتم ترکیبی و تودرتو است که با کمک دستورهای بسته‌ی \lr{algorithmic} نوشته شده است.
+
+\begin{algorithm}[p]
+    \onehalfspacing
+    \caption{الگوریتم اجرای برنامه‌ی شبیه‌سازی}
+    \label{alg:simulation-random}
+    \begin{algorithmic}[1]
+        \REQUIRE زمان $t_{max}$ به عنوان زمان لازم برای انجام شبیه سازی،\\
+        \REQUIRE  گراف شبکه برای شبیه سازی،
+        \ENSURE جدول تغییرات گراف از لحظه‌ی ۰ تا t.
+        \FOR {تمام لحظات در بازه‌ی ۰ تا $t_{max}$}
+            \FOR {تمام پیوند‌ها}
+                \STATE محاسبه‌ی ضریب و نرخ انتقال پیوند
+                \STATE محاسبه‌ی کیفیت و نرخ یادگیری
+            \ENDFOR
+            \FOR {تمام گره‌ها}
+                \STATE محاسبه‌ی نرخ انتقال گره
+                \STATE محاسبه‌ی وضعیت جدید
+            \ENDFOR
+            \IF {تغییرات از مقدار $\delta$ کمتر است}
+                \STATE شکستن حلقه
+                \COMMENT{این شرط برای پایان قبل از رسیدن به محدودیت زمانی است، اگر تغییرات کمتر از $\delta$ باشد}
+            \ELSIF {زمان اجرای برنامه بیش از حد طول کشیده \AND $t>100$}
+                \STATE شکستن حلقه
+            \ENDIF
+        \ENDFOR
+        \PRINT {زمان اجرای برنامه}
+        \RETURN {ماتریس تغییرات زمانی}
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{الگوریتم با دستورهای لاتین}
+الگوریتم \ref{alg:RANSAC} یک الگوریتم با دستورهای لاتین است.
 
 \begin{algorithm}[ht]
 \onehalfspacing
@@ -135,19 +169,19 @@ $\mathbf{x}_i\leftrightarrow\mathbf{x}'_i$
 \end{latin}
 \end{algorithm}
 
-\section{درج کد}
+\section{کد}
 درج کد به زبان‌های مختلف به سادگی امکان‌پذیر است. برنامه
 \ref{code:matlabEx}
 یک قطعه کد
 \lr{MATLAB}
 را نشان می‌دهد.
-\singlespacing
-\begin{figure}
+\begin{figure}[ht]
 	\begin{LTR}
+        \singlespacing
 		\lstinputlisting[language=MATLAB, caption={نمونه کد \lr{MATLAB}}, label={code:matlabEx}]{MatlabExample.m}
+        % \doublespacing
 	\end{LTR}
 \end{figure}
-\doublespacing
 
 \section{تصویر}
 نمونهٔ یک تصویر را در فصل قبل دیدیم. دو تصویر شیر کنار هم را نیز در شکل
