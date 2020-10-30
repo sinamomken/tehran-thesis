@@ -1,4 +1,3 @@
-sudo: required
 language: generic
 services: docker
 script:
@@ -10,7 +9,6 @@ deploy:
     secure: tQXVAe0Q2RCTGUWW5jbEuHBIcV9v/vogoRLWrQV0OZiMRAjzgiWwPYDCXEHSwk/qx8DXKO0R/rX6gWGBYhN3h+5d6Jf7/4PlCJslykTxnmZbx4X5LuKRIWYHzjjrRLLFUeL//SGsrgU3JyjvCwU2Ns2epjRyhWRcI8mHT3RZK2x009czjI354/e5/Z8bTpZPSkwlhOqhq9SPmnsWYQFNS45aAxRkRO9iBrVq1xjRPzaXUWAVeGlRGbXpCblLZ8J/6N7vKClM1tTDBIbdMG6lHbU+4GqdrQchVoPeKm17/NPzSIz+iukTQ5kRJ7MHnTxeEtX975M/OU5BIP5A15+zL9DMHt1tZm0frkWLbVWPW2ijMmgZ8sTacupYvoPeO0ltxEbG44gqMkVXgb8CzO2hM7nR0alWw86YrcpfcZ6ilUBQENADzKtcocCLLb6169WjuNl6kejU87ka2OPtlsoYM5Fq3CNvCJj1caDYc+1UskVx+BlHQWgrsYeuDdwXPC0YOWwpPBNPpQBQPCphutsCvY5cXcfSbxNDVo6H8Ldb709/JWfijkr5p2S+4DTEOVDRQfjR90n6aXDOhLrB/ks1nyN7pwrzaQjwqwTIDyG41pCY2w/bdf2ujkF+J27f71IWgYCj52PhTgQQEtdmScx+nSm/PufCrAe/Qoy0IwZhkF4=
   file: "*.pdf"
   file_glob: true
-  skip_cleanup: true
   on:
     repo: sinamomken/tehran-thesis
     tags: true
