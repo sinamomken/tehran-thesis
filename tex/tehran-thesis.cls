@@ -114,11 +114,11 @@
 \vspace{-10mm}
 % دستورات دوآرمه
 \makebox[\textwidth][c]{
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}{5cm}
 	\raggedleft
 	\includegraphics[height=4cm]{logo}
 \end{minipage}
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}{\textwidth - 8cm}
 	\begin{center}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@university \\}
@@ -128,7 +128,7 @@
 		\end{onehalfspacing}
 	\end{center}
 \end{minipage}
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}{5cm}
 	\raggedright
 	\includegraphics[height=4cm]{eng-logo}
 \end{minipage}
