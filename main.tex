@@ -74,8 +74,8 @@ twoside
     \protect\renewcommand\protect\cftchappresnum{\appendixname~}%
     \protect\setlength{\cftchapnumwidth}{\mylenapp}}
     
-\let\Chapter\chapter
 % دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱ (فعلا با glossaries سازگار نیست)
+% \let\Chapter\chapter
 %\pretocmd{\chapter}{
 %  \clearpage
 %  \pagenumbering{arabic}
@@ -88,7 +88,7 @@ twoside
 \include{./tex/appendix3}   	% پیوست سوم: مراجع، واژه‌نامه و حاشیه‌نویسی
 
 % برگرداندن شماره‌بندی صفحات فصول
-\let\chapter\Chapter
+% \let\chapter\Chapter
 \pagenumbering{tartibi} % اول، دوم، ...
 %\baselineskip=.75cm
 
