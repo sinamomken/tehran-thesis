@@ -362,7 +362,7 @@
 \begin{table}[h]
 \small
 \begin{onehalfspacing}
-\begin{tabular}{| >{\centering\arraybackslash}m{0.03\textwidth} | >{\centering\arraybackslash}m{.17\textwidth} | >{\centering\arraybackslash}m{.17\textwidth} |>{\centering\arraybackslash}m{.1\textwidth}|>{\centering\arraybackslash}m{.2\textwidth}|>{\centering\arraybackslash}m{.17\textwidth}|}
+\begin{tabular}{| >{\centering\arraybackslash}m{0.03\textwidth} | >{\centering\arraybackslash}m{.17\textwidth} | >{\centering\arraybackslash}m{.17\textwidth} |>{\centering\arraybackslash}m{.1\textwidth}|>{\centering\arraybackslash}m{.2\textwidth}|>{\centering\arraybackslash}m{.15\textwidth}|}
 \hline
 {\bfseries\begin{sideways}ردیف\end{sideways}} & {\bfseries مشخصات هیأت داوران} & {\bfseries نام و نام خانوادگی} & {\bfseries مرتبهٔ دانشگاهی} &	{\bfseries دانشگاه یا مؤسسه} & {\bfseries امضا} \\
 \hline
