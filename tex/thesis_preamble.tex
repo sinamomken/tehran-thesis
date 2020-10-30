@@ -1,5 +1,5 @@
 % ابتدای درج صفحات مختلف
-\titlePage
+\coverPage
 % بررسی حالت پیش‌نویس
 \ifoptiondraft{}{% 
     \besmPage
@@ -19,18 +19,18 @@
 } % end ifoptiondraft
 \abstractPage
 % شروع درج فهرست‌ها
-\newpage\clearpage
+\newpage\cleardoublepage
 \pagenumbering{harfi} % آ، ب، ...
-\tableofcontents \newpage
+\tableofcontents \clearpage
 % بررسی حالت پیش‌نویس برای بقیه فهرست‌ها
 \ifoptiondraft{
     \listoftodos
 }{%
-    \listoffigures \newpage
-    \listoftables  \newpage
+    \listoffigures \clearpage
+    \listoftables  \clearpage
     \addcontentsline{toc}{chapter}{\listalgorithmname}
-    \listofalgorithms %\newpage
+    \listofalgorithms \clearpage
     \addcontentsline{toc}{chapter}{\lstlistlistingname}
-    \lstlistoflistings \newpage
+    \lstlistoflistings \clearpage
     \printacronyms
 } % end ifoptiondraft

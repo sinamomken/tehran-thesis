@@ -191,19 +191,13 @@
 } % end of coverPage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\besmPage}{
-%% صفحه سفید
-\newpage
-\pagestyle{empty}\noindent\\ 
 %% بسم الله الرحمن الرحیم
-\newpage
+\cleardoublepage
 \thispagestyle{empty}
-%\hfill
+\hfill
 \begin{center}
 \includegraphics[width=10cm]{img/besm}
 \end{center}
-%% صفحه سفید
-\newpage
-\pagestyle{empty}\noindent\\ 
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% فرم داخلی جلد به فارسی (دارای استاد مشاور)
@@ -303,11 +297,11 @@
 \end{titlepage}%
 } % end of titlePage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\titlepage{\newpage\centering
+\def\titlepage{\if@RTL\cleardoublepage\else\clearpage\fi\centering
   \thispagestyle{empty}
   \parindent 0pt \parskip 10pt plus 1fil minus 1fil
   \def\baselinestretch{1}\@normalsize\vbox to \vsize\bgroup\vbox to 9in\bgroup}
-\def\endtitlepage{\par\kern 0pt\egroup\vss\egroup\newpage}
+\def\endtitlepage{\par\kern 0pt\egroup\vss\egroup}
 
 \def\signature{\vspace{1cm}
 \begin{flushleft}
@@ -315,26 +309,12 @@
 \@name\ \@surname \\
 \@thesisdate}
 \end{flushleft}}
-
-% \def\abstract{
-% \newpage
-% \subsection*{چکیده}\small
-% \@normalsize
-% \@fa-abstract
-% }
-% \def\endabstract{\par}
-
-%\pagenumbering{harfi}
-%\let\ol@chapter\@chapter
-%\def\@chapter{%
-%  \ifnum\c@chapter=0 \pagenumbering{arabic}\setcounter{page}{1}\fi
-%  \ol@chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
-\newpage
+\cleardoublepage
 %\setcounter{page}{1}
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
 \begin{minipage}{4cm}
 	\raggedleft
@@ -438,8 +418,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تأییدیه‌ی صحت و اصالت نتایج
 \newcommand{\esalatPage}{
-\newpage
-%\thispagestyle{empty}
+\cleardoublepage
+\thispagestyle{empty}
 \begin{center}
 {\Large \titlefont\bfseries
 تعهدنامهٔ اصالت اثر\\
@@ -466,7 +446,8 @@
 %% مجوز بهره‌برداری از پایان‌نامه
 \newcommand{\mojavezPage}
 {
-\newpage
+\cleardoublepage
+\thispagestyle{empty}
 \ \vfill
 \vspace{-12cm}
 \tikzstyle{tmpvip}=%
@@ -507,7 +488,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \ifx\@dedication\undefined%
     \relax
 \else
-    \newpage
+    \cleardoublepage
     \thispagestyle{empty}
     %\vspace{-40mm}
     \@dedication
@@ -520,7 +501,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \ifx\@acknowledgement\undefined%
 	\relax
 \else   
-	\newpage
+	\cleardoublepage
 	\thispagestyle{empty}
 	\centerline{\Large \bfseries قدردانی}
 	\vspace{1cm}
@@ -533,7 +514,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 
 %% چکیده فارسی
 \newcommand\abstractPage{
-	\newpage
+	\cleardoublepage
 	\thispagestyle{empty}
 	\section*{چکیده}
 	% \addcontentsline{toc}{section}{چکیده}
@@ -541,12 +522,14 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 	\par\noindent
 	\paragraph{واژگان کلیدی}
 	\@keywords
-	\newpage
 }
 
 \def\latinabstract{
 %% Latin abstract Page
-\newpage\clearpage
+\cleardoublepage\newpage
+\thispagestyle{empty}
+~
+\newpage
 \thispagestyle{empty}
 \section*{Abstract}
 % \addcontentsline{toc}{section}{چکیده}
@@ -564,9 +547,10 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \font\supervisorfont=cmbxti10
 
 \newcommand{\latinTitlePage}{%
-
-\latinabstract
 %% Latin title page
+\clearpage
+\thispagestyle{empty}
+~
 \begin{titlepage}
 \vspace{-10mm}
 %% Double logo commands

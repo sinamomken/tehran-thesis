@@ -81,7 +81,7 @@ twoside
 %  \pagenumbering{arabic}
 %  \renewcommand*{\thepage}{\rl{\thechapter-\arabic{page}}}}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+        
 
 \include{./tex/appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
 \include{./tex/appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
@@ -94,11 +94,14 @@ twoside
 
 % چاپ واژه‌نامه‌ها و نمایه 
 \onehalfspacing
+\cleardoublepage
 \printglossary
+\cleardoublepage
 \printindex
 
 \begin{latin}
 \baselineskip=.6cm
+\latinabstract
 \latinTitlePage
 \end{latin}
 \label{LastPage}
