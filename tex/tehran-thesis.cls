@@ -106,31 +106,37 @@
 %\topmargin=-30pt
 \vspace{-10mm}
 % دستورات دوآرمه
-\makebox[\textwidth][c]{
+\begin{latin}
+\hskip-1cm
+\makebox[\textwidth+2cm][c]{
 \begin{minipage}{5cm}
-	\raggedleft
-	\includegraphics[height=4cm]{logo}
+	\centering
+	\includegraphics[height=4cm]{eng-logo}
 \end{minipage}
 \begin{minipage}{\textwidth - 8cm}
 	\begin{center}
+	\begin{persian}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@university \\}
 		{\normalsize \bf \@college \\}
 		{\large\bfseries\@faculty \\}
 		{\large\bfseries\@department}
 		\end{onehalfspacing}
+	\end{persian}
 	\end{center}
 \end{minipage}
 \begin{minipage}{5cm}
-	\raggedright
-	\includegraphics[height=4cm]{eng-logo}
+	\centering
+	\includegraphics[height=4cm]{logo}
 \end{minipage}
 }
+\end{latin}
 % دستورات تک‌آرمه
 %\centerline{{\includegraphics[width=5cm]{logo}}}
 %\centerline{\bf \@university}
 %\centerline{\large\bfseries\@faculty}
 % بعد از آرم‌ها
+\centering
 \vskip 1.5cm
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
@@ -198,31 +204,37 @@
 %\topmargin=-30pt
 \vspace{-10mm}
 % دستورات دوآرمه
-\makebox[\textwidth][c]{
+\begin{latin}
+\hskip-1cm
+\makebox[\textwidth+2cm][c]{
 \begin{minipage}{5cm}
-	\raggedleft
-	\includegraphics[height=4cm]{logo}
+	\centering
+	\includegraphics[height=4cm]{eng-logo}
 \end{minipage}
 \begin{minipage}{\textwidth - 8cm}
 	\begin{center}
+	\begin{persian}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@university \\}
 		{\normalsize \bf \@college \\}
 		{\large\bfseries\@faculty \\}
 		{\large\bfseries\@department}
 		\end{onehalfspacing}
+	\end{persian}
 	\end{center}
 \end{minipage}
 \begin{minipage}{5cm}
-	\raggedright
-	\includegraphics[height=4cm]{eng-logo}
+	\centering
+	\includegraphics[height=4cm]{logo}
 \end{minipage}
 }
+\end{latin}
 % دستورات تک‌آرمه
 %\centerline{{\includegraphics[width=5cm]{logo}}}
 %\centerline{\bf \@university}
 %\centerline{\large\bfseries\@faculty}
 % بعد از آرم‌ها
+\centering
 \vskip 1.5cm
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
@@ -290,7 +302,7 @@
 \end{titlepage}%
 } % end of titlePage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\titlepage{\if@RTL\cleardoublepage\else\clearpage\fi\centering
+\def\titlepage{\if@RTL\cleardoublepage\else\clearpage\fi
   \thispagestyle{empty}
   \parindent 0pt \parskip 10pt plus 1fil minus 1fil
   \def\baselinestretch{1}\@normalsize\vbox to \vsize\bgroup\vbox to 9in\bgroup}
@@ -547,11 +559,14 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \begin{titlepage}
 \vspace{-10mm}
 %% Double logo commands
-\makebox[\textwidth][c]{
-\begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,right]{eng-logo-en}
+\begin{latin}
+\hskip-1cm
+\makebox[\textwidth+2cm][c]{
+\begin{minipage}{5cm}
+	\centering
+	\includegraphics[height=4cm]{eng-logo-en}
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{\linewidth - 8cm}
 	\begin{center}
 		\begin{onehalfspacing}
 		{\normalsize \bf \@latinuniversity \\}
@@ -561,15 +576,18 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 		\end{onehalfspacing}
 	\end{center}
 \end{minipage}
-\begin{minipage}{0.3\textwidth}
-	\includegraphics[height=4cm,left]{logo-en}
+\begin{minipage}{5cm}
+	\centering
+	\includegraphics[height=4cm]{logo-en}
 \end{minipage}
 }
+\end{latin}
 %% Single logo commands
 %\centerline{{\includegraphics[width=5cm]{logo-en}}}
 %\centerline{\bf \@latinuniversity}
 %\centerline{\large\bfseries\@latinfaculty}
 %% After logos
+\centering
 \vskip 1.5cm
 {%\latintitlefont 
 \Huge\latintitlefont\bfseries
