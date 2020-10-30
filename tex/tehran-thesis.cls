@@ -1,20 +1,13 @@
 %%
 %%  This is file `tehran-thesis.cls',
-%%  It is a modification IUST-Thesis by Mahmood Amintoosi which itself is a change of Tabriz_thesis by Vahid Damanafshan.
+%%  It is a modification of IUST-Thesis by Mahmood Amintoosi
+%%  which itself is a change of Tabriz_thesis by Vahid Damanafshan
+%%  which itself is a change of xepersian-thesis by Vafa Khalighi
+%%
 %%  Author: Sina Momken, sina.momken@gmail.com
 %%	Base author: Mahmood Amintoosi, m.amintoosi@gmail.com
 %%  https://github.com/sinamomken/tehran-thesis
-%%	Ver 0.1, May 2017
-
-%% Original Copyright
-%%  The original file was xepersian-thesis.cls by Vafa Khalighi
-%%   __________________________________
-%%   Copyright © 2011-2012 Vahid Damanafshan
-%%  
-%%   http://damanafshan.tk      
-%%   http://forum.parsilatex.com
-%% 
-%% 
+%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tehran-thesis}
               [05/09/2017 v0.1
@@ -680,18 +673,20 @@ pdfdirection={R2L}
 \makeatother
 }
 
+%%
 %% Author: Sina Momken
 %%
 %% Base author: M.Amintoosi
 %% 
-%% Copyright © 2011-2012 by Vahid Damanafshan     
+%% Copyright © 2019-     by Hadi Safari (tehran-thesis)
+%% Copyright © 2017-     by Sina Momken (tehran-thesis)
+%% Copyright © 2012-2012 by Mahmood Amintoosi (IUST-Thesis)
+%% Copyright © 2011-2012 by Vahid Damanafshan (Tabriz_thesis)
+%% Copyright © 2008-2011 by Vafa Khalighi (xepersian-thesis.cls)
 %% 
 %% Distributable under GNU GENERAL PUBLIC LICENSE Version 3.
 %% 
 %% This work is "maintained" by Sina Momken & Hadi Safari.
-%% 
-%% 
-%% 
 %% 
 %% Special thanks to Mahmood Amintoosi, Vahid Damanafshan and Vafa Khalighi for their invaluable work.
 %%
