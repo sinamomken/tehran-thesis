@@ -78,7 +78,7 @@
 \makeatother
 
 \newcommand{\newword}[4]{
-	\newglossaryentry{#1}     {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
+	\newglossaryentry{#1}   {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
 	\newglossaryentry{f-#1} {type={persian},name={#3},text={\lr{#2}},description={}}
 }
 
@@ -86,7 +86,7 @@
 \defglsentryfmt[english]{\glsgenentryfmt\ifglsused{\glslabel}{}{\LTRfootnote{\glsentryname{\glslabel}}}}
 
 %%% بر طبق این دستور، در اولین باری که واژه مورد نظر از فهرست اختصارات وارد شود، پاورقی زده می‌شود. 
-\defglsentryfmt[acronym]{\glsentryname{\glslabel}\ifglsused{\glslabel}{}{\footnote{\glsentrydesc{\glslabel}}}}
+\defglsentryfmt[acronym]{\lr{\glsentryname{\glslabel}}\ifglsused{\glslabel}{}{\LTRfootnote{\glsentrydesc{\glslabel}}}}
 
 
 %%%%%% ============================================================================================================
