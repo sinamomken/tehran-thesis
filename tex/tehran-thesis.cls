@@ -31,9 +31,14 @@
 \newcommand{\secondadvisorrank}[1]{\def\@secondadvisorrank{#1}}
 \newcommand{\internaljudge}[1]{\def\@internaljudge{#1}}
 \newcommand{\internaljudgerank}[1]{\def\@internaljudgerank{#1}}
+\newcommand{\secondinternaljudge}[1]{\def\@secondinternaljudge{#1}}
+\newcommand{\secondinternaljudgerank}[1]{\def\@secondinternaljudgerank{#1}}
 \newcommand{\externaljudge}[1]{\def\@externaljudge{#1}}
 \newcommand{\externaljudgerank}[1]{\def\@externaljudgerank{#1}}
 \newcommand{\externaljudgeuniversity}[1]{\def\@externaljudgeuniversity{#1}}
+\newcommand{\secondexternaljudge}[1]{\def\@secondexternaljudge{#1}}
+\newcommand{\secondexternaljudgerank}[1]{\def\@secondexternaljudgerank{#1}}
+\newcommand{\secondexternaljudgeuniversity}[1]{\def\@secondexternaljudgeuniversity{#1}}
 \newcommand{\graduatedeputy}[1]{\def\@graduatedeputy{#1}}
 \newcommand{\graduatedeputyrank}[1]{\def\@graduatedeputyrank{#1}}
 \def\name#1{\gdef\@name{#1}}
@@ -389,9 +394,19 @@
 \arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
+\ifx\@secondinternaljudge\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد داور داخلی & \@secondinternaljudge & \@secondinternaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+\hline
+\fi
 \ifx\@externaljudge\undefined%
 \else \stepcounter{davaranCounter}
 \arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+\hline
+\fi
+\ifx\@secondexternaljudge\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد مدعو & \@secondexternaljudge & \@secondexternaljudgerank & \@secondexternaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
 \ifx\@graduatedeputy\undefined%
