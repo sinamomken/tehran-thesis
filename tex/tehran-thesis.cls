@@ -21,6 +21,7 @@
 \def\department#1{\gdef\@department{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\thesisdate#1{\gdef\@thesisdate{#1}}
+\newcommand{\gender}[1]{\def\@gender{#1}}
 \newcommand{\firstsupervisor}[1]{\def\@firstsupervisor{#1}}
 \newcommand{\firstsupervisorrank}[1]{\def\@firstsupervisorrank{#1}}
 \newcommand{\secondsupervisor}[1]{\def\@secondsupervisor{#1}}
@@ -351,7 +352,13 @@
 }
 \end{center}
 %\vspace{.5cm}
-هیأت داوران \@projectLabel{}ٔ \@degree{} آقای~/~خانم \@name{} \@surname{} به شمارهٔ دانشجویی \@studentID{} در رشتهٔ \@subject{}~-~گرایش \@field{} را در تاریخ ............ با عنوان «\@title{}»\\
+هیأت داوران \@projectLabel{} \@degree{}
+\ifx\@gender\undefined
+آقای~/~خانم \space
+\else
+\@gender \space
+\fi
+\@name{} \@surname{} به شمارهٔ دانشجویی \@studentID{} در رشتهٔ \@subject{}~-~گرایش \@field{} را در تاریخ ................ با عنوان «\@title{}»\\
 \makebox[\textwidth][l]{
 \parbox{0.7\textwidth}{
 \makebox[2cm]{}\hspace{1ex}\makebox[2cm]{به عدد}\makebox[5cm]{به حروف}\\
