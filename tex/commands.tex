@@ -16,7 +16,7 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \lstset{inputpath=./code/}
 % بسته‌ای برای رسم کادر
-\usepackage{framed} 
+\usepackage{framed}
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
 % بسته‌ٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
@@ -110,6 +110,9 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+% بستهٔ نوشتن متن با چند ستون هم تراز
+\usepackage{multicol}
+
 % بسته زیر باگ ناشی از فراخوانی بسته‌های زیاد را برطرف می‌کند.
 \usepackage{morewrites}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,29 +125,29 @@
 \makeatletter
 % تعریف قلم فارسی و انگلیسی و مکان قلم‌ها
 \if@irfonts
-\settextfont[Path={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
-% LiberationSerif or FreeSerif as free equivalents of Times New Roman
-\setlatintextfont[Path={./font/}, BoldFont={LiberationSerif-Bold.ttf}, BoldItalicFont={LiberationSerif-BoldItalic.ttf}, ItalicFont={LiberationSerif-Italic.ttf},Scale=1]{LiberationSerif-Regular.ttf}
-% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
-% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
-\setdigitfont[Path={./font/}, Scale=1.2]{IRLotusICEE.ttf}
-% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-\setiranicfont[Path={./font/}, Scale=1.3]{IRLotusICEE_Iranic.ttf}				% ایرانیک، خوابیده به چپ
-\setmathsfdigitfont[Path={./font/}]{IRTitr.ttf}
-\defpersianfont\titlefont[Path={./font/}, Scale=1]{IRTitr.ttf}
-% برای تعریف یک قلم خاص عنوان لاتین، خط بعد را فعال و ویرایش کنید و خط بعد از آن را غیرفعال کنید.
-% \deflatinfont\latintitlefont[Scale=1]{LiberationSerif}
-\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
+	\settextfont[Path={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
+	% LiberationSerif or FreeSerif as free equivalents of Times New Roman
+	\setlatintextfont[Path={./font/}, BoldFont={LiberationSerif-Bold.ttf}, BoldItalicFont={LiberationSerif-BoldItalic.ttf}, ItalicFont={LiberationSerif-Italic.ttf},Scale=1]{LiberationSerif-Regular.ttf}
+	% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+	% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
+	\setdigitfont[Path={./font/}, Scale=1.2]{IRLotusICEE.ttf}
+	% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+	\setiranicfont[Path={./font/}, Scale=1.3]{IRLotusICEE_Iranic.ttf}				% ایرانیک، خوابیده به چپ
+	\setmathsfdigitfont[Path={./font/}]{IRTitr.ttf}
+	\defpersianfont\titlefont[Path={./font/}, Scale=1]{IRTitr.ttf}
+	% برای تعریف یک قلم خاص عنوان لاتین، خط بعد را فعال و ویرایش کنید و خط بعد از آن را غیرفعال کنید.
+	% \deflatinfont\latintitlefont[Scale=1]{LiberationSerif}
+	\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
 \else
-\settextfont{XB Niloofar}
-\setlatintextfont{Junicode}
-% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
-% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
-\setdigitfont{XB Niloofar}
-% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-% \setmathsfdigitfont{XB Titre}
-\defpersianfont\titlefont{XB Titre}
-\deflatinfont\latintitlefont[Scale=1.1]{Junicode}
+	\settextfont{XB Niloofar}
+	\setlatintextfont{Junicode}
+	% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+	% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
+	\setdigitfont{XB Niloofar}
+	% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+	% \setmathsfdigitfont{XB Titre}
+	\defpersianfont\titlefont{XB Titre}
+	\deflatinfont\latintitlefont[Scale=1.1]{Junicode}
 \fi
 \makeatother
 
@@ -237,6 +240,8 @@
 \renewcommand{\algorithmiccomment}[1]{\{{\itshape #1}\}}
 \makeatletter
 
+
+\newcommand{\algorithmautorefname}{الگوریتم}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورهایی برای سفارشی کردن سربرگ صفحات:
 %\newcommand{\SetHeader}[1]{
@@ -281,24 +286,24 @@
 \addtolength\mylenapp{\cftchapnumwidth}
 
 \setlength\cftpartnumwidth{\mylenprt}
-\setlength\cftchapnumwidth{\mylenchp}	
+\setlength\cftchapnumwidth{\mylenchp}
 
 \makeatletter
 {\def\thebibliography#1{\chapter*{\refname\@mkboth
-   {\uppercase{\refname}}{\uppercase{\refname}}}\list
-   {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}
-   \rightmargin\labelwidth
-   \advance\rightmargin\labelsep
-   \advance\rightmargin\bibindent
-   \itemindent -\bibindent
+		  {\uppercase{\refname}}{\uppercase{\refname}}}\list
+		{[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}
+			\rightmargin\labelwidth
+			\advance\rightmargin\labelsep
+			\advance\rightmargin\bibindent
+			\itemindent -\bibindent
 
-   \listparindent \itemindent
-   \parsep \z@
-   \usecounter{enumi}}
-   \def\newblock{}
-   \sloppy
-   \sfcode`\.=1000\relax}}
-   
+			\listparindent \itemindent
+			\parsep \z@
+			\usecounter{enumi}}
+		\def\newblock{}
+		\sloppy
+		\sfcode`\.=1000\relax}}
+
 %اگر مایلید در شماره گذاری حرفی و ابجد به جای آ از الف استفاده شود دستورات زیر را فعال کنید.   
 %\def\@Abjad#1{%
 %  \ifcase#1\or الف\or ب\or ج\or د%

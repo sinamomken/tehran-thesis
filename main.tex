@@ -58,10 +58,10 @@ twoside
 % اگر از استیل‌های natbib استفاده می‌کنید باید دو خط را در فایل commands.tex تغییر دهید.
 \pagestyle{empty}
 {
-\small
-\onehalfspacing
-\bibliographystyle{plain-fa} % or plainnat-fa for author-date
-\bibliography{./tex/MyReferences}
+    \small
+    \onehalfspacing
+    \bibliographystyle{plain-fa} % or plainnat-fa for author-date
+    \bibliography{./tex/MyReferences}
 }
 
 \pagestyle{fancy}
@@ -73,7 +73,7 @@ twoside
 \addtocontents{toc}{
     \protect\renewcommand\protect\cftchappresnum{\appendixname~}%
     \protect\setlength{\cftchapnumwidth}{\mylenapp}}
-    
+
 % دستورات لازم برای شماره‌گذاری صفحات پیوست‌ها بشکل آ-۱ (فعلا با glossaries سازگار نیست)
 % \let\Chapter\chapter
 %\pretocmd{\chapter}{
@@ -81,7 +81,7 @@ twoside
 %  \pagenumbering{arabic}
 %  \renewcommand*{\thepage}{\rl{\thechapter-\arabic{page}}}}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        
+
 
 \include{./tex/appendix1}		% پیوست اول: آشنایی مقدماتی با لاتک
 \include{./tex/appendix2}		% پیوست دوم: جدول، نمودار و الگوریتم در لاتک
@@ -95,14 +95,14 @@ twoside
 \onehalfspacing
 \cleardoublepage
 \pagenumbering{tartibi} % اول، دوم، ...
-\printglossary
+\printallglossary
 \cleardoublepage
 \printindex
 
 \begin{latin}
-\baselineskip=.6cm
-\latinabstract
-\latinTitlePage
+    \baselineskip=.6cm
+    \latinabstract
+    \latinTitlePage
 \end{latin}
 \label{LastPage}
 
