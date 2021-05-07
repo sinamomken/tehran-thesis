@@ -146,7 +146,7 @@
 \vskip 1.5cm
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
-\if@bscthesis 
+\if@bscthesis
 	{\large\bfseries{پروژهٔ کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
@@ -156,13 +156,13 @@
 	}
 \else
 	{\large\bfseries \@projectLabel\ \writtenfor
-	\@degree{} 
+	\@degree{}
 	}
 	{\large\bfseries{در رشتهٔ \@subject}}
 	\vskip .2cm
 	\centerline{\large \bfseries%
 		گرایش \@field}
-\fi	
+\fi
 \vskip 1cm
 \par
 {\Large\bfseries{\@name\ \ \@surname}}
@@ -244,7 +244,7 @@
 \vskip 1.5cm
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
-\if@bscthesis 
+\if@bscthesis
 	{\large\bfseries{پروژهٔ کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
@@ -254,13 +254,13 @@
 	}
 \else
 	{\large\bfseries \@projectLabel{} \writtenfor
-	\@degree{} 
+	\@degree{}
 	}
 	{\large\bfseries{در رشتهٔ \@subject}}
 	\vskip .2cm
 	\centerline{\large \bfseries%
 		گرایش \@field}
-\fi	
+\fi
 \vskip 1cm
 \par
 {\Large\bfseries{\@name\ \ \@surname}}
@@ -316,7 +316,7 @@
 
 \def\signature{\vspace{1cm}
 \begin{flushleft}
-{%\nastaliq \scriptsize 
+{%\nastaliq \scriptsize
 \@name\ \@surname \\
 \@thesisdate}
 \end{flushleft}}
@@ -443,7 +443,7 @@
 \end{center}
 } % End of davaranPage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% تأییدیه‌ی صحت و اصالت نتایج
+%% تأییدیهٔ صحت و اصالت نتایج
 \newcommand{\esalatPage}{
 \cleardoublepage
 \thispagestyle{empty}
@@ -452,12 +452,12 @@
 تعهدنامهٔ اصالت اثر\\
 }
 \vspace{.5cm}
-باسمه تعالی 
+باسمه تعالی
 \vspace{.5cm}
 \end{center}
-\doublespacing 
+\doublespacing
 
-اینجانب 
+اینجانب
 \@name \ \@surname \
 تأیید می‌کنم که مطالب مندرج در این \@projectLabel{} حاصل کار پژوهشی اینجانب است و به دستاوردهای پژوهشی دیگران که در این نوشته از آن‌ها استفاده شده است مطابق مقررات ارجاع گردیده است. این \@projectLabel{} قبلاً برای احراز هیچ مدرک هم‌سطح یا بالاتری ارائه نشده است.
 
@@ -488,7 +488,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \begin{center}
 
 \textbf{کلیهٔ حقوق مادی  و معنوی این اثر}
- 
+
 \textbf{متعلّق به دانشگاه تهران است.}
 
 \end{center}
@@ -527,7 +527,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 {
 \ifx\@acknowledgement\undefined%
 	\relax
-\else   
+\else
 	\cleardoublepage
 	\thispagestyle{empty}
 	\centerline{\Large \bfseries قدردانی}
@@ -535,7 +535,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 	\par\noindent
 	\@acknowledgement
 % با استفاده از دستور زیر، امضای شما، به طور خودکار، درج می‌شود.
-	\signature 
+	\signature
 \fi
 }
 
@@ -611,20 +611,20 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 %% After logos
 \centering
 \vskip 1.5cm
-{%\latintitlefont 
+{%\latintitlefont
 \Huge\latintitlefont\bfseries
 \@latintitle}
 %\baselineskip=.750cm \par
 \vskip 15mm
 {
 \large
-\if@bscthesis 
+\if@bscthesis
     Bachelor of Science Thesis
-	in  \@latinsubject 
+	in  \@latinsubject
 \else
 	A Thesis submitted to the Graduate Studies Office
     \\In partial fulfillment of the requirements for
-    \\The degree of 
+    \\The degree of
 	\if@mscthesis
 	 Master of Science
 	\else
@@ -717,17 +717,17 @@ pdfdirection={R2L}
 %% Author: Sina Momken
 %%
 %% Base author: M.Amintoosi
-%% 
+%%
 %% Copyright © 2019-     by Hadi Safari (tehran-thesis)
 %% Copyright © 2017-     by Sina Momken (tehran-thesis)
 %% Copyright © 2012-2012 by Mahmood Amintoosi (IUST-Thesis)
 %% Copyright © 2011-2012 by Vahid Damanafshan (Tabriz_thesis)
 %% Copyright © 2008-2011 by Vafa Khalighi (xepersian-thesis.cls)
-%% 
+%%
 %% Distributable under GNU GENERAL PUBLIC LICENSE Version 3.
-%% 
+%%
 %% This work is "maintained" by Sina Momken & Hadi Safari.
-%% 
+%%
 %% Special thanks to Mahmood Amintoosi, Vahid Damanafshan and Vafa Khalighi for their invaluable work.
 %%
 %% End of file `tehran-thesis.cls'.
