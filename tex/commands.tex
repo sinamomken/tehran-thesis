@@ -328,19 +328,23 @@
 % در این قسمت رنگ، قلم و قالب‌بندی قسمت‌های مختلف یک کد تعیین می‌شود. 
 \lstdefinestyle{myStyle}{
 	basicstyle=\ttfamily, % whole listing /w verbatim font
-	keywordstyle=\color{blue}\bfseries, % bold black keywords
+	keywordstyle={[1]\bfseries\color{blue}}, % bold black keywords
 	identifierstyle=, % nothing happens
 	commentstyle=\color{LimeGreen}, % green comments
 	stringstyle=\ttfamily\color{red}, % red typewriter font for strings
 	showstringspaces=false % no special string spaces
 	breaklines=true,
 	breakatwhitespace=false,
-	numbers=right, % line number formats
+	numbers=left, % line number formats
 	numberstyle=\footnotesize\lr,
-	numbersep=-10pt,
+	numbersep=10pt,
 	frame=single,
 	captionpos=b,
-	captiondirection=RTL
+	captiondirection=RTL,
+	xleftmargin=0.5cm,
+	emphstyle={\color{red}},
+	keywordstyle={[2]\bfseries\color{red}},
+	keywordstyle={[3]\color{RawSienna}},
 }
 \lstset{style=myStyle} % command to set default style
 \def\lstlistingname{\rl{برنامهٔ}}
