@@ -33,20 +33,27 @@
 \let\citelatin\cite
 \let\citeplatin\cite
 %%%%%%%%%%%%
+
+% Colors for hyperref
+\definecolor{darkred}{rgb}{0.5,0,0}     % Web color: Maroon
+\definecolor{darkgreen}{rgb}{0,0.5,0}   % Web color: Green
+\definecolor{darkblue}{rgb}{0,0,0.5}    % Web color: Navy
+
 % بررسی حالت پیش نویس
 \usepackage{ifdraft}
 \ifdraft
 {%
 	% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
 	\usepackage[unicode=true,pagebackref=true,
-colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
+		linkcolor=darkblue,citecolor=darkred,urlcolor=darkgreen,final]{hyperref}
 	%\usepackage{todonotes}
 	\usepackage[firstpage]{draftwatermark}
 	\SetWatermarkText{\ \ \ پیش‌نویس}
 	\SetWatermarkScale{1.2}
 }
-{ 
-	\usepackage[pagebackref=false]{hyperref}
+{
+	\usepackage[unicode=true,pagebackref=false,colorlinks,
+		linkcolor=darkblue,citecolor=darkred,urlcolor=darkgreen]{hyperref}
 	%\usepackage[disable]{todonotes} % final without TODOs
 }
 
