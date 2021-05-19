@@ -551,7 +551,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \newcommand{\sogandnamehPage}
 {
 	\if@phdthesis
-		\clearpage
+		\cleardoublepage
 		\thispagestyle{empty}
 		\centerline{\Large\bfseries سوگندنامه دانش آموختگان دکتری دانشگاه تهران }
 		\vspace{1cm}
