@@ -78,6 +78,12 @@
 \newif\if@mscthesis
 \@mscthesisfalse
 \DeclareOption{msc}{\@mscthesistrue}
+% \newif\if@proposal
+% \@proposalfalse
+% \DeclareOption{proposal}{\@proposaltrue}
+\newif\if@phdthesis
+\@phdthesisfalse
+\DeclareOption{phd}{\@phdthesistrue}
 \newif\if@irfonts
 \@irfontsfalse
 \DeclareOption{irfonts}{\@irfontstrue}
@@ -320,6 +326,15 @@
 \@name\ \@surname \\
 \@thesisdate}
 \end{flushleft}}
+\def\getsignature{
+	\vspace{1cm}
+	\begin{center}
+		\begin{tabular}{lr}
+		نام و نام خانوادگی دانشجو:   & 	\@name{} \@surname \\
+		تاریخ و امضای دانشجو: & \\
+		\end{tabular}
+	\end{center}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
@@ -461,13 +476,7 @@
 \@name \ \@surname \
 تأیید می‌کنم که مطالب مندرج در این \@projectLabel{} حاصل کار پژوهشی اینجانب است و به دستاوردهای پژوهشی دیگران که در این نوشته از آن‌ها استفاده شده است مطابق مقررات ارجاع گردیده است. این \@projectLabel{} قبلاً برای احراز هیچ مدرک هم‌سطح یا بالاتری ارائه نشده است.
 
-\vspace{1cm}
-\begin{center}
-\begin{tabular}{lr}
-نام و نام خانوادگی دانشجو:   & 	\@name{} \@surname \\
- تاریخ و امضای دانشجو: & \\
-\end{tabular}
-\end{center}
+\getsignature
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% مجوز بهره‌برداری از پایان‌نامه
@@ -537,6 +546,39 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 % با استفاده از دستور زیر، امضای شما، به طور خودکار، درج می‌شود.
 	\signature
 \fi
+}
+
+\newcommand{\sogandnamehPage}
+{
+	\if@phdthesis
+		\clearpage
+		\thispagestyle{empty}
+		\centerline{\Large\bfseries سوگندنامه دانش آموختگان دکتری دانشگاه تهران }
+		\vspace{1cm}
+		\par\noindent
+		\centerline{بسم الله الرحمن الرحیم}
+		
+		\par\noindent
+		سپاس یزدان پاک را که مرا مشمول الطاف خویش نمود که با طی مراحل تحصیل به اخذ درجه دکتری نائل شوم  به شکرانه این نعمت بزرگ الهی که با امکانات این مرز و بوم فراهم و نزد اینجانب به امانت گذاشته شده است، در پیشگاه ملت ایران به کتاب آسمانی خود، قرآن کریم، سوگند یاد می‌کنم که:
+		\begin{itemize}
+			\item در سراسر زندگی حرفه‌ای، به نحو احسن در راه اعتلای کشور ایران و جامعه بشری قدم برداشته و در این راه از هیچ کوششی دریغ نکنم.
+			\item در تمام فعالیت‌های تخصصی، رضای خدا را همراه با صداقت علمی و اجتماعی مدنظر داشته و از موقعیت‌های به دست آمده در جهت رفع مشکلات مردم استفاده کنم و در همهٔ امور، منافع کشور را بر منافع فردی مقدم بدارم.
+			\item همواره علم و دانش خود را به روز نگاه داشته و در ادای وظایف و تعهدات حرفه ای در حد توان سعی و تلاش خود را بکارگیرم.
+		\end{itemize}
+
+		\par\noindent
+		و اینک از خداوند متعال توفیق بندگی و پای بندی به مفاد این سوگندنامه را خواستارم و از او می‌خواهم که مرا در ادامه و پیمودن مسیر و فتح قله‌های رفیع علم و دانش و ایفای رسالت علمی‌و انسانی خویش موفق بدارد.
+		
+		\vspace{1cm}
+		\par\noindent
+		و ایمان دارم که:
+
+		\centerline{«إِنَّ اللَّهَ يَعْلَمُ غَيْبَ السَّماواتِ وَ الْأَرْضِ وَ اللَّهُ بَصيرٌ بِما تَعْمَلُونَ» (سوره حجرات، آیه 18)}
+
+		\getsignature
+	\else
+		\relax
+	\fi
 }
 
 %% چکیده فارسی
