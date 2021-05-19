@@ -24,8 +24,10 @@
 }{%
     \listoffigures \clearpage
     \listoftables  \clearpage
+    \phantomsection % hyperref: enable hyperlinking from the table of contents to this point
     \addcontentsline{toc}{chapter}{\listalgorithmname}
     \listofalgorithms \clearpage
+    \phantomsection % hyperref: enable hyperlinking from the table of contents to this point
     \addcontentsline{toc}{chapter}{\lstlistlistingname}
     \lstlistoflistings \clearpage
     \printacronyms
