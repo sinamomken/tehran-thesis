@@ -8,13 +8,13 @@
 %%% اشکال ........................................ Failure
 %%% ش
 %%% شبکه ...................................... Network
-\newglossarystyle{myFaToEn}{%
+\newglossarystyle{FaToEnStyle}{%
 	\renewenvironment{theglossary}{\begin{multicols}{2}}{\end{multicols}}
 	\renewcommand*{\glsgroupskip}{\vskip 10mm}
 	\renewcommand*{\glsgroupheading}[1]{\subsection*{\glsgetgrouptitle{##1}}}
 	\renewcommand*{\glossentry}[2]{{\raggedright\noindent\glsentryname{##1}\dotfill\space \glsentrytext{##1}
-
-			}}
+		
+	}}
 }
 
 %% % تعریف استایل برای واژه‌نامه انگلیسی به فارسی، در این استایل واژه‌های فارسی در سمت راست و واژه‌های انگلیسی در سمت چپ خواهند آمد. از حالت گروه ‌بندی استفاده می‌کنیم، 
@@ -26,7 +26,7 @@
 %% %N
 %% % Network ................................. شبکه
 
-\newglossarystyle{myEntoFa}{%
+\newglossarystyle{EntoFaStyle}{%
 	%%% این دستور در حقیقت عملیات گروه‌بندی را انجام می‌دهد. بدین صورت که واژه‌ها در بخش‌های جداگانه گروه‌بندی می‌شوند، 
 	%%% عنوان بخش همان نام حرفی است که هر واژه در آن گروه با آن شروع شده است. 
 	\renewenvironment{theglossary}{\begin{LTR}\LTRmulticolcolumns\begin{multicols}{2}}{\end{multicols}\end{LTR}}
@@ -34,12 +34,12 @@
 	\renewcommand*{\glsgroupheading}[1]{\subsection*{\glsgetgrouptitle{##1}}}
 	%%% در این دستور نحوه نمایش واژه‌ها می‌آید. در این جا واژه فارسی در سمت راست و واژه انگلیسی در سمت چپ قرار داده شده است، و بین آن با نقطه پر می‌شود. 
 	\renewcommand*{\glossentry}[2]{{\raggedleft\noindent\glsentryname{##1}\dotfill\space \rl{\glsentrytext{##1}}
-
-			}}
+		
+	}}
 }
 
 %%% تعیین استایل برای فهرست اختصارات
-\newglossarystyle{myAbbrlist}{%
+\newglossarystyle{AbbrlistStyle}{%
 	%%% این دستور در حقیقت عملیات گروه‌بندی را انجام می‌دهد. بدین صورت که اختصارات‌ در بخش‌های جداگانه گروه‌بندی می‌شوند، 
 	%%% عنوان بخش همان نام حرفی است که هر اختصار در آن گروه با آن شروع شده است. 
 	\renewenvironment{theglossary}{\begin{LTR}}{\end{LTR}}
@@ -48,7 +48,7 @@
 	%%% در این دستور نحوه نمایش اختصارات می‌آید. در این جا حالت کوچک اختصار در سمت چپ و حالت بزرگ در سمت راست قرار داده شده است، و بین آن با نقطه پر می‌شود. 
 	% \renewcommand*{\glossentry}[2]{\noindent\Glsentrylong{##1}\dotfill\space \glsentrytext{##1} 
 	\renewcommand*{\glossentry}[2]{\noindent\glsentrytext{##1}\space\dotfill\space \Glsentrylong{##1}
-
+		
 	}
 	%%% تغییر نام محیط abbreviation به فهرست اختصارات
 	\renewcommand*{\acronymname}{\rl{فهرست اختصارات}}
@@ -56,7 +56,7 @@
 
 %%% برای اجرا xindy بر روی فایل .tex و تولید واژه‌نامه‌ها و فهرست اختصارات و فهرست نمادها یکسری  فایل تعریف شده است.‌ Latex داده های مربوط به واژه‌نامه و .. را در این 
 %%%  فایل‌ها نگهداری می‌کند. مهم‌ترین option‌ این قسمت این است که 
-%%% عنوان واژه‌نامه‌ها و یا فهرست اختصارات و یا فهرست نمادها را می‌توانید در این‌جا مشخص کنید. 
+%%% عنوان واژه‌نامه‌ها  یا فهرست اختصارات  یا فهرست نمادها را می‌توانید در این‌جا مشخص کنید. 
 %%% در این جا عباراتی مثل glg، gls، glo و ... پسوند فایل‌هایی است که برای xindy بکار می‌روند. 
 \newglossary[glg]{english}{gls}{glo}{واژه‌نامهٔ انگلیسی به فارسی}
 \newglossary[blg]{persian}{bls}{blo}{واژه‌نامهٔ فارسی به انگلیسی}
@@ -99,8 +99,7 @@
 	%\cleardoublepage
 	\phantomsection
 	\baselineskip=.75cm
-	\setglossarystyle{myAbbrlist}
-	\printglossary[type=acronym]
+	\printglossary[type=acronym,style=AbbrlistStyle]	
 	\clearpage
 }%
 
@@ -120,8 +119,8 @@
 	\let\appendix\relax
 	\clearpage
 	\phantomsection % hyperref: enable hyperlinking from the table of contents to this point
-	\printglossary[type=persian,style=myFaToEn]
+	\printglossary[type=persian,style=FaToEnStyle]
 	\clearpage
 	\phantomsection % hyperref: enable hyperlinking from the table of contents to this point
-	\printglossary[type=english,style=myEntoFa]
+	\printglossary[type=english,style=EntoFaStyle]
 }%
