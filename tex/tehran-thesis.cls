@@ -78,9 +78,9 @@
 \newif\if@mscthesis
 \@mscthesisfalse
 \DeclareOption{msc}{\@mscthesistrue}
-% \newif\if@proposal
-% \@proposalfalse
-% \DeclareOption{proposal}{\@proposaltrue}
+\newif\if@proposal
+\@proposalfalse
+\DeclareOption{proposal}{\@proposaltrue}
 \newif\if@phdthesis
 \@phdthesisfalse
 \DeclareOption{phd}{\@phdthesistrue}
