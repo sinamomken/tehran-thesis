@@ -19,7 +19,7 @@
 \usepackage{framed}
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
-% بسته‌ٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
+% بستهٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
 \usepackage{etoolbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,7 +43,7 @@
 \usepackage{ifdraft}
 \ifdraft
 {%
-	% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
+	% بستهٔ ایجاد لینک‌های رنگی با امکان جهش
 	\usepackage[unicode=true,pagebackref=true,
 		linkcolor=darkblue,citecolor=darkred,urlcolor=darkgreen,final]{hyperref}
 	%\usepackage{todonotes}
@@ -174,7 +174,7 @@
 \renewcommand{\bibname}{مراجع}
 % دستوری برای تعریف واژه‌نامه انگلیسی به فارسی
 \newcommand\persiangloss[2]{#1\dotfill\lr{#2}\\}
-% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی 
+% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی
 \newcommand\englishgloss[2]{#2\dotfill\lr{#1}\\}
 % تعریف دستور جدید «\پ» برای خلاصه‌نویسی جهت نوشتن عبارت «پروژه/پایان‌نامه/رساله»
 \newcommand{\پ}{پروژه/پایان‌نامه/رساله }
@@ -238,8 +238,9 @@
 \renewcommand{\algorithmiccomment}[1]{\{{\itshape #1}\}}
 \makeatletter
 
-
 \newcommand{\algorithmautorefname}{الگوریتم}
+\renewcommand{\equationautorefname}{معادلهٔ}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورهایی برای سفارشی کردن سربرگ صفحات:
 %\newcommand{\SetHeader}[1]{
@@ -302,7 +303,7 @@
 		\sloppy
 		\sfcode`\.=1000\relax}}
 
-%اگر مایلید در شماره گذاری حرفی و ابجد به جای آ از الف استفاده شود دستورات زیر را فعال کنید.   
+%اگر مایلید در شماره گذاری حرفی و ابجد به جای آ از الف استفاده شود دستورات زیر را فعال کنید.
 %\def\@Abjad#1{%
 %  \ifcase#1\or الف\or ب\or ج\or د%
 %           \or هـ\or و\or ز\or ح\or ط%
@@ -316,8 +317,8 @@
 %   \ifcase#1\or الف\or ب\or ج\or د%
 %            \or هـ‍\or و\or ز\or ح\or ط\fi
 
-%   \ifnum#1=\z@\abjad@zero\fi}   
-%  
+%   \ifnum#1=\z@\abjad@zero\fi}
+%
 %   \def\@harfi#1{\ifcase#1\or الف\or ب\or پ\or ت\or ث\or
 
 % ج\or چ\or ح\or خ\or د\or ذ\or ر\or ز\or ژ\or س\or ش\or ص\or ض\or ط\or ظ\or ع\or غ\or
@@ -328,7 +329,7 @@
 \makeatother
 
 %%% امکان درج کد در سند
-% در این قسمت رنگ، قلم و قالب‌بندی قسمت‌های مختلف یک کد تعیین می‌شود. 
+% در این قسمت رنگ، قلم و قالب‌بندی قسمت‌های مختلف یک کد تعیین می‌شود.
 \lstdefinestyle{myStyle}{
 	basicstyle=\ttfamily, % whole listing /w verbatim font
 	keywordstyle={[1]\bfseries\color{blue}}, % bold black keywords
