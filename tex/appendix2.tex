@@ -31,6 +31,22 @@
   \end{tabular}
 \end{table}
 
+به کمک بستهٔ
+\verb|array|
+می‌توان عرض ستون‌های یک جدول را با ابعاد مشخص نمود. برای این کار سه تراز جدید با نام‌های \lr{R}، \lr{C} و \lr{L} به جای \lr{r}، \lr{c} و \lr{l} به همراه عرض ستون استفاده نمود.
+\begin{table}[ht]
+  \caption{مدلهای تبدیل با عرض ثابت.}
+  \label{tab:motionModelsFixed}
+  \centering
+  \onehalfspacing
+  \begin{tabular}{|r}|C{2.5cm}|L{5cm}|R{3cm}|}
+    \hline نام مدل & درجه آزادی & تبدیل مختصات                & توضیح         \\
+    \hline انتقالی & ۲          & $\begin{aligned} x'=x+t_x \\ y'=y+t_y \end{aligned}$ & انتقال دوبعدی \\
+    \hline اقلیدسی & ۳          & $\begin{aligned} x'=x\cos\theta - y\sin\theta+t_x \\ y'=x\sin\theta+y\cos\theta+t_y \end{aligned}$ & انتقالی+دوران \\
+    \hline
+  \end{tabular}
+\end{table}
+
 برای اینکه عرض جدول قابل کنترل باشد، باید از دستورات
 \verb|tabularx|،
 \verb|tabulary| یا
