@@ -47,7 +47,7 @@
 \def\dedication#1{\gdef\@dedication{#1}}
 \long\def\acknowledgement#1{\gdef\@acknowledgement{#1}}
 \def\keywords#1{\gdef\@keywords{#1}}
-\long\def\fa-abstract#1{\gdef\@fa-abstract{#1}}
+\long\def\farsiabstract#1{\gdef\@farsiabstract{#1}}
 \def\subject#1{\gdef\@subject{#1}}
 \def\field#1{\gdef\@field{#1}}
 \def\projectLabel#1{\gdef\@projectLabel{#1}}
@@ -69,7 +69,7 @@
 \def\secondlatinadvisor#1{\gdef\@secondlatinadvisor{#1}}
 \def\latinname#1{\gdef\@latinname{#1}}
 \def\latinsurname#1{\gdef\@latinsurname{#1}}
-\long\def\en-abstract#1{\gdef\@en-abstract{#1}}
+\long\def\latinabstract#1{\gdef\@latinabstract{#1}}
 \def\latinkeywords#1{\gdef\@latinkeywords{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@bscthesis
@@ -545,26 +545,26 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 	\thispagestyle{empty}
 	\section*{چکیده}
 	% \addcontentsline{toc}{section}{چکیده}
-	\@fa-abstract
+	\@farsiabstract
 	\par\noindent
-	\paragraph{واژگان کلیدی}
+	\paragraph{واژگان کلیدی:}
 	\@keywords
 }
 
-\def\latinabstract{
-%% Latin abstract Page
-\cleardoublepage\newpage
-\thispagestyle{empty}
-~
-\newpage
-\thispagestyle{empty}
-\section*{Abstract}
-% \addcontentsline{toc}{section}{چکیده}
-\@en-abstract
-\par
-\noindent
-\paragraph{Keywords}
-\@latinkeywords
+\def\latinabstractPage{
+	%% Latin abstract Page
+	\cleardoublepage\newpage
+	\thispagestyle{empty}
+	~
+	\newpage
+	\thispagestyle{empty}
+	\section*{Abstract}
+	% \addcontentsline{toc}{section}{چکیده}
+	\@latinabstract
+	\par
+	\noindent
+	\paragraph{Keywords:}
+	\@latinkeywords
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
