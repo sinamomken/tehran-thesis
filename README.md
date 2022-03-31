@@ -122,10 +122,10 @@ More screenshots are available in [`img`][imgs] folder.
 [irmug-persian]: http://wiki.irmug.com/index.php/%D9%82%D9%84%D9%85%D9%87%D8%A7%DB%8C_%D8%B3%D8%B1%DB%8C_%D8%A7%DB%8C%DA%A9%D8%B3_%D9%86%D8%B3%D8%AE%D9%87%D9%94_%DB%B2
 [irmug-english]: http://wiki.irmug.com/index.php/X_Series_2
 
-[texlive]: https://www.tug.org/texlive/
+[texlive]: https://tug.org/texlive/
 [mactex]: https://tug.org/mactex/
 [xepersian]: https://ctan.org/pkg/xepersian
-[persian-bib]: https://www.ctan.org/pkg/persian-bib
+[persian-bib]: https://ctan.org/pkg/persian-bib
 [glossaries]: https://ctan.org/pkg/glossaries
 [todonotes]: https://ctan.org/pkg/todonotes
 [bibtex]: https://ctan.org/pkg/bibtex
