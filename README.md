@@ -39,15 +39,15 @@ git clone https://github.com/sinamomken/tehran-thesis --single-branch
 در نتیجه این قالب به نصب نیاز ندارد. با این حال، این قالب از تکنولوژی‌ها و بسته‌های مختلفی استفاده می‌کند. پیش‌نیازهای زیر قبل از استفاده از قالب باید نصب باشند:
 
 #### پیش‌نیازها
-* ‫نصب کامل `texlive` بر روی لینوکس، ویندوز یا `MacTex` بر روی سیستم‌عامل مک. خصوصاً بسته‌های لاتک زیر باید نصب باشند:
-  * `زی‌پرشین`: تمام امکانات حروف‌چینی زبان فارسی در این قالب پایان‌نامه، با بستهٔ `XePersian` فراهم شده است.
-  * ‫`persian-bib`: سبک‌های ارجاع‌دهی فارسی با این بسته فراهم شده‌اند.
-  * ‫`glossaries`: بسته مدیریت پیشرفتهٔ واژه‌نامه‌ها در لاتک.
-  * ‫`todonotes`: امکان حاشیه‌نویسی و نکته‌گذاری را در فایل‌های TeX شما فراهم می‌آورد.
+* ‫نصب کامل [`texlive`][texlive] بر روی لینوکس، ویندوز یا [`MacTex`][mactex] بر روی سیستم‌عامل مک. خصوصاً بسته‌های لاتک زیر باید نصب باشند:
+  * `زی‌پرشین`: تمام امکانات حروف‌چینی زبان فارسی در این قالب پایان‌نامه، با بستهٔ [`XePersian`][xepersian] فراهم شده است.
+  * ‫[`persian-bib`][persian-bib]: سبک‌های ارجاع‌دهی فارسی با این بسته فراهم شده‌اند.
+  * ‫[`glossaries`][glossaries]: بسته مدیریت پیشرفتهٔ واژه‌نامه‌ها در لاتک.
+  * ‫[`todonotes`][todonotes]: امکان حاشیه‌نویسی و نکته‌گذاری را در فایل‌های TeX شما فراهم می‌آورد.
 * ‫`latexmk`: برنامه‌ایست معادل `make` برای پروژه‌های لاتک که مراحل مختلف کامپایل را در صورت نیاز تکرار می‌کند (باید در نسخه کامل `texlive` باشد).
-* `‫bibtex`: برنامهٔ ساخت فهرست مراجع و کتابشناسی (باید در نسخه کامل `texlive` باشد) و بستهٔ `persian-bib`.
+* [`‫bibtex`][bibtex]: برنامهٔ ساخت فهرست مراجع و کتابشناسی (باید در نسخه کامل `texlive` باشد) و بستهٔ [`persian-bib`][persian-bib].
 * ‫`xindy`: برنامهٔ پشتی مورد نیاز برای ساخت واژه‌نامه‌ها و نمایه‌ها.
-  * زبان `persian` یا `persian-variant3` باید برای `xindy` نصب باشد (که در اوبونتو 16.04 دستی باید دانلود و کپی شود).
+  * زبان `persian` یا `persian-variant3` باید برای [`xindy`][xindy] نصب باشد (که در اوبونتو 16.04 دستی باید دانلود و کپی شود).
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل [`BiDiTexmaker`][biditexmaker].
 * ‫\[اختیاری\] نصب قلم‌های سری X نسخهٔ ۲ و Junicode در سیستم‌عامل‌تان.
 
@@ -79,14 +79,14 @@ _tehran-thesis_ latex template is a portable package, that is designed for custo
 Therefor, it doesn't need any installation. However, it uses many technologies to fulfill its duties. Dependencies below must be installed:
 
 #### Prerequisites
-* Full `texlive` installation for Linux or Window, Or `MacTex` for MacOS. Specially, latex packages below should be installed:
-  * `XePersian`: All persian properties are based on `XePersian` package.
-  * `persian-bib`: Bibliography styles are provided by `persian-bib` package.
-  * `glossaries`: Advanced glossary management package.
-  * `todonotes`: Provides commenting and todo notes available in your tex files.
+* Full [`texlive`][texlive] installation for Linux or Window, Or [`MacTex`][mactex] for MacOS. Specially, latex packages below should be installed:
+  * [`XePersian`][xepersian]: All persian properties are based on `XePersian` package.
+  * [`persian-bib`][persian-bib]: Bibliography styles are provided by `persian-bib` package.
+  * [`glossaries`][glossaries]: Advanced glossary management package.
+  * [`todonotes`][todonotes]: Provides commenting and todo notes available in your tex files.
 *  `latexmk`: equivalent of `make` for latex projects (should be included in a full `texlive` installation).
-* `bibtex`: bibliography creation backend engine (should be included in a full `texlive` installation) and `persian-bib` package.
-* `xindy`: glossary/indexing backend engine.
+* [`bibtex`][bibtex]: bibliography creation backend engine (should be included in a full `texlive` installation) and [`persian-bib`][persian-bib] package.
+* [`xindy`][xindy]: glossary/indexing backend engine.
   * `persian` or `persian-variant3` language should be installed for xindy (not available by default in Ubuntu 16.04).
 * A TeX editor/IDE with RTL support, e.g. [`BiDiTexmaker`][biditexmaker].
 * \[Optional\] X Series 2 & Junicode Fonts installed in your system.
@@ -121,3 +121,12 @@ More screenshots are available in [`img`][imgs] folder.
 
 [irmug-persian]: http://wiki.irmug.com/index.php/%D9%82%D9%84%D9%85%D9%87%D8%A7%DB%8C_%D8%B3%D8%B1%DB%8C_%D8%A7%DB%8C%DA%A9%D8%B3_%D9%86%D8%B3%D8%AE%D9%87%D9%94_%DB%B2
 [irmug-english]: http://wiki.irmug.com/index.php/X_Series_2
+
+[texlive]: https://tug.org/texlive/
+[mactex]: https://tug.org/mactex/
+[xepersian]: https://ctan.org/pkg/xepersian
+[persian-bib]: https://ctan.org/pkg/persian-bib
+[glossaries]: https://ctan.org/pkg/glossaries
+[todonotes]: https://ctan.org/pkg/todonotes
+[bibtex]: https://ctan.org/pkg/bibtex
+[xindy]: https://ctan.org/pkg/xindy
