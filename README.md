@@ -1,7 +1,7 @@
 # tehran-thesis
 
 [![GitHub release](https://img.shields.io/github/release/sinamomken/tehran-thesis.svg?style=flat-square)](https://github.com/sinamomken/tehran-thesis/releases/latest)
-<!-- [![Travis (.org)](https://img.shields.io/travis/sinamomken/tehran-thesis.svg?style=flat-square)](https://travis-ci.org/sinamomken/tehran-thesis) -->
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sinamomken/tehran-thesis/Build?style=flat-square)](https://github.com/sinamomken/tehran-thesis/actions/workflows/build.yml)
 
 LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 <div dir="rtl">قالب لاتک پایان‌نامه دانشگاه تهران</div>

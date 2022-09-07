@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # See https://github.com/xu-cheng/latex-action/issues/32#issuecomment-626086551 for xindy fix
+      - uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            ln -sf /opt/texlive/texdir/texmf-dist/scripts/xindy/xindy.pl /opt/texlive/texdir/bin/x86_64-linuxmusl/xindy
+            ln -sf /opt/texlive/texdir/texmf-dist/scripts/xindy/texindy.pl /opt/texlive/texdir/bin/x86_64-linuxmusl/texindy
+            wget https://sourceforge.net/projects/xindy/files/xindy-source-components/2.4/xindy-kernel-3.0.tar.gz
+            tar xf xindy-kernel-3.0.tar.gz
+            cd xindy-kernel-3.0/src
+            apk add make
+            apk add clisp --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+            make
+            cp -f xindy.mem /opt/texlive/texdir/bin/x86_64-linuxmusl/
+            cd ../../
+            sh build.sh
+
+      - name: upload artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: TehranThesis
+          path: main.pdf
