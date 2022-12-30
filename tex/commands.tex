@@ -217,10 +217,10 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \renewcommand{\algorithmicbody}{\if@RTL\textbf{انجام بده}\else\textbf{do}\fi}
 \renewcommand{\algorithmictrue}{\if@RTL\textbf{درست}\else\textbf{true}\fi}
 \renewcommand{\algorithmicfalse}{\if@RTL\textbf{نادرست}\else\textbf{false}\fi}
-\renewcommand{\algorithmicendif}{\algorithmicend\textbf{ شرط }\algorithmicif}
-\renewcommand{\algorithmicendfor}{\algorithmicend\textbf{ حلقهٔ }\algorithmicfor}
-\renewcommand{\algorithmicendwhile}{\algorithmicend\textbf{ حلقهٔ }\algorithmicwhile}
-\renewcommand{\algorithmicendloop}{\algorithmicend\textbf{ حلقهٔ }\algorithmicloop}
+\renewcommand{\algorithmicendif}{\algorithmicend\if@RTL\textbf{ شرط }\else\ \fi\algorithmicif}
+\renewcommand{\algorithmicendfor}{\algorithmicend\if@RTL\textbf{ حلقهٔ }\else\ \fi\algorithmicfor}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\if@RTL\textbf{ حلقهٔ }\else\ \fi\algorithmicwhile}
+\renewcommand{\algorithmicendloop}{\algorithmicend\if@RTL\textbf{ حلقهٔ }\else\ \fi\algorithmicloop}
 \renewcommand{\algorithmiccomment}[1]{\{{\itshape #1}\}}
 \makeatletter
 
