@@ -7,7 +7,7 @@
 % در ورژن جدید زی‌پرشین برای تایپ متن‌های ریاضی، این سه بسته، حتماً باید فراخوانی شود
 \usepackage{amsthm,amssymb,amsmath}
 % بسته‌ای برای تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
-\usepackage[a4paper, top=40mm, bottom=40mm, outer=25mm, inner=35mm]{geometry}
+\usepackage[a4paper, top=35mm, bottom=30mm, outer=25mm, inner=35mm]{geometry}
 % بسته‌‌ای برای ظاهر شدن شکل‌ها و تعیین آدرس تصاویر
 \usepackage[final]{graphicx}
 \graphicspath{{./img/}}
@@ -16,10 +16,10 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \lstset{inputpath=./code/}
 % بسته‌ای برای رسم کادر
-\usepackage{framed} 
+\usepackage{framed}
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
-% بسته‌ٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
+% بستهٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
 \usepackage{etoolbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,20 +33,27 @@
 \let\citelatin\cite
 \let\citeplatin\cite
 %%%%%%%%%%%%
+
+% Colors for hyperref
+\definecolor{darkred}{rgb}{0.5,0,0}     % Web color: Maroon
+\definecolor{darkgreen}{rgb}{0,0.5,0}   % Web color: Green
+\definecolor{darkblue}{rgb}{0,0,0.5}    % Web color: Navy
+
 % بررسی حالت پیش نویس
 \usepackage{ifdraft}
 \ifdraft
 {%
-	% بسته‌ٔ ایجاد لینک‌های رنگی با امکان جهش
+	% بستهٔ ایجاد لینک‌های رنگی با امکان جهش
 	\usepackage[unicode=true,pagebackref=true,
-colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
+		linkcolor=darkblue,citecolor=darkred,urlcolor=darkgreen,final]{hyperref}
 	%\usepackage{todonotes}
 	\usepackage[firstpage]{draftwatermark}
 	\SetWatermarkText{\ \ \ \rl{پیش‌نویس}}
 	\SetWatermarkScale{1.2}
 }
-{ 
-	\usepackage[pagebackref=false]{hyperref}
+{
+	\usepackage[unicode=true,pagebackref=false,colorlinks,
+		linkcolor=darkblue,citecolor=darkred,urlcolor=darkgreen]{hyperref}
 	%\usepackage[disable]{todonotes} % final without TODOs
 }
 
@@ -95,43 +102,50 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \usepackage[xindy,toc,acronym,nonumberlist=true]{glossaries}
 
 % بسته‌ای برای افزودن تورفتگی به ابتدای اولین پاراگراف هر بخش
-\usepackage{indentfirst}
+% \usepackage{indentfirst}
+
+% بسته و دستورات زیر برای تنظیم عرض ستون‌های جدول به همراه جایگاه متن گذاشته شده است
+\usepackage{array}
+\newcolumntype{R}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% بستهٔ نوشتن متن با چند ستون هم تراز
+\usepackage{multicol}
 
 % بسته زیر باگ ناشی از فراخوانی بسته‌های زیاد را برطرف می‌کند.
 \usepackage{morewrites}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد)
-\usepackage[extrafootnotefeatures, localise=on, displaymathdigits=persian]{xepersian}
-
-
+\usepackage[extrafootnotefeatures, localise=on, displaymathdigits=default]{xepersian}
 
 
 \makeatletter
 % تعریف قلم فارسی و انگلیسی و مکان قلم‌ها
 \if@irfonts
-\settextfont[Path={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
-% LiberationSerif or FreeSerif as free equivalents of Times New Roman
-\setlatintextfont[Path={./font/}, BoldFont={LiberationSerif-Bold.ttf}, BoldItalicFont={LiberationSerif-BoldItalic.ttf}, ItalicFont={LiberationSerif-Italic.ttf},Scale=1]{LiberationSerif-Regular.ttf}
-% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
-% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
-\setdigitfont[Path={./font/}, Scale=1.2]{IRLotusICEE.ttf}
-% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-\setiranicfont[Path={./font/}, Scale=1.3]{IRLotusICEE_Iranic.ttf}				% ایرانیک، خوابیده به چپ
-\setmathsfdigitfont[Path={./font/}]{IRTitr.ttf}
-\defpersianfont\titlefont[Path={./font/}, Scale=1]{IRTitr.ttf}
-% برای تعریف یک قلم خاص عنوان لاتین، خط بعد را فعال و ویرایش کنید و خط بعد از آن را غیرفعال کنید.
-% \deflatinfont\latintitlefont[Scale=1]{LiberationSerif}
-\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
+	\settextfont[Path={./font/}, BoldFont={IRLotusICEE_Bold.ttf}, BoldItalicFont={IRLotusICEE_BoldIranic.ttf}, ItalicFont={IRLotusICEE_Iranic.ttf},Scale=1.2]{IRLotusICEE.ttf}
+	% LiberationSerif or FreeSerif as free equivalents of Times New Roman
+	\setlatintextfont[Path={./font/}, BoldFont={LiberationSerif-Bold.ttf}, BoldItalicFont={LiberationSerif-BoldItalic.ttf}, ItalicFont={LiberationSerif-Italic.ttf},Scale=1]{LiberationSerif-Regular.ttf}
+	% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+	% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
+	\setdigitfont[Path={./font/}, Scale=1.2]{IRLotusICEE.ttf}
+	% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+	\setiranicfont[Path={./font/}, Scale=1.3]{IRLotusICEE_Iranic.ttf}				% ایرانیک، خوابیده به چپ
+	\setmathsfdigitfont[Path={./font/}]{IRTitr.ttf}
+	\defpersianfont\titlefont[Path={./font/}, Scale=1]{IRTitr.ttf}
+	% برای تعریف یک قلم خاص عنوان لاتین، خط بعد را فعال و ویرایش کنید و خط بعد از آن را غیرفعال کنید.
+	% \deflatinfont\latintitlefont[Scale=1]{LiberationSerif}
+	\font\latintitlefont=cmssbx10 scaled 2300 %cmssbx10 scaled 2300
 \else
-\settextfont{XB Niloofar}
-\setlatintextfont{Junicode}
-% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
-% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
-\setdigitfont{XB Niloofar}
-% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-% \setmathsfdigitfont{XB Titre}
-\defpersianfont\titlefont{XB Titre}
-\deflatinfont\latintitlefont[Scale=1.1]{Junicode}
+	\settextfont{XB Niloofar}
+	\setlatintextfont{Junicode}
+	% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+	% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
+	\setdigitfont{XB Niloofar}
+	% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+	% \setmathsfdigitfont{XB Titre}
+	\defpersianfont\titlefont{XB Titre}
+	\deflatinfont\latintitlefont[Scale=1.1]{Junicode}
 \fi
 \makeatother
 
@@ -160,7 +174,7 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \renewcommand{\bibname}{مراجع}
 % دستوری برای تعریف واژه‌نامه انگلیسی به فارسی
 \newcommand\persiangloss[2]{#1\dotfill\lr{#2}\\}
-% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی 
+% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی
 \newcommand\englishgloss[2]{#2\dotfill\lr{#1}\\}
 % تعریف دستور جدید «\پ» برای خلاصه‌نویسی جهت نوشتن عبارت «پروژه/پایان‌نامه/رساله»
 \newcommand{\پ}{پروژه/پایان‌نامه/رساله }
@@ -224,6 +238,9 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \renewcommand{\algorithmiccomment}[1]{\{{\itshape #1}\}}
 \makeatletter
 
+\newcommand{\algorithmautorefname}{الگوریتم}
+\renewcommand{\equationautorefname}{معادلهٔ}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورهایی برای سفارشی کردن سربرگ صفحات:
 %\newcommand{\SetHeader}[1]{
@@ -268,25 +285,25 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \addtolength\mylenapp{\cftchapnumwidth}
 
 \setlength\cftpartnumwidth{\mylenprt}
-\setlength\cftchapnumwidth{\mylenchp}	
+\setlength\cftchapnumwidth{\mylenchp}
 
 \makeatletter
 {\def\thebibliography#1{\chapter*{\refname\@mkboth
-   {\uppercase{\refname}}{\uppercase{\refname}}}\list
-   {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}
-   \rightmargin\labelwidth
-   \advance\rightmargin\labelsep
-   \advance\rightmargin\bibindent
-   \itemindent -\bibindent
+		  {\uppercase{\refname}}{\uppercase{\refname}}}\list
+		{[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}
+			\rightmargin\labelwidth
+			\advance\rightmargin\labelsep
+			\advance\rightmargin\bibindent
+			\itemindent -\bibindent
 
-   \listparindent \itemindent
-   \parsep \z@
-   \usecounter{enumi}}
-   \def\newblock{}
-   \sloppy
-   \sfcode`\.=1000\relax}}
-   
-%اگر مایلید در شماره گذاری حرفی و ابجد به جای آ از الف استفاده شود دستورات زیر را فعال کنید.   
+			\listparindent \itemindent
+			\parsep \z@
+			\usecounter{enumi}}
+		\def\newblock{}
+		\sloppy
+		\sfcode`\.=1000\relax}}
+
+%اگر مایلید در شماره گذاری حرفی و ابجد به جای آ از الف استفاده شود دستورات زیر را فعال کنید.
 %\def\@Abjad#1{%
 %  \ifcase#1\or الف\or ب\or ج\or د%
 %           \or هـ\or و\or ز\or ح\or ط%
@@ -300,8 +317,8 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 %   \ifcase#1\or الف\or ب\or ج\or د%
 %            \or هـ‍\or و\or ز\or ح\or ط\fi
 
-%   \ifnum#1=\z@\abjad@zero\fi}   
-%  
+%   \ifnum#1=\z@\abjad@zero\fi}
+%
 %   \def\@harfi#1{\ifcase#1\or الف\or ب\or پ\or ت\or ث\or
 
 % ج\or چ\or ح\or خ\or د\or ذ\or ر\or ز\or ژ\or س\or ش\or ص\or ض\or ط\or ظ\or ع\or غ\or
@@ -312,22 +329,27 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \makeatother
 
 %%% امکان درج کد در سند
-% در این قسمت رنگ، قلم و قالب‌بندی قسمت‌های مختلف یک کد تعیین می‌شود. 
+% در این قسمت رنگ، قلم و قالب‌بندی قسمت‌های مختلف یک کد تعیین می‌شود.
 \lstdefinestyle{myStyle}{
 	basicstyle=\ttfamily, % whole listing /w verbatim font
-	keywordstyle=\color{blue}\bfseries, % bold black keywords
+	keywordstyle={[1]\bfseries\color{blue}}, % bold black keywords
 	identifierstyle=, % nothing happens
 	commentstyle=\color{LimeGreen}, % green comments
 	stringstyle=\ttfamily\color{red}, % red typewriter font for strings
 	showstringspaces=false % no special string spaces
 	breaklines=true,
 	breakatwhitespace=false,
-	numbers=right, % line number formats
+	numbers=left, % line number formats
 	numberstyle=\footnotesize\lr,
-	numbersep=-10pt,
+	numbersep=10pt,
 	frame=single,
+	rulecolor=\color{black}, % for fix multiline (string|comment) change border color
 	captionpos=b,
-	captiondirection=RTL
+	captiondirection=RTL,
+	xleftmargin=0.5cm,
+	emphstyle={\color{red}},
+	keywordstyle={[2]\bfseries\color{red}},
+	keywordstyle={[3]\color{RawSienna}},
 }
 \lstset{style=myStyle} % command to set default style
 \def\lstlistingname{\rl{برنامهٔ}}

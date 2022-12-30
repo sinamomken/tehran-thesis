@@ -1,3 +1,5 @@
+% !TeX root=../main.tex
+
 %%% تنظیمات مربوط به بسته  glossaries
 %%% تعریف استایل برای واژه‌نامه فارسی به انگلیسی، در این استایل واژه‌های فارسی در سمت راست و واژه‌های انگلیسی در سمت چپ خواهند آمد. از حالت گروه ‌بندی استفاده می‌کنیم، 
 %%% یعنی واژه‌ها در گروه‌هایی به ترتیب حروف الفبا مرتب می‌شوند، مثلا:
@@ -6,13 +8,13 @@
 %%% اشکال ........................................ Failure
 %%% ش
 %%% شبکه ...................................... Network
-\newglossarystyle{myFaToEn}{%
-	\renewenvironment{theglossary}{}{}
+\newglossarystyle{FaToEnStyle}{%
+	\renewenvironment{theglossary}{\begin{multicols}{2}}{\end{multicols}}
 	\renewcommand*{\glsgroupskip}{\vskip 10mm}
 	\renewcommand*{\glsgroupheading}[1]{\subsection*{\glsgetgrouptitle{##1}}}
-	\renewcommand*{\glossentry}[2]{\noindent\glsentryname{##1}\dotfill\space \glsentrytext{##1}
+	\renewcommand*{\glossentry}[2]{{\raggedright\noindent\glsentryname{##1}\dotfill\space \glsentrytext{##1}
 		
-	}
+	}}
 }
 
 %% % تعریف استایل برای واژه‌نامه انگلیسی به فارسی، در این استایل واژه‌های فارسی در سمت راست و واژه‌های انگلیسی در سمت چپ خواهند آمد. از حالت گروه ‌بندی استفاده می‌کنیم، 
@@ -24,27 +26,28 @@
 %% %N
 %% % Network ................................. شبکه
 
-\newglossarystyle{myEntoFa}{%
+\newglossarystyle{EntoFaStyle}{%
 	%%% این دستور در حقیقت عملیات گروه‌بندی را انجام می‌دهد. بدین صورت که واژه‌ها در بخش‌های جداگانه گروه‌بندی می‌شوند، 
 	%%% عنوان بخش همان نام حرفی است که هر واژه در آن گروه با آن شروع شده است. 
-	\renewenvironment{theglossary}{}{}
+	\renewenvironment{theglossary}{\begin{LTR}\LTRmulticolcolumns\begin{multicols}{2}}{\end{multicols}\end{LTR}}
 	\renewcommand*{\glsgroupskip}{\vskip 10mm}
-	\renewcommand*{\glsgroupheading}[1]{\begin{LTR} \subsection*{\glsgetgrouptitle{##1}} \end{LTR}}
+	\renewcommand*{\glsgroupheading}[1]{\subsection*{\glsgetgrouptitle{##1}}}
 	%%% در این دستور نحوه نمایش واژه‌ها می‌آید. در این جا واژه فارسی در سمت راست و واژه انگلیسی در سمت چپ قرار داده شده است، و بین آن با نقطه پر می‌شود. 
-	\renewcommand*{\glossentry}[2]{\noindent\glsentrytext{##1}\dotfill\space \glsentryname{##1}
+	\renewcommand*{\glossentry}[2]{{\raggedleft\noindent\glsentryname{##1}\dotfill\space \rl{\glsentrytext{##1}}
 		
-	}
+	}}
 }
 
 %%% تعیین استایل برای فهرست اختصارات
-\newglossarystyle{myAbbrlist}{%
+\newglossarystyle{AbbrlistStyle}{%
 	%%% این دستور در حقیقت عملیات گروه‌بندی را انجام می‌دهد. بدین صورت که اختصارات‌ در بخش‌های جداگانه گروه‌بندی می‌شوند، 
 	%%% عنوان بخش همان نام حرفی است که هر اختصار در آن گروه با آن شروع شده است. 
-	\renewenvironment{theglossary}{}{}
+	\renewenvironment{theglossary}{\begin{LTR}}{\end{LTR}}
 	\renewcommand*{\glsgroupskip}{\vskip 10mm}
-	\renewcommand*{\glsgroupheading}[1]{\begin{LTR} \subsection*{\glsgetgrouptitle{##1}} \end{LTR}}
+	\renewcommand*{\glsgroupheading}[1]{\subsection*{\glsgetgrouptitle{##1}}}
 	%%% در این دستور نحوه نمایش اختصارات می‌آید. در این جا حالت کوچک اختصار در سمت چپ و حالت بزرگ در سمت راست قرار داده شده است، و بین آن با نقطه پر می‌شود. 
-	\renewcommand*{\glossentry}[2]{\noindent\Glsentrylong{##1}\dotfill\space \glsentrytext{##1} 
+	% \renewcommand*{\glossentry}[2]{\noindent\Glsentrylong{##1}\dotfill\space \glsentrytext{##1} 
+	\renewcommand*{\glossentry}[2]{\noindent\glsentrytext{##1}\space\dotfill\space \Glsentrylong{##1}
 		
 	}
 	%%% تغییر نام محیط abbreviation به فهرست اختصارات
@@ -53,7 +56,7 @@
 
 %%% برای اجرا xindy بر روی فایل .tex و تولید واژه‌نامه‌ها و فهرست اختصارات و فهرست نمادها یکسری  فایل تعریف شده است.‌ Latex داده های مربوط به واژه‌نامه و .. را در این 
 %%%  فایل‌ها نگهداری می‌کند. مهم‌ترین option‌ این قسمت این است که 
-%%% عنوان واژه‌نامه‌ها و یا فهرست اختصارات و یا فهرست نمادها را می‌توانید در این‌جا مشخص کنید. 
+%%% عنوان واژه‌نامه‌ها  یا فهرست اختصارات  یا فهرست نمادها را می‌توانید در این‌جا مشخص کنید. 
 %%% در این جا عباراتی مثل glg، gls، glo و ... پسوند فایل‌هایی است که برای xindy بکار می‌روند. 
 \newglossary[glg]{english}{gls}{glo}{واژه‌نامهٔ انگلیسی به فارسی}
 \newglossary[blg]{persian}{bls}{blo}{واژه‌نامهٔ فارسی به انگلیسی}
@@ -78,7 +81,7 @@
 \makeatother
 
 \newcommand{\newword}[4]{
-	\newglossaryentry{#1}     {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
+	\newglossaryentry{#1}   {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
 	\newglossaryentry{f-#1} {type={persian},name={#3},text={\lr{#2}},description={}}
 }
 
@@ -86,7 +89,7 @@
 \defglsentryfmt[english]{\glsgenentryfmt\ifglsused{\glslabel}{}{\LTRfootnote{\glsentryname{\glslabel}}}}
 
 %%% بر طبق این دستور، در اولین باری که واژه مورد نظر از فهرست اختصارات وارد شود، پاورقی زده می‌شود. 
-\defglsentryfmt[acronym]{\glsentryname{\glslabel}\ifglsused{\glslabel}{}{\footnote{\glsentrydesc{\glslabel}}}}
+\defglsentryfmt[acronym]{\glsentryname{\glslabel}\ifglsused{\glslabel}{}{\LTRfootnote{\glsentrydesc{\glslabel}}}}
 
 
 %%%%%% ============================================================================================================
@@ -94,31 +97,30 @@
 %%============================ دستور برای قرار دادن فهرست اختصارات 
 \newcommand{\printabbreviation}{
 	%\cleardoublepage
-	%\phantomsection
+	\phantomsection
 	\baselineskip=.75cm
-	\setglossarystyle{myAbbrlist}
-	%\begin{LTR}
-		\Oldprintglossary[type=acronym]	
-	%\end{LTR}
+	\printglossary[type=acronym,style=AbbrlistStyle]	
 	\clearpage
 }%
 
+\setglossarysection{chapter}
+\renewcommand{\glossarysection}[2][\theglstoctitle]{%
+	\def\theglstoctitle{#2}%
+	{\normalfont\LARGE\bfseries#2}%
+	%  \chapter*{#2}
+	\addcontentsline{toc}{chapter}{#1}%
+	\markboth{#1}{#1}%
+}
+% \renewcommand{\glossarysection}[2][]{\chapter*{#1}}
+
 \newcommand{\printacronyms}{\printabbreviation}
 %%% در این جا محیط هر دو واژه‌نامه را باز تعریف کرده ایم، تا اولا مشکل قرار دادن صفحه اضافی را حل کنیم، ثانیا عنوان واژه‌نامه ها را با دستور addcontentlist وارد فهرست مطالب کرده ایم.
-\let\Oldprintglossary\printglossary
-\renewcommand{\printglossary}{
+\newcommand{\printallglossary}{
 	\let\appendix\relax
-	%% تنظیم کننده فاصله بین خطوط در این قسمت
 	\clearpage
-	%\phantomsection
-	%% این دستور موجب این می‌شود که واژه‌نامه‌ها در  حالت دو ستونی نوشته شود. 
-	\twocolumn{}
-	\setglossarystyle{myFaToEn}
-	\Oldprintglossary[type=persian]
+	\phantomsection % hyperref: enable hyperlinking from the table of contents to this point
+	\printglossary[type=persian,style=FaToEnStyle]
 	\clearpage
-	%\phantomsection
-	\setglossarystyle{myEntoFa}
-	\Oldprintglossary[type=english]	
-	\onecolumn{}
+	\phantomsection % hyperref: enable hyperlinking from the table of contents to this point
+	\printglossary[type=english,style=EntoFaStyle]
 }%
-%%%%%%

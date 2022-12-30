@@ -21,6 +21,7 @@
 \def\department#1{\gdef\@department{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\thesisdate#1{\gdef\@thesisdate{#1}}
+\newcommand{\gender}[1]{\def\@gender{#1}}
 \newcommand{\firstsupervisor}[1]{\def\@firstsupervisor{#1}}
 \newcommand{\firstsupervisorrank}[1]{\def\@firstsupervisorrank{#1}}
 \newcommand{\secondsupervisor}[1]{\def\@secondsupervisor{#1}}
@@ -31,9 +32,14 @@
 \newcommand{\secondadvisorrank}[1]{\def\@secondadvisorrank{#1}}
 \newcommand{\internaljudge}[1]{\def\@internaljudge{#1}}
 \newcommand{\internaljudgerank}[1]{\def\@internaljudgerank{#1}}
+\newcommand{\secondinternaljudge}[1]{\def\@secondinternaljudge{#1}}
+\newcommand{\secondinternaljudgerank}[1]{\def\@secondinternaljudgerank{#1}}
 \newcommand{\externaljudge}[1]{\def\@externaljudge{#1}}
 \newcommand{\externaljudgerank}[1]{\def\@externaljudgerank{#1}}
 \newcommand{\externaljudgeuniversity}[1]{\def\@externaljudgeuniversity{#1}}
+\newcommand{\secondexternaljudge}[1]{\def\@secondexternaljudge{#1}}
+\newcommand{\secondexternaljudgerank}[1]{\def\@secondexternaljudgerank{#1}}
+\newcommand{\secondexternaljudgeuniversity}[1]{\def\@secondexternaljudgeuniversity{#1}}
 \newcommand{\graduatedeputy}[1]{\def\@graduatedeputy{#1}}
 \newcommand{\graduatedeputyrank}[1]{\def\@graduatedeputyrank{#1}}
 \def\name#1{\gdef\@name{#1}}
@@ -41,7 +47,7 @@
 \def\dedication#1{\gdef\@dedication{#1}}
 \long\def\acknowledgement#1{\gdef\@acknowledgement{#1}}
 \def\keywords#1{\gdef\@keywords{#1}}
-\long\def\fa-abstract#1{\gdef\@fa-abstract{#1}}
+\long\def\farsiabstract#1{\gdef\@farsiabstract{#1}}
 \def\subject#1{\gdef\@subject{#1}}
 \def\field#1{\gdef\@field{#1}}
 \def\projectLabel#1{\gdef\@projectLabel{#1}}
@@ -63,7 +69,7 @@
 \def\secondlatinadvisor#1{\gdef\@secondlatinadvisor{#1}}
 \def\latinname#1{\gdef\@latinname{#1}}
 \def\latinsurname#1{\gdef\@latinsurname{#1}}
-\def\en-abstract#1{\gdef\@en-abstract{#1}}
+\long\def\latinabstract#1{\gdef\@latinabstract{#1}}
 \def\latinkeywords#1{\gdef\@latinkeywords{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@bscthesis
@@ -72,6 +78,12 @@
 \newif\if@mscthesis
 \@mscthesisfalse
 \DeclareOption{msc}{\@mscthesistrue}
+\newif\if@proposal
+\@proposalfalse
+\DeclareOption{proposal}{\@proposaltrue}
+\newif\if@phdthesis
+\@phdthesisfalse
+\DeclareOption{phd}{\@phdthesistrue}
 \newif\if@irfonts
 \@irfontsfalse
 \DeclareOption{irfonts}{\@irfontstrue}
@@ -140,7 +152,7 @@
 \vskip 1.5cm
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
-\if@bscthesis 
+\if@bscthesis
 	{\large\bfseries{پروژهٔ کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
@@ -150,13 +162,13 @@
 	}
 \else
 	{\large\bfseries \@projectLabel\ \writtenfor
-	\@degree{} 
+	\@degree{}
 	}
 	{\large\bfseries{در رشتهٔ \@subject}}
 	\vskip .2cm
 	\centerline{\large \bfseries%
 		گرایش \@field}
-\fi	
+\fi
 \vskip 1cm
 \par
 {\Large\bfseries{\@name\ \ \@surname}}
@@ -238,7 +250,7 @@
 \vskip 1.5cm
 {\huge\titlefont\bfseries \@title}\par
 \vskip 5mm
-\if@bscthesis 
+\if@bscthesis
 	{\large\bfseries{پروژهٔ کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
@@ -248,13 +260,13 @@
 	}
 \else
 	{\large\bfseries \@projectLabel{} \writtenfor
-	\@degree{} 
+	\@degree{}
 	}
 	{\large\bfseries{در رشتهٔ \@subject}}
 	\vskip .2cm
 	\centerline{\large \bfseries%
 		گرایش \@field}
-\fi	
+\fi
 \vskip 1cm
 \par
 {\Large\bfseries{\@name\ \ \@surname}}
@@ -310,10 +322,19 @@
 
 \def\signature{\vspace{1cm}
 \begin{flushleft}
-{%\nastaliq \scriptsize 
+{%\nastaliq \scriptsize
 \@name\ \@surname \\
 \@thesisdate}
 \end{flushleft}}
+\def\getsignature{
+	\vspace{1cm}
+	\begin{center}
+		\begin{tabular}{lr}
+		نام و نام خانوادگی دانشجو:   & 	\@name{} \@surname \\
+		تاریخ و امضای دانشجو: & \\
+		\end{tabular}
+	\end{center}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
@@ -346,7 +367,13 @@
 }
 \end{center}
 %\vspace{.5cm}
-هیأت داوران \@projectLabel{}ٔ \@degree{} آقای~/~خانم \@name{} \@surname{} به شمارهٔ دانشجویی \@studentID{} در رشتهٔ \@subject{}~-~گرایش \@field{} را در تاریخ ............ با عنوان «\@title{}»\\
+هیأت داوران \@projectLabel{} \@degree{}
+\ifx\@gender\undefined
+آقای~/~خانم \space
+\else
+\@gender \space
+\fi
+\@name{} \@surname{} به شمارهٔ دانشجویی \@studentID{} در رشتهٔ \@subject{}~-~گرایش \@field{} را در تاریخ ................ با عنوان «\@title{}»\\
 \makebox[\textwidth][l]{
 \parbox{0.7\textwidth}{
 \makebox[2cm]{}\hspace{1ex}\makebox[2cm]{به عدد}\makebox[5cm]{به حروف}\\
@@ -389,9 +416,19 @@
 \arabic{davaranCounter} & استاد داور داخلی & \@internaljudge & \@internaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
+\ifx\@secondinternaljudge\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد داور داخلی & \@secondinternaljudge & \@secondinternaljudgerank & دانشگاه تهران & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+\hline
+\fi
 \ifx\@externaljudge\undefined%
 \else \stepcounter{davaranCounter}
 \arabic{davaranCounter} & استاد مدعو & \@externaljudge & \@externaljudgerank & \@externaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
+\hline
+\fi
+\ifx\@secondexternaljudge\undefined%
+\else \stepcounter{davaranCounter}
+\arabic{davaranCounter} & استاد مدعو & \@secondexternaljudge & \@secondexternaljudgerank & \@secondexternaljudgeuniversity & \rule[-.3\baselineskip]{0pt}{2\normalbaselineskip} \\
 \hline
 \fi
 \ifx\@graduatedeputy\undefined%
@@ -421,7 +458,7 @@
 \end{center}
 } % End of davaranPage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% تأییدیه‌ی صحت و اصالت نتایج
+%% تأییدیهٔ صحت و اصالت نتایج
 \newcommand{\esalatPage}{
 \cleardoublepage
 \thispagestyle{empty}
@@ -430,22 +467,16 @@
 تعهدنامهٔ اصالت اثر\\
 }
 \vspace{.5cm}
-باسمه تعالی 
+باسمه تعالی
 \vspace{.5cm}
 \end{center}
-\doublespacing 
+\doublespacing
 
-اینجانب 
+اینجانب
 \@name \ \@surname \
 تأیید می‌کنم که مطالب مندرج در این \@projectLabel{} حاصل کار پژوهشی اینجانب است و به دستاوردهای پژوهشی دیگران که در این نوشته از آن‌ها استفاده شده است مطابق مقررات ارجاع گردیده است. این \@projectLabel{} قبلاً برای احراز هیچ مدرک هم‌سطح یا بالاتری ارائه نشده است.
 
-\vspace{1cm}
-\begin{center}
-\begin{tabular}{lr}
-نام و نام خانوادگی دانشجو:   & 	\@name{} \@surname \\
- تاریخ و امضای دانشجو: & \\
-\end{tabular}
-\end{center}
+\getsignature
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% مجوز بهره‌برداری از پایان‌نامه
@@ -466,7 +497,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 \begin{center}
 
 \textbf{کلیهٔ حقوق مادی  و معنوی این اثر}
- 
+
 \textbf{متعلّق به دانشگاه تهران است.}
 
 \end{center}
@@ -505,7 +536,7 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 {
 \ifx\@acknowledgement\undefined%
 	\relax
-\else   
+\else
 	\cleardoublepage
 	\thispagestyle{empty}
 	\centerline{\Large \bfseries قدردانی}
@@ -513,8 +544,41 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 	\par\noindent
 	\@acknowledgement
 % با استفاده از دستور زیر، امضای شما، به طور خودکار، درج می‌شود.
-	\signature 
+	\signature
 \fi
+}
+
+\newcommand{\sogandnamehPage}
+{
+	\if@phdthesis
+		\cleardoublepage
+		\thispagestyle{empty}
+		\centerline{\Large\bfseries سوگندنامه دانش آموختگان دکتری دانشگاه تهران }
+		\vspace{1cm}
+		\par\noindent
+		\centerline{بسم الله الرحمن الرحیم}
+		
+		\par\noindent
+		سپاس یزدان پاک را که مرا مشمول الطاف خویش نمود که با طی مراحل تحصیل به اخذ درجه دکتری نائل شوم  به شکرانه این نعمت بزرگ الهی که با امکانات این مرز و بوم فراهم و نزد اینجانب به امانت گذاشته شده است، در پیشگاه ملت ایران به کتاب آسمانی خود، قرآن کریم، سوگند یاد می‌کنم که:
+		\begin{itemize}
+			\item در سراسر زندگی حرفه‌ای، به نحو احسن در راه اعتلای کشور ایران و جامعه بشری قدم برداشته و در این راه از هیچ کوششی دریغ نکنم.
+			\item در تمام فعالیت‌های تخصصی، رضای خدا را همراه با صداقت علمی و اجتماعی مدنظر داشته و از موقعیت‌های به دست آمده در جهت رفع مشکلات مردم استفاده کنم و در همهٔ امور، منافع کشور را بر منافع فردی مقدم بدارم.
+			\item همواره علم و دانش خود را به روز نگاه داشته و در ادای وظایف و تعهدات حرفه ای در حد توان سعی و تلاش خود را بکارگیرم.
+		\end{itemize}
+
+		\par\noindent
+		و اینک از خداوند متعال توفیق بندگی و پای بندی به مفاد این سوگندنامه را خواستارم و از او می‌خواهم که مرا در ادامه و پیمودن مسیر و فتح قله‌های رفیع علم و دانش و ایفای رسالت علمی‌و انسانی خویش موفق بدارد.
+		
+		\vspace{1cm}
+		\par\noindent
+		و ایمان دارم که:
+
+		\centerline{«إِنَّ اللَّهَ يَعْلَمُ غَيْبَ السَّماواتِ وَ الْأَرْضِ وَ اللَّهُ بَصيرٌ بِما تَعْمَلُونَ» (سوره حجرات، آیه 18)}
+
+		\getsignature
+	\else
+		\relax
+	\fi
 }
 
 %% چکیده فارسی
@@ -523,26 +587,26 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 	\thispagestyle{empty}
 	\section*{چکیده}
 	% \addcontentsline{toc}{section}{چکیده}
-	\@fa-abstract
+	\@farsiabstract
 	\par\noindent
-	\paragraph{واژگان کلیدی}
+	\paragraph{واژگان کلیدی:}
 	\@keywords
 }
 
-\def\latinabstract{
-%% Latin abstract Page
-\cleardoublepage\newpage
-\thispagestyle{empty}
-~
-\newpage
-\thispagestyle{empty}
-\section*{Abstract}
-% \addcontentsline{toc}{section}{چکیده}
-\@en-abstract
-\par
-\noindent
-\paragraph{Keywords}
-\@latinkeywords
+\def\latinabstractPage{
+	%% Latin abstract Page
+	\cleardoublepage\newpage
+	\thispagestyle{empty}
+	~
+	\newpage
+	\thispagestyle{empty}
+	\section*{Abstract}
+	% \addcontentsline{toc}{section}{چکیده}
+	\@latinabstract
+	\par
+	\noindent
+	\paragraph{Keywords:}
+	\@latinkeywords
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -589,20 +653,20 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
 %% After logos
 \centering
 \vskip 1.5cm
-{%\latintitlefont 
+{%\latintitlefont
 \Huge\latintitlefont\bfseries
 \@latintitle}
 %\baselineskip=.750cm \par
 \vskip 15mm
 {
 \large
-\if@bscthesis 
+\if@bscthesis
     Bachelor of Science Thesis
-	in  \@latinsubject 
+	in  \@latinsubject
 \else
 	A Thesis submitted to the Graduate Studies Office
     \\In partial fulfillment of the requirements for
-    \\The degree of 
+    \\The degree of
 	\if@mscthesis
 	 Master of Science
 	\else
@@ -695,17 +759,17 @@ pdfdirection={R2L}
 %% Author: Sina Momken
 %%
 %% Base author: M.Amintoosi
-%% 
+%%
 %% Copyright © 2019-     by Hadi Safari (tehran-thesis)
 %% Copyright © 2017-     by Sina Momken (tehran-thesis)
 %% Copyright © 2012-2012 by Mahmood Amintoosi (IUST-Thesis)
 %% Copyright © 2011-2012 by Vahid Damanafshan (Tabriz_thesis)
 %% Copyright © 2008-2011 by Vafa Khalighi (xepersian-thesis.cls)
-%% 
+%%
 %% Distributable under GNU GENERAL PUBLIC LICENSE Version 3.
-%% 
+%%
 %% This work is "maintained" by Sina Momken & Hadi Safari.
-%% 
+%%
 %% Special thanks to Mahmood Amintoosi, Vahid Damanafshan and Vafa Khalighi for their invaluable work.
 %%
 %% End of file `tehran-thesis.cls'.

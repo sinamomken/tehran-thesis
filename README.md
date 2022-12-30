@@ -4,9 +4,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sinamomken/tehran-thesis/Build?style=flat-square)](https://github.com/sinamomken/tehran-thesis/actions/workflows/build.yml)
 
 LaTeX template for MSc/BSc/PhD theses of University of Tehran.
-<div dir="rtl">قالب لاتک پایان‌نامه دانشگاه تهران</div>
-
-<div dir="rtl">
+قالب لاتک پایان‌نامه دانشگاه تهران
 
 ## راهنمای فارسی
 ### ویژگی‌ها
@@ -27,13 +25,11 @@ LaTeX template for MSc/BSc/PhD theses of University of Tehran.
 [![GitHub release](https://img.shields.io/github/release/sinamomken/tehran-thesis.svg?style=flat-square)](https://github.com/sinamomken/tehran-thesis/releases/latest)
 دریافت کنید.
 با دستور زیر نیز می‌توانید به آخرین نسخهٔ در حال توسعهٔ قالب دسترسی داشته باشید:
-<div dir="ltr">
+
 
 ```bash
 git clone https://github.com/sinamomken/tehran-thesis --single-branch
 ```
-
-</div>
 
 ‫قالب پایان‌نامهٔ _tehran-thesis_ در واقع یک بستهٔ قابل‌حمل است که بگونه‌ای طراحی شده تا مشخصات متغیر پایان‌نامه توسط دانشجو عوض شود و مطالب پایان‌نامه نیز توسط وی در فصول مختلف وارد گردد. به هیچ تلاشی برای قالب‌بندی نیاز نیست و تنها کافی است دانشجو طبق توضیحات، مطالب خود را وارد نماید.
 در نتیجه این قالب به نصب نیاز ندارد. با این حال، این قالب از تکنولوژی‌ها و بسته‌های مختلفی استفاده می‌کند. پیش‌نیازهای زیر قبل از استفاده از قالب باید نصب باشند:
@@ -51,7 +47,6 @@ git clone https://github.com/sinamomken/tehran-thesis --single-branch
 * ‫یک ویرایشگر یا IDE برای پروژه‌های TeX، ترجیحاً با پشتیبانی از زبان‌های دوجهته یا راست به چپ، مثل [`BiDiTexmaker`][biditexmaker].
 * ‫\[اختیاری\] نصب قلم‌های سری X نسخهٔ ۲ و Junicode در سیستم‌عامل‌تان.
 
-</div>
 
 ## English Readme
 ### Features

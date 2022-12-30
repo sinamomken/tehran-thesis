@@ -1,0 +1,33 @@
+{
+    "files.exclude": {
+        "**/*.aux": true,
+        "**/*.nav": true,
+        "**/*.snm": true,
+        "**/*.toc": true,
+        "**/*.acn": true,
+        "**/*.blg": true,
+        "**/*.bbl": true,
+        "**/*.fls": true,
+        "**/*.blo": true,
+        "**/*.bls": true,
+        "**/*.blf": true,
+        "**/*.loa": true,
+        "**/*.lof": true,
+        "**/*.lol": true,
+        "**/*.lot": true,
+        "**/*.brf": true,
+        "**/*.glo": true,
+        "**/*.idx": true,
+        "**/*.ilg": true,
+        "**/*.acr": true,
+        "**/*.alg": true,
+        "**/*.glg": true,
+        "**/*.gls": true,
+        "**/*.ind": true,
+        "**/*.xdy": true,
+        "**/*.mw": true,
+        "**/*.synctex.gz": true,
+        "**/*.out": true
+    },
+    "cSpell.language": "en,fa"
+}

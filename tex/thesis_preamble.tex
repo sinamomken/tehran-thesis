@@ -5,12 +5,13 @@
     \besmPage
     \titlePage
     \davaranPage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \esalatPage
     \mojavezPage
-% چنانچه مایل به چاپ صفحات «تقدیم»، «نیایش» و «سپاس‌گزاری» در خروجی نیستید، خط‌های زیر را با گذاشتن ٪  در ابتدای آنها غیرفعال کنید.
+    % چنانچه مایل به چاپ صفحات «تقدیم»، «نیایش» و «سپاس‌گزاری» در خروجی نیستید، خط‌های زیر را با گذاشتن ٪  در ابتدای آنها غیرفعال کنید.
     \taghdimPage
     \ghadrdaniPage
+    \sogandnamehPage
 } % end ifoptiondraft
 \abstractPage
 % شروع درج فهرست‌ها
@@ -23,8 +24,10 @@
 }{%
     \listoffigures \clearpage
     \listoftables  \clearpage
+    \phantomsection % hyperref: enable hyperlinking from the table of contents to this point
     \addcontentsline{toc}{chapter}{\listalgorithmname}
     \listofalgorithms \clearpage
+    \phantomsection % hyperref: enable hyperlinking from the table of contents to this point
     \addcontentsline{toc}{chapter}{\lstlistlistingname}
     \lstlistoflistings \clearpage
     \printacronyms
